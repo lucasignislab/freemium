@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Check, X, Shield, Zap, Target } from "lucide-react";
+import { Check, X, Zap, Target } from "lucide-react";
+import raadsLogo from "../assets/raads-logo.png";
 
 const features = [
     {
@@ -105,8 +106,16 @@ export const ComparisonSection = () => {
                             )}
 
                             <div className="p-8 pb-4 text-center">
-                                <div className={`w-12 h-12 rounded-sharp flex items-center justify-center mx-auto mb-4 ${comp.highlight ? 'bg-brand-yellow/10' : comp.color + '/10'}`}>
-                                    {comp.highlight ? <Shield className="text-brand-yellow" /> : <Target className={comp.textColor} />}
+                                <div className={`flex items-center justify-center mx-auto mb-4 ${comp.highlight ? 'h-16 w-auto' : 'w-12 h-12 rounded-sharp ' + comp.color + '/10'}`}>
+                                    {comp.highlight ? (
+                                        <img
+                                            src={raadsLogo}
+                                            alt="RAADS Logo"
+                                            className="h-10 w-auto object-contain"
+                                        />
+                                    ) : (
+                                        <Target className={comp.textColor} />
+                                    )}
                                 </div>
                                 <h3 className={`text-xl font-black uppercase tracking-tighter ${comp.highlight ? 'text-white' : 'text-gray-900'}`}>
                                     {comp.name}

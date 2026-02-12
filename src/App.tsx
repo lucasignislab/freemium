@@ -8,6 +8,7 @@ import { Results } from "./components/Results.tsx"
 import { HowItWorks } from "./components/HowItWorks.tsx"
 import { ImpactCarousel } from "./components/ImpactCarousel.tsx"
 import { ComparisonSection } from "./components/ComparisonSection.tsx"
+import { IntegrationsSection } from "./components/IntegrationsSection.tsx"
 import { ClientsCarousel } from "./components/ClientsCarousel.tsx"
 import { Footer } from "./components/Footer.tsx"
 import { DesignSystem } from "./pages/DesignSystem.tsx"
@@ -33,6 +34,7 @@ const LandingPage = () => {
       <HowItWorks />
       <ImpactCarousel />
       <ComparisonSection />
+      <IntegrationsSection />
       <Results />
       <ClientsCarousel />
       <ConversionForm />
