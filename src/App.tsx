@@ -5,6 +5,9 @@ import { TrustLayer } from "./components/TrustLayer.tsx"
 import { ExclusiveTool } from "./components/ExclusiveTool.tsx"
 import { ConversionForm } from "./components/ConversionForm.tsx"
 import { Results } from "./components/Results.tsx"
+import { HowItWorks } from "./components/HowItWorks.tsx"
+import { ImpactCarousel } from "./components/ImpactCarousel.tsx"
+import { ComparisonSection } from "./components/ComparisonSection.tsx"
 import { ClientsCarousel } from "./components/ClientsCarousel.tsx"
 import { Footer } from "./components/Footer.tsx"
 import { DesignSystem } from "./pages/DesignSystem.tsx"
@@ -27,6 +30,9 @@ const LandingPage = () => {
       <TrustLayer />
       <ExclusiveTool />
       <PainPoints />
+      <HowItWorks />
+      <ImpactCarousel />
+      <ComparisonSection />
       <Results />
       <ClientsCarousel />
       <ConversionForm />

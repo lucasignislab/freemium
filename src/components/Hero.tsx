@@ -5,7 +5,7 @@ export const Hero = () => {
     return (
         <section className="pt-32 pb-20 overflow-hidden relative">
             {/* Subtle background glow */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-yellow/5 to-transparent -z-10" />
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-brand-yellow/5 to-transparent -z-10" />
 
             <div className="container-wide">
                 <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">

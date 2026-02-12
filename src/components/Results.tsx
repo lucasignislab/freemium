@@ -71,7 +71,7 @@ export const Results = () => {
     return (
         <section id="testimonials" className="py-24 bg-gray-50 overflow-hidden relative">
             {/* P2-11: Sublte background gradient */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--color-brand-yellow)_0%,_transparent_20%)] opacity-[0.03] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-brand-yellow)_0%,transparent_20%)] opacity-[0.03] pointer-events-none" />
 
             <div className="container-wide relative z-10">
                 <div className="flex flex-col md:flex-row gap-16 items-center mb-20">
