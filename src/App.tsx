@@ -5,6 +5,7 @@ import { TrustLayer } from "./components/TrustLayer.tsx"
 import { ExclusiveTool } from "./components/ExclusiveTool.tsx"
 import { ConversionForm } from "./components/ConversionForm.tsx"
 import { Results } from "./components/Results.tsx"
+import { PricingSection } from "./components/PricingSection.tsx"
 import { HowItWorks } from "./components/HowItWorks.tsx"
 import { ImpactCarousel } from "./components/ImpactCarousel.tsx"
 import { ComparisonSection } from "./components/ComparisonSection.tsx"
@@ -36,6 +37,7 @@ const LandingPage = () => {
       <ComparisonSection />
       <IntegrationsSection />
       <Results />
+      <PricingSection />
       <ClientsCarousel />
       <ConversionForm />
     </>
