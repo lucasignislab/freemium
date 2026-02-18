@@ -18,8 +18,8 @@ const pains = [
     },
     {
         tag: "SEGURANÇA DO ATIVO",
-        title: "Bloqueio de Contas por Fraude",
-        description: "Atividades suspeitas e cliques inválidos são as principais causas de suspensão. Um bloqueio hoje pode significar o <span class='text-brand-dark font-black'>fim da sua operação</span> amanhã.",
+        title: "IP Bloqueado",
+        description: "Atividades suspeitas e cliques inválidos aumentam as chances de suspensão. Um bloqueio hoje pode significar o <span class='text-brand-dark font-black'>fim da sua operação</span> amanhã.",
         image: "/assets/pains/pain-ban.png",
         bullets: ["Risco constante de suspensão", "Perda de pixel e inteligência", "Interrupção imediata do fluxo de caixa"]
     }
@@ -38,7 +38,7 @@ export const PainPoints = () => {
                         <AlertTriangle size={14} />
                         OBSTÁCULOS DA ESCALA
                     </motion.div>
-                    <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight">
+                    <h2 className="text-[28px] xs:text-4xl md:text-6xl font-black tracking-tighter leading-[1.1]">
                         POR QUE SUA ESCALA <br />
                         <span className="text-red-600 font-black">ESTÁ TRAVADA?</span>
                     </h2>
@@ -51,23 +51,23 @@ export const PainPoints = () => {
                                 initial={{ opacity: 0, x: i % 2 !== 0 ? 50 : -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8 }}
-                                className="flex-1"
+                                className="flex-1 text-center md:text-left flex flex-col items-center md:items-start"
                             >
                                 <span className="text-xs font-black text-gray-400 tracking-[0.3em] uppercase mb-4 block">
                                     {pain.tag}
                                 </span>
-                                <h3 className="text-3xl md:text-5xl font-black mb-6 leading-tight uppercase tracking-tighter">
+                                <h3 className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 leading-tight uppercase tracking-tighter">
                                     {pain.title}
                                 </h3>
                                 <p
-                                    className="text-xl text-gray-500 mb-8 leading-relaxed"
+                                    className="text-base sm:text-xl text-gray-500 mb-8 leading-relaxed max-w-[300px] xs:max-w-none"
                                     dangerouslySetInnerHTML={{ __html: pain.description }}
                                 />
-                                <div className="space-y-4 pt-4 border-t border-gray-100">
+                                <div className="space-y-4 pt-4 border-t border-gray-100 w-full flex flex-col items-center md:items-start">
                                     {pain.bullets.map((bullet, idx) => (
-                                        <div key={idx} className="flex gap-3 items-center">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                                            <p className="text-sm font-bold text-gray-400 uppercase tracking-wide">{bullet}</p>
+                                        <div key={idx} className="flex gap-3 items-center justify-center md:justify-start">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                                            <p className="text-sm font-bold text-gray-400 uppercase tracking-wide text-center md:text-left">{bullet}</p>
                                         </div>
                                     ))}
                                 </div>

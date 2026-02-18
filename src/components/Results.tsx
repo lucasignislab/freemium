@@ -74,30 +74,30 @@ export const Results = () => {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-brand-yellow)_0%,transparent_20%)] opacity-[0.03] pointer-events-none" />
 
             <div className="container-wide relative z-10">
-                <div className="flex flex-col md:flex-row gap-16 items-center mb-20">
-                    <div className="flex-1">
+                <div className="flex flex-col md:flex-row gap-16 items-center mb-20 text-center md:text-left">
+                    <div className="flex-1 flex flex-col items-center md:items-start">
                         <motion.h2
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-6xl font-black leading-tight mb-6"
+                            className="text-[28px] xs:text-4xl md:text-6xl font-black leading-tight mb-6"
                         >
                             RESULTADOS QUE <br />
-                            <span className="text-brand-green">PAGAM</span> A FERRAMENTA.
+                            <span className="text-brand-green">PAGAM</span> <br className="sm:hidden" /> A FERRAMENTA.
                         </motion.h2>
                         <p className="text-xl text-gray-500 max-w-xl">
                             Não é sobre software, é sobre lucro líquido. Veja como as maiores operações do Brasil estão blindando seu caixa.
                         </p>
                     </div>
 
-                    <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-white p-8 rounded-modern shadow-2xl border-l-8 border-brand-yellow">
+                    <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                        <div className="bg-white p-8 rounded-modern shadow-2xl border-l-0 md:border-l-8 border-brand-yellow flex flex-col items-center md:items-start text-center md:text-left">
                             <p className="font-bold text-3xl mb-1">
                                 <Counter value={1.2} suffix="M" prefix="R$ " decimals={1} />
                             </p>
                             <p className="text-sm text-gray-400 uppercase tracking-widest font-black">Investimento Protegido</p>
                         </div>
-                        <div className="bg-brand-dark p-8 rounded-modern shadow-2xl text-white mt-4 md:mt-10">
+                        <div className="bg-brand-dark p-8 rounded-modern shadow-2xl text-white mt-4 md:mt-10 flex flex-col items-center md:items-start text-center md:text-left">
                             <p className="font-bold text-3xl mb-1 text-brand-green">
                                 <Counter value={240} suffix="%" prefix="+" />
                             </p>
@@ -114,16 +114,16 @@ export const Results = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white p-10 rounded-modern border border-gray-100 shadow-xl hover:shadow-2xl transition-all group"
+                            className="bg-white p-10 rounded-modern border border-gray-100 shadow-xl hover:shadow-2xl transition-all group flex flex-col items-center md:items-start text-center md:text-left"
                         >
-                            <div className="w-14 h-14 bg-gray-50 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <div className="w-14 h-14 bg-gray-50 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform mx-auto md:mx-0">
                                 {stat.icon}
                             </div>
                             <h3 className="text-5xl font-black mb-2 tracking-tighter">
                                 <Counter value={stat.value} suffix={stat.suffix} prefix={stat.prefix} decimals={stat.decimals} />
                             </h3>
                             <p className="font-bold text-lg mb-4">{stat.label}</p>
-                            <p className="text-gray-500 leading-relaxed">
+                            <p className="text-gray-500 leading-relaxed max-w-xs mx-auto md:mx-0">
                                 {stat.description}
                             </p>
                         </motion.div>

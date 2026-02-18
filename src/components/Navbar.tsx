@@ -1,12 +1,24 @@
-// RAADS Navbar
-
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => setIsOpen(!isOpen);
+
+    const menuLinks = [
+        { name: "O Problema", href: "/#pain" },
+        { name: "Como Funciona", href: "/#solution" },
+        { name: "Resultados", href: "/#testimonials" },
+        { name: "Design System", href: "/design-system", isSpecial: true },
+    ];
+
     return (
-        <nav className="fixed top-0 left-0 right-0 bg-white backdrop-blur-md z-40 border-b border-gray-100">
-            <div className="container-wide h-20 flex items-center justify-between">
-                <Link to="/" className="flex items-center gap-2">
+        <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+            <div className="container-wide h-20 flex items-center justify-between relative z-50">
+                <Link to="/" className="flex items-center justify-center md:justify-start gap-2 flex-1 md:flex-initial">
                     <img
                         src="/logo_v1.png"
                         alt="RAADS Logo"
@@ -15,16 +27,60 @@ export const Navbar = () => {
                 </Link>
 
                 <div className="hidden md:flex items-center gap-8 font-medium">
-                    <a href="/#pain" className="hover:text-brand-green transition-colors">O Problema</a>
-                    <a href="/#solution" className="hover:text-brand-green transition-colors">Como Funciona</a>
-                    <a href="/#testimonials" className="hover:text-brand-green transition-colors">Resultados</a>
-                    <Link to="/design-system" className="hover:text-brand-green transition-colors font-bold text-brand-green">Design System</Link>
+                    {menuLinks.map((link) => (
+                        <a
+                            key={link.name}
+                            href={link.href}
+                            className={`hover:text-brand-green transition-colors ${link.isSpecial ? 'font-bold text-brand-green' : ''}`}
+                        >
+                            {link.name}
+                        </a>
+                    ))}
                 </div>
 
-                <button className="bg-brand-yellow text-brand-dark px-6 py-2 rounded-modern font-bold hover:scale-105 transition-all active:scale-95 shadow-lg shadow-brand-yellow/20">
-                    Comece agora - 14 dias grátis
-                </button>
+                <div className="flex items-center gap-4">
+                    <button className="hidden md:block bg-brand-yellow text-brand-dark px-6 py-2 rounded-modern font-bold hover:scale-105 transition-all active:scale-95 shadow-lg shadow-brand-yellow/20">
+                        Teste Já - 14 dias grátis
+                    </button>
+
+                    <button
+                        onClick={toggleMenu}
+                        className="md:hidden p-2 text-brand-dark hover:bg-gray-100 rounded-lg transition-colors"
+                        aria-label="Menu"
+                    >
+                        {isOpen ? <X size={28} /> : <Menu size={28} />}
+                    </button>
+                </div>
             </div>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="absolute top-20 left-0 right-0 bg-white border-b border-gray-100 shadow-2xl md:hidden overflow-hidden"
+                    >
+                        <div className="flex flex-col p-6 gap-4 items-center text-center">
+                            {menuLinks.map((link) => (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className={`py-3 w-full text-lg font-black tracking-tight border-b border-gray-50 last:border-0 hover:text-brand-green transition-colors ${link.isSpecial ? 'text-brand-green' : 'text-brand-dark'
+                                        }`}
+                                >
+                                    {link.name}
+                                </a>
+                            ))}
+                            <button className="mt-4 w-full bg-brand-yellow text-brand-dark px-6 py-4 rounded-modern font-black uppercase text-sm tracking-widest shadow-lg shadow-brand-yellow/20 active:scale-95 transition-transform">
+                                Teste Já - 14 dias grátis
+                            </button>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };

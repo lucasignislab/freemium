@@ -172,8 +172,8 @@ const ChainCarousel: React.FC<ChainCarouselProps> = ({
     const currentItem = items[currentIndex];
 
     return (
-        <div id='explore-section' className={`space-y-12 ${className}`}>
-            <div className='flex flex-col xl:flex-row max-w-7xl mx-auto px-4 md:px-8 gap-12 justify-center items-center'>
+        <div id='explore-section' className={`md:space-y-12 ${className}`}>
+            <div className='flex flex-col xl:flex-row max-w-7xl mx-auto px-4 md:px-8 gap-4 md:gap-12 justify-center items-center'>
                 <motion.div
                     className="relative w-full max-w-md xl:max-w-2xl h-[450px] items-center justify-center hidden xl:flex -left-14"
                     onMouseEnter={() => !searchTerm && setIsPaused(true)}
@@ -202,7 +202,7 @@ const ChainCarousel: React.FC<ChainCarouselProps> = ({
                             key={currentItem.id}
                             initial={{ scale: 0.8, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
-                            className="flex flex-col items-center justify-center gap-0 mt-4"
+                            className="flex flex-col items-center justify-center gap-0 mt-2 md:mt-4"
                         >
                             <div className='p-4 bg-brand-yellow rounded-full shadow-[0_0_30px_rgba(255,184,0,0.3)]'>
                                 {currentItem.logo ? (
@@ -218,7 +218,7 @@ const ChainCarousel: React.FC<ChainCarouselProps> = ({
                         </motion.div>
                     )}
 
-                    <div className="mt-6 relative max-w-lg mx-auto xl:mx-0">
+                    <div className="mt-3 md:mt-6 relative max-w-lg mx-auto xl:mx-0">
                         <div className="px-3 flex items-center relative">
                             <Input
                                 type="text"
@@ -280,7 +280,7 @@ const ChainCarousel: React.FC<ChainCarouselProps> = ({
 
                 <motion.div
                     ref={rightSectionRef}
-                    className="relative w-full max-w-md xl:max-w-2xl h-[450px] flex items-center justify-center -right-14"
+                    className="relative w-full max-w-md xl:max-w-2xl h-[450px] hidden xl:flex items-center justify-center -right-14"
                     onMouseEnter={() => !searchTerm && setIsPaused(true)}
                     onMouseLeave={() => !searchTerm && setIsPaused(false)}
                     initial={{ x: '100%', opacity: 0 }}
@@ -373,17 +373,17 @@ export const IntegrationsSection = () => {
             <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-yellow/20 to-transparent" />
 
             <div className="container-wide relative z-10">
-                <div className="text-center mb-16">
+                <div className="text-center mb-2 md:mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-3 py-1 bg-brand-yellow/10 text-brand-yellow font-black text-[10px] tracking-[0.2em] rounded-full mb-6 border border-brand-yellow/20"
+                        className="inline-flex items-center gap-2 px-3 py-1 bg-brand-yellow/10 text-brand-yellow font-black text-[10px] tracking-[0.2em] rounded-full mb-1 md:mb-6 border border-brand-yellow/20"
                     >
                         <Globe size={12} />
                         ECOSSISTEMA COMPLETO
                     </motion.div>
-                    <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[1.2] mb-6 text-white">
-                        Mais de <span className="text-brand-yellow italic">70 plataformas</span> <br />
+                    <h2 className="text-[28px] xs:text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[1.2] mb-1 md:mb-6 text-white">
+                        Mais de <br className="xs:hidden" /> <span className="text-brand-yellow italic">70 plataformas</span> <br />
                         totalmente integradas
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">

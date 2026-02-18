@@ -101,9 +101,11 @@ const CASCADE_CSS = `
 }
 
 @media (max-width: 768px) {
-    .impact-carousel_container { height: 400px; }
-    .impact-carousel_item.next { transform: translateY(-50%) translateX(5%) scale(0.6); }
-    .impact-carousel_item.prev { transform: translateY(-50%) translateX(-105%) scale(0.6); }
+    .impact-carousel_container { height: 480px; }
+    .impact-carousel_item { transform: translateY(-50%) translateX(-50%) scale(0.9); }
+    .impact-carousel_item.now { transform: translateY(-50%) translateX(-50%) scale(1); }
+    .impact-carousel_item.next { transform: translateY(-50%) translateX(10%) scale(0.65); }
+    .impact-carousel_item.prev { transform: translateY(-50%) translateX(-110%) scale(0.65); }
     .impact-carousel_item.next2, .impact-carousel_item.prev2 { display: none; }
 }
 `;
@@ -138,8 +140,8 @@ export const ImpactCarousel = () => {
         <section className="py-24 bg-brand-dark text-white overflow-hidden relative">
             <style dangerouslySetInnerHTML={{ __html: CASCADE_CSS }} />
 
-            <div className="container-wide mb-16 relative z-10">
-                <div className="max-w-4xl">
+            <div className="container-wide mb-16 relative z-10 text-center md:text-left">
+                <div className="max-w-4xl flex flex-col items-center md:items-start mx-auto md:mx-0">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -164,7 +166,7 @@ export const ImpactCarousel = () => {
                         return (
                             <div
                                 key={slide.id}
-                                className={`impact-carousel_item ${classes} w-[300px] md:w-[600px] aspect-16/10 group`}
+                                className={`impact-carousel_item ${classes} w-[280px] xs:w-[320px] md:w-[600px] aspect-10/14 md:aspect-16/10 group`}
                             >
                                 <div className="relative h-full w-full rounded-modern overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                                     {/* Background Image */}
@@ -179,7 +181,7 @@ export const ImpactCarousel = () => {
                                     <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors" />
 
                                     {/* Content Container */}
-                                    <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+                                    <div className="absolute inset-0 p-6 xs:p-8 md:p-12 flex flex-col justify-end items-center md:items-start text-center md:text-left">
                                         <AnimatePresence mode="wait">
                                             {isActive && (
                                                 <motion.div
@@ -191,7 +193,7 @@ export const ImpactCarousel = () => {
                                                     <h3 className="text-2xl md:text-3xl font-black mb-4 uppercase tracking-normal leading-[1.1]">
                                                         {slide.title}
                                                     </h3>
-                                                    <p className="text-brand-gray-300 font-medium text-sm md:text-lg leading-relaxed max-w-lg">
+                                                    <p className="text-brand-gray-300 font-medium text-sm md:text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
                                                         {slide.description}
                                                     </p>
                                                 </motion.div>
@@ -240,7 +242,7 @@ export const ImpactCarousel = () => {
                     whileTap={{ scale: 0.95 }}
                     className="btn btn-accent uppercase text-lg tracking-tight"
                 >
-                    COMECE AGORA 14 DIAS GRÁTIS!
+                    Teste Já - 14 dias grátis
                 </motion.button>
             </div>
 

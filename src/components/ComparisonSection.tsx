@@ -57,6 +57,66 @@ const competitors = [
     }
 ];
 
+const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: number }) => (
+    <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: idx * 0.1 }}
+        className={`relative rounded-modern overflow-hidden border shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none ${comp.highlight
+            ? 'border-brand-yellow/50 bg-brand-dark md:scale-105 z-20 shadow-[0_20px_50px_rgba(0,0,0,0.3)]'
+            : 'border-gray-200 bg-gray-100/80 shadow-inner'
+            }`}
+    >
+        {comp.highlight && (
+            <div className="absolute top-0 left-0 right-0 bg-brand-yellow text-brand-dark text-[10px] font-black py-1 text-center uppercase tracking-widest">
+                A Escolha Definitiva
+            </div>
+        )}
+
+        <div className="p-8 pb-4 text-center">
+            <div className={`flex items-center justify-center mx-auto mb-4 ${comp.highlight ? 'h-16 w-auto' : 'w-12 h-12 rounded-sharp ' + comp.color + '/10'}`}>
+                {comp.highlight ? (
+                    <img
+                        src={raadsLogo}
+                        alt="RAADS Logo"
+                        className="h-10 w-auto object-contain"
+                    />
+                ) : (
+                    <Target className={comp.textColor} />
+                )}
+            </div>
+            <h3 className={`text-xl font-black uppercase tracking-tighter ${comp.highlight ? 'text-white' : 'text-gray-900'}`}>
+                {comp.name}
+            </h3>
+        </div>
+
+        <div className="px-4">
+            {features.map((feat, fIdx) => (
+                <div key={fIdx} className={`h-24 flex items-center justify-center border-b gap-4 ${comp.highlight ? 'border-white/10' : 'border-gray-100'}`}>
+                    {comp.values[fIdx] ? (
+                        <div className={`p-2 rounded-full ${comp.highlight ? 'bg-brand-yellow text-brand-dark' : 'bg-brand-green/10 text-brand-green'}`}>
+                            <Check size={20} strokeWidth={3} />
+                        </div>
+                    ) : (
+                        <div className={`p-2 rounded-full ${comp.highlight ? 'bg-red-500/20 text-red-500' : 'bg-red-500/10 text-red-500/50'}`}>
+                            <X size={20} strokeWidth={3} />
+                        </div>
+                    )}
+                </div>
+            ))}
+        </div>
+
+        {comp.highlight && (
+            <div className="p-8">
+                <button className="w-full py-3 bg-brand-yellow text-brand-dark font-black text-xs rounded-sharp hover:scale-110 active:scale-95 transition-all uppercase tracking-widest shadow-lg shadow-brand-yellow/30">
+                    EU QUERO O RAADS
+                </button>
+            </div>
+        )}
+    </motion.div>
+);
+
 export const ComparisonSection = () => {
     return (
         <section className="py-24 bg-white text-brand-dark relative overflow-hidden">
@@ -76,9 +136,9 @@ export const ComparisonSection = () => {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-                    {/* Features Label Column */}
-                    <div className="hidden md:flex flex-col pt-32">
+                {/* Desktop: grid layout */}
+                <div className="hidden md:grid md:grid-cols-5 gap-4">
+                    <div className="flex flex-col pt-32">
                         {features.map((feature, i) => (
                             <div key={i} className="h-24 flex flex-col justify-center border-b border-gray-100">
                                 <span className="text-sm font-black uppercase tracking-widest text-gray-400">{feature.name}</span>
@@ -86,70 +146,26 @@ export const ComparisonSection = () => {
                             </div>
                         ))}
                     </div>
-
-                    {/* Competitor Columns */}
                     {competitors.map((comp, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: idx * 0.1 }}
-                            className={`relative rounded-modern overflow-hidden border ${comp.highlight
-                                ? 'border-brand-yellow/50 bg-brand-dark scale-105 z-20 shadow-[0_20px_50px_rgba(0,0,0,0.3)]'
-                                : 'border-gray-200 bg-gray-100/80 shadow-inner'
-                                }`}
-                        >
-                            {comp.highlight && (
-                                <div className="absolute top-0 left-0 right-0 bg-brand-yellow text-brand-dark text-[10px] font-black py-1 text-center uppercase tracking-widest">
-                                    A Escolha Definitiva
-                                </div>
-                            )}
-
-                            <div className="p-8 pb-4 text-center">
-                                <div className={`flex items-center justify-center mx-auto mb-4 ${comp.highlight ? 'h-16 w-auto' : 'w-12 h-12 rounded-sharp ' + comp.color + '/10'}`}>
-                                    {comp.highlight ? (
-                                        <img
-                                            src={raadsLogo}
-                                            alt="RAADS Logo"
-                                            className="h-10 w-auto object-contain"
-                                        />
-                                    ) : (
-                                        <Target className={comp.textColor} />
-                                    )}
-                                </div>
-                                <h3 className={`text-xl font-black uppercase tracking-tighter ${comp.highlight ? 'text-white' : 'text-gray-900'}`}>
-                                    {comp.name}
-                                </h3>
-                            </div>
-
-                            <div className="px-4">
-                                {features.map((feat, fIdx) => (
-                                    <div key={fIdx} className={`h-24 flex items-center justify-center border-b gap-4 ${comp.highlight ? 'border-white/10' : 'border-gray-100'}`}>
-                                        <div className="md:hidden flex flex-col text-left absolute left-8">
-                                            <span className={`text-[10px] font-black uppercase ${comp.highlight ? 'text-gray-500' : 'text-gray-400'}`}>{feat.name}</span>
-                                        </div>
-                                        {comp.values[fIdx] ? (
-                                            <div className={`p-2 rounded-full ${comp.highlight ? 'bg-brand-yellow text-brand-dark' : 'bg-brand-green/10 text-brand-green'}`}>
-                                                <Check size={20} strokeWidth={3} />
-                                            </div>
-                                        ) : (
-                                            <div className={`p-2 rounded-full ${comp.highlight ? 'bg-red-500/20 text-red-500' : 'bg-red-500/10 text-red-500/50'}`}>
-                                                <X size={20} strokeWidth={3} />
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-
-                            {comp.highlight && (
-                                <div className="p-8">
-                                    <button className="w-full py-3 bg-brand-yellow text-brand-dark font-black text-xs rounded-sharp hover:scale-110 active:scale-95 transition-all uppercase tracking-widest shadow-lg shadow-brand-yellow/30">
-                                        EU QUERO O RAADS
-                                    </button>
-                                </div>
-                            )}
-                        </motion.div>
+                        <ComparisonCard key={idx} comp={comp} idx={idx} />
                     ))}
+                </div>
+
+                {/* Mobile: horizontal swipeable carousel */}
+                <div className="md:hidden">
+                    <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-4 -mx-4 scrollbar-hide">
+                        {competitors.map((comp, idx) => (
+                            <ComparisonCard key={idx} comp={comp} idx={idx} />
+                        ))}
+                    </div>
+                    <div className="flex justify-center gap-1.5 mt-4">
+                        {competitors.map((_, idx) => (
+                            <div
+                                key={idx}
+                                className="w-2 h-2 rounded-full bg-gray-300"
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
 

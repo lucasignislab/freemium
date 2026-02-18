@@ -10,7 +10,7 @@ export const Hero = () => {
             <div className="container-wide">
                 <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
                     {/* Left side — Copy (55%) */}
-                    <div className="flex-1 md:max-w-[55%]">
+                    <div className="flex-1 md:max-w-[55%] flex flex-col items-center md:items-start text-center md:text-left">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -25,9 +25,11 @@ export const Hero = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-4xl md:text-7xl font-black tracking-normal leading-[1.1] mb-6 uppercase"
+                            className="text-[28px] xs:text-4xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6 uppercase"
                         >
-                            VOCÊ ESTÁ <span className="text-brand-yellow">PAGANDO</span> PARA OS BOTS <span className="underline decoration-brand-green underline-offset-8">ROUBAREM</span> SEU DINHEIRO?
+                            VOCÊ ESTÁ <span className="text-brand-yellow">PAGANDO</span> <br className="sm:hidden" />
+                            PARA OS BOTS <span className="underline decoration-brand-green underline-offset-8">ROUBAREM</span> <br className="sm:hidden" />
+                            SEU DINHEIRO?
                         </motion.h1>
 
                         {/* P0-2: Micro-copy explicativo */}
@@ -44,7 +46,7 @@ export const Hero = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            className="text-lg md:text-xl text-gray-500 mb-8 leading-relaxed max-w-xl"
+                            className="text-base sm:text-lg md:text-xl text-gray-500 mb-8 leading-relaxed max-w-[320px] xs:max-w-xl mx-auto md:mx-0"
                         >
                             Milhões de reais são perdidos todos os dias por anunciantes que não rastreiam 100% das vendas e permitem que cliques fraudulentos esgotem seu orçamento.
                         </motion.p>
@@ -53,7 +55,7 @@ export const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
-                            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8"
+                            className="flex flex-col sm:flex-row items-center md:items-start gap-4 mb-8"
                         >
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
@@ -61,7 +63,7 @@ export const Hero = () => {
                                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                 className="btn-accent btn scale-110 group whitespace-nowrap"
                             >
-                                Comece agora – 14 dias grátis
+                                Teste Já - 14 dias grátis
                                 <MousePointerClick className="ml-2 group-hover:translate-x-1 transition-transform" />
                             </motion.button>
                         </motion.div>
@@ -71,7 +73,7 @@ export const Hero = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.6, delay: 0.8 }}
-                            className="flex flex-wrap gap-6 text-sm text-gray-500"
+                            className="flex flex-wrap gap-6 text-sm text-gray-500 justify-center md:justify-start"
                         >
                             <span className="flex items-center gap-1.5 font-semibold">
                                 <Shield size={16} className="text-brand-green" /> Anti-Fraude

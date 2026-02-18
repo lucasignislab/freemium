@@ -32,8 +32,8 @@ export const HowItWorks = () => {
     return (
         <section id="how-it-works" className="py-24 bg-white text-brand-dark overflow-hidden">
             <div className="container-wide">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                    <div className="max-w-2xl">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-8 text-center md:text-left">
+                    <div className="max-w-2xl flex flex-col items-center md:items-start">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -47,7 +47,7 @@ export const HowItWorks = () => {
                             Constrói seu Lucro
                         </h2>
                     </div>
-                    <p className="text-gray-500 font-medium text-lg max-w-sm border-l-2 border-brand-green pl-6 md:mb-2">
+                    <p className="text-gray-500 font-medium text-lg max-w-sm border-l-0 md:border-l-2 border-brand-green pl-0 md:pl-6 md:mb-2 text-center md:text-left">
                         Um processo invisível que blinda sua conta enquanto você foca na escala.
                     </p>
                 </div>
@@ -66,18 +66,18 @@ export const HowItWorks = () => {
                                 viewport={{ once: true }}
                                 className="group"
                             >
-                                <div className="flex flex-col h-full">
-                                    <div className="flex items-center justify-between mb-8">
-                                        <div className="text-6xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-500">
+                                <div className="flex flex-col h-full items-center md:items-start text-center md:text-left">
+                                    <div className="flex items-center justify-center md:justify-between mb-8 w-full">
+                                        <div className="text-6xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-500 hidden md:block">
                                             {step.number}
                                         </div>
-                                        <div className={`p-4 bg-gray-50 border border-gray-100 rounded-sharp group-hover:border-${step.color}/40 transition-all duration-500 shadow-xl`}>
+                                        <div className={`p-4 bg-gray-50 border border-gray-100 rounded-sharp group-hover:border-${step.color}/40 transition-all duration-500 shadow-xl mx-auto md:mx-0`}>
                                             {step.icon}
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className={`h-px w-8 bg-${step.color}`} />
+                                    <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+                                        <div className={`h-px w-8 bg-${step.color} hidden md:block`} />
                                         <span className={`text-${step.color} text-xs font-black tracking-widest uppercase`}>
                                             {step.detail}
                                         </span>

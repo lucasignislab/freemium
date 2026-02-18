@@ -34,9 +34,10 @@ export const ExclusiveTool = () => {
                     >
                         PIONEIRISMO NACIONAL
                     </motion.div>
-                    <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[1.15]">
-                        A primeira ferramenta brasileira <br />
-                        criada <span className="text-brand-green">exclusivamente</span> para <br />
+                    <h2 className="text-[26px] xs:text-3xl sm:text-4xl md:text-6xl font-black tracking-tighter leading-[1.2] md:leading-[1.15]">
+                        A primeira ferramenta <br className="sm:hidden" />
+                        brasileira criada <br className="sm:hidden" />
+                        <span className="text-brand-green">exclusivamente</span> para <br className="sm:hidden" />
                         afiliados de Google Ads.
                     </h2>
                 </div>
@@ -48,20 +49,20 @@ export const ExclusiveTool = () => {
                                 initial={{ opacity: 0, x: i % 2 !== 0 ? 50 : -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8 }}
-                                className="flex-1"
+                                className="flex-1 text-center md:text-left flex flex-col items-center md:items-start"
                             >
                                 <span className="text-xs font-black text-gray-400 tracking-[0.3em] uppercase mb-4 block">
                                     {feature.tag}
                                 </span>
-                                <h3 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
+                                <h3 className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 leading-tight tracking-tighter uppercase">
                                     {feature.title}
                                 </h3>
                                 <div className="space-y-4">
                                     {feature.description.split(';').map((bullet, idx) => (
-                                        <div key={idx} className="flex gap-3 items-start">
-                                            <CheckCircle2 className="text-brand-green shrink-0 mt-1" size={20} />
+                                        <div key={idx} className="flex gap-3 items-center justify-center md:justify-start">
+                                            <CheckCircle2 className="text-brand-green shrink-0" size={20} />
                                             <p
-                                                className="text-lg text-gray-600 font-medium"
+                                                className="text-lg text-gray-600 font-medium text-center md:text-left"
                                                 dangerouslySetInnerHTML={{ __html: bullet.trim() }}
                                             />
                                         </div>
@@ -99,7 +100,7 @@ export const ExclusiveTool = () => {
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                         className="btn-accent btn group"
                     >
-                        Teste grátis por 14 dias
+                        Teste Já - 14 dias grátis
                         <MousePointerClick className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </motion.button>
                     <p className="text-sm text-gray-400 mt-3 font-medium">Sem cartão de crédito · Cancele quando quiser</p>

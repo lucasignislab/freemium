@@ -4,40 +4,40 @@ export const Footer = () => {
     return (
         <footer className="py-20 bg-white border-t border-gray-100">
             <div className="container-wide">
-                <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
-                    <div className="max-w-xs">
-                        <div className="flex items-center gap-2 mb-6">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 mb-20 text-center md:text-left">
+                    <div className="max-w-xs flex flex-col items-center md:items-start">
+                        <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
                             <img
                                 src="/logo_v1.png"
                                 alt="RAADS Logo"
-                                className="h-36 w-auto object-contain"
+                                className="h-24 md:h-36 w-auto object-contain"
                             />
                         </div>
-                        <p className="text-gray-500 text-sm leading-relaxed">
+                        <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
                             A ferramenta definitiva para anunciantes profissionais que não aceitam perder dinheiro para robôs.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
-                        <div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-12 w-full md:w-auto">
+                        <div className="flex flex-col items-center md:items-start">
                             <h4 className="font-bold text-brand-dark mb-4 text-xs uppercase tracking-widest">Produto</h4>
-                            <ul className="space-y-3 text-sm text-gray-500">
+                            <ul className="space-y-3 text-sm text-gray-500 text-center md:text-left">
                                 <li><a href="#" className="hover:text-brand-yellow transition-colors">Funcionalidades</a></li>
                                 <li><a href="#" className="hover:text-brand-yellow transition-colors">Integrações</a></li>
                                 <li><a href="#" className="hover:text-brand-yellow transition-colors">Preços</a></li>
                             </ul>
                         </div>
-                        <div>
+                        <div className="flex flex-col items-center md:items-start">
                             <h4 className="font-bold text-brand-dark mb-4 text-xs uppercase tracking-widest">Suporte</h4>
-                            <ul className="space-y-3 text-sm text-gray-500">
+                            <ul className="space-y-3 text-sm text-gray-500 text-center md:text-left">
                                 <li><a href="#" className="hover:text-brand-yellow transition-colors">WhatsApp</a></li>
                                 <li><a href="#" className="hover:text-brand-yellow transition-colors">Central de Ajuda</a></li>
                                 <li><a href="#" className="hover:text-brand-yellow transition-colors">Status</a></li>
                             </ul>
                         </div>
-                        <div>
+                        <div className="flex flex-col items-center md:items-start col-span-2 md:col-span-1">
                             <h4 className="font-bold text-brand-dark mb-4 text-xs uppercase tracking-widest">Legal</h4>
-                            <ul className="space-y-3 text-sm text-gray-500">
+                            <ul className="space-y-3 text-sm text-gray-500 text-center md:text-left">
                                 <li><a href="#" className="hover:text-brand-yellow transition-colors">Privacidade</a></li>
                                 <li><a href="#" className="hover:text-brand-yellow transition-colors">Termos</a></li>
                             </ul>

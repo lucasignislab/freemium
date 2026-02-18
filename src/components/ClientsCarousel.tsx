@@ -10,11 +10,11 @@ export const ClientsCarousel = () => {
         <section className="py-12 bg-white border-y border-gray-100 overflow-hidden">
             <div className="container-wide mb-8">
                 <div className="flex items-center gap-4">
-                    <div className="h-[1px] flex-1 bg-gray-100"></div>
-                    <h2 className="text-sm font-black uppercase tracking-[0.2em] text-gray-400">
+                    <div className="h-px flex-1 bg-gray-100"></div>
+                    <h2 className="text-sm font-black uppercase tracking-[0.2em] text-gray-400 text-center">
                         UTILIZAM A RATOEIRA
                     </h2>
-                    <div className="h-[1px] flex-1 bg-gray-100"></div>
+                    <div className="h-px flex-1 bg-gray-100"></div>
                 </div>
             </div>
 
