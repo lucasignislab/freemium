@@ -92,7 +92,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
         </div>
 
         <div className="px-4">
-            {features.map((feat, fIdx) => (
+            {features.map((_feat, fIdx) => (
                 <div key={fIdx} className={`h-24 flex items-center justify-center border-b gap-4 ${comp.highlight ? 'border-white/10' : 'border-gray-100'}`}>
                     {comp.values[fIdx] ? (
                         <div className={`p-2 rounded-full ${comp.highlight ? 'bg-brand-yellow text-brand-dark' : 'bg-brand-green/10 text-brand-green'}`}>
