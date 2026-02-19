@@ -67,9 +67,9 @@ const CarouselItemCard: React.FC<CarouselItemProps> = ({ chain, side }) => {
     const xOffset = side === 'left' ? -distance * 50 : distance * 50;
 
     const IconOrLogo = (
-        <div className="rounded-full border border-white/10 p-2 bg-brand-dark shadow-xl">
+        <div className={`rounded-full border border-white/10 shadow-xl overflow-hidden flex items-center justify-center ${logo ? 'size-12' : 'size-12 p-2 bg-brand-dark'}`}>
             {logo ? (
-                <img src={logo} alt={`${name} logo`} className="size-8 rounded-full object-cover" />
+                <img src={logo} alt={`${name} logo`} className="size-full object-cover" />
             ) : (
                 <FallbackIcon className="size-8 text-brand-yellow" />
             )}
@@ -204,9 +204,9 @@ const ChainCarousel: React.FC<ChainCarouselProps> = ({
                             animate={{ scale: 1, opacity: 1 }}
                             className="flex flex-col items-center justify-center gap-0 mt-2 md:mt-4"
                         >
-                            <div className='p-4 bg-brand-yellow rounded-full shadow-[0_0_30px_rgba(255,184,0,0.3)]'>
+                            <div className={`shadow-[0_0_30px_rgba(255,184,0,0.3)] rounded-full overflow-hidden flex items-center justify-center ${currentItem.logo ? 'size-20' : 'size-20 p-4 bg-brand-yellow'}`}>
                                 {currentItem.logo ? (
-                                    <img src={currentItem.logo} alt={`${currentItem.name} logo`} className="size-12 rounded-full object-cover" />
+                                    <img src={currentItem.logo} alt={`${currentItem.name} logo`} className="size-full object-cover" />
                                 ) : (
                                     <currentItem.icon className="size-10 text-brand-dark" />
                                 )}
@@ -306,7 +306,7 @@ const ChainCarousel: React.FC<ChainCarouselProps> = ({
 };
 
 const integrationItems: ChainItem[] = [
-    { id: 1, name: "ClickBank", icon: DollarSign, details: "Affiliate Network" },
+    { id: 1, name: "ClickBank", icon: DollarSign, details: "Affiliate Network", logo: "/assets/clickbank.svg" },
     { id: 2, name: "BuyGoods", icon: ShoppingCart, details: "Checkout & Affiliate" },
     { id: 3, name: "MaxWeb", icon: TrendingUp, details: "CPA Network" },
     { id: 4, name: "DrCash", icon: Activity, details: "Nutra CPA" },
