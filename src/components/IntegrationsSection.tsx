@@ -265,7 +265,7 @@ const ChainCarousel: React.FC<ChainCarouselProps> = ({
                                         className="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-white/5 transition-colors duration-150 rounded-lg m-2 border border-transparent hover:border-white/5"
                                     >
                                         {chain.logo ? (
-                                            <img src={chain.logo} alt={`${chain.name} logo`} className="size-6 rounded-full object-cover" />
+                                            <img src={chain.logo} alt={`${chain.name} logo`} className="size-6 rounded-full object-cover bg-white" />
                                         ) : (
                                             <chain.icon size={20} className="text-brand-yellow" />
                                         )}
@@ -313,7 +313,7 @@ const integrationItems: ChainItem[] = [
     { id: 5, name: "SmartAdv", icon: Zap, details: "Performance Marketing", logo: "/assets/smartadv_logo.png" },
     { id: 6, name: "GuruMedia", icon: BarChart3, details: "Affiliate Network", logo: "/assets/gurumedia.png" },
     { id: 7, name: "Digistore24", icon: Globe, details: "Global Marketplace", logo: "/assets/digistore.png" },
-    { id: 8, name: "AdCombo", icon: Target, details: "CPA Network", logo: "/assets/adcombo.png" },
+    { id: 8, name: "AdCombo", icon: Target, details: "CPA Network", logo: "/assets/AdCombo-logo.png" },
     { id: 9, name: "MediaScalers", icon: Layers, details: "Media Buying", logo: "/assets/mediascalers.png" },
     { id: 10, name: "TerraLeads", icon: Globe, details: "CPA Network", logo: "/assets/terraleads.png" },
     { id: 11, name: "Braip", icon: TrendingUp, details: "Produtos Físicos", logo: "/assets/braip.webp" },
@@ -364,9 +364,6 @@ const integrationItems: ChainItem[] = [
     { id: 57, name: "Hebreus", icon: Shield, details: "Gestão & CRM", logo: "/assets/hebreus.png" },
     { id: 58, name: "NutraBank", icon: Database, details: "Financial & CPA", logo: "/assets/nutrabank.png" },
     { id: 59, name: "NetvŌrk", icon: Globe, details: "Affiliate Network", logo: "/assets/NetvŌrk.png" },
-    { id: 60, name: "ClickDefender", icon: Shield, details: "Ads Security", logo: "/assets/click_defender_1.png" },
-    { id: 61, name: "Filtrify", icon: Zap, details: "Ads Filter", logo: "/assets/Filtrify-2.jpg" },
-    { id: 62, name: "Raads", icon: TrendingUp, details: "Ads Strategy", logo: "/assets/raads-logo.png" },
     { id: 63, name: "Kwai", icon: Smartphone, details: "Social Ads", logo: "/assets/kwai.svg" },
     { id: 64, name: "MetaCPA Plus", icon: Target, details: "CPA Hub", logo: "/assets/metacpa.jpg" },
     { id: 65, name: "Affiliate World", icon: Globe, details: "Event Partner" },
