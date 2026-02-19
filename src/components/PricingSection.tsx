@@ -17,6 +17,9 @@ interface Plan {
     buttonText: string;
     highlight: boolean;
     icon: React.ReactNode;
+    installments?: string;
+    cents?: string;
+    cashPrice?: string;
 }
 
 const periods: Period[] = ["ANUAL", "SEMESTRAL", "MENSAL"];
@@ -121,15 +124,39 @@ const MENSAL_PLANS: Plan[] = [
 
 const pricingData: Record<Period, Plan[]> = {
     MENSAL: MENSAL_PLANS,
-    SEMESTRAL: MENSAL_PLANS.map(p => ({
+    SEMESTRAL: MENSAL_PLANS.filter(p => p.name !== "Camundongo").map(p => ({
         ...p,
-        price: "R$ " + (parseInt(p.price.replace(/\D/g, "")) - 10),
-        discount: (parseInt(p.discount) + 5) + "% DE DESCONTO"
+        installments: "6X",
+        ...(p.name === "Ratazana" ? {
+            price: "R$ 149",
+            cents: ",52",
+            originalPrice: "R$897,00",
+            cashPrice: "por R$797,00 à vista",
+            discount: "11% DE DESCONTO"
+        } : p.name === "Rato" ? {
+            price: "R$ 205",
+            cents: ",80",
+            originalPrice: "R$1.397,00",
+            cashPrice: "por R$1.097,00 à vista",
+            discount: "21% DE DESCONTO"
+        } : {})
     })),
-    ANUAL: MENSAL_PLANS.map(p => ({
+    ANUAL: MENSAL_PLANS.filter(p => p.name !== "Camundongo").map(p => ({
         ...p,
-        price: "R$ " + (parseInt(p.price.replace(/\D/g, "")) - 20),
-        discount: (parseInt(p.discount) + 10) + "% DE DESCONTO"
+        installments: "12X",
+        ...(p.name === "Ratazana" ? {
+            price: "R$ 139",
+            cents: ",31",
+            originalPrice: "R$1.597,00",
+            cashPrice: "por R$1.347,00 à vista",
+            discount: "16% DE DESCONTO"
+        } : p.name === "Rato" ? {
+            price: "R$ 185",
+            cents: ",85",
+            originalPrice: "R$2.597,00",
+            cashPrice: "por R$1.797,00 à vista",
+            discount: "31% DE DESCONTO"
+        } : {})
     }))
 };
 
@@ -155,7 +182,7 @@ const PricingCard = ({
                 }`}
         >
             {plan.highlight && (
-                <div className="absolute top-0 left-0 right-0 bg-brand-yellow text-brand-dark text-[10px] font-black py-1 text-center uppercase tracking-widest">
+                <div className="absolute top-0 left-0 right-0 bg-brand-yellow text-brand-dark text-[10px] font-black py-1 text-center uppercase tracking-widest rounded-t-modern">
                     A Escolha Definitiva
                 </div>
             )}
@@ -166,17 +193,23 @@ const PricingCard = ({
                 </h3>
 
                 <div className={`relative inline-block px-4 py-8 w-full ${plan.highlight ? 'bg-brand-yellow' : 'bg-gray-400/20'}`}>
-                    <div className="text-xs line-through opacity-50 mb-1">{plan.originalPrice} por</div>
                     <div className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 inline-block mb-2">
                         {plan.discount}
                     </div>
                     <div className="flex items-center justify-center gap-1">
+                        {plan.installments && (
+                            <span className="text-xl font-black">{plan.installments}</span>
+                        )}
                         <span className="text-xl font-black">R$</span>
                         <span className="text-6xl font-black leading-none">{plan.price.replace("R$ ", "")}</span>
                         <div className="text-left">
-                            <span className="text-lg font-black block leading-none">,00/mês</span>
+                            <span className="text-lg font-black block leading-none">{plan.cents || ",00"}/mês</span>
                         </div>
                     </div>
+                    <div className="text-xs line-through opacity-50 mt-2">de {plan.originalPrice}</div>
+                    {plan.cashPrice && (
+                        <div className="text-xs font-bold mt-1">{plan.cashPrice}</div>
+                    )}
                     <div className="text-[10px] font-bold opacity-60 mt-2 uppercase tracking-tighter">
                         Com renovação automática
                     </div>
@@ -292,7 +325,7 @@ export const PricingSection = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 items-start">
+                <div className={`grid grid-cols-1 ${pricingData[activePeriod].length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-7xl'} gap-8 mx-auto px-4 items-start`}>
                     <AnimatePresence mode="wait">
                         {pricingData[activePeriod]?.map((plan, idx) => (
                             <PricingCard
