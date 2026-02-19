@@ -15,10 +15,10 @@ export const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="inline-flex items-center gap-2 bg-brand-yellow/10 text-brand-yellow px-4 py-2 rounded-full font-bold text-sm mb-6 border border-brand-yellow/20"
+                            className="inline-flex items-center gap-2 bg-brand-yellow/10 text-brand-yellow px-4 py-2 rounded-full font-bold text-xs sm:text-sm mb-6 border border-brand-yellow/20"
                         >
                             <AlertTriangle size={16} />
-                            CONTEÚDO PARA ANUNCIANTES NO GOOGLE ADS
+                            CONTEÚDO PARA ANUNCIANTES<br className="sm:hidden" /> NO GOOGLE ADS
                         </motion.div>
 
                         <motion.h1
@@ -46,7 +46,7 @@ export const Hero = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            className="text-base sm:text-lg md:text-xl text-gray-500 mb-8 leading-relaxed max-w-[320px] xs:max-w-xl mx-auto md:mx-0"
+                            className="text-base sm:text-lg md:text-xl text-gray-500 mb-8 leading-relaxed max-w-[320px] xs:max-w-xl md:max-w-2xl mx-auto md:mx-0"
                         >
                             Milhões de reais são perdidos todos os dias por anunciantes que não rastreiam 100% das vendas e permitem que cliques fraudulentos esgotem seu orçamento.
                         </motion.p>

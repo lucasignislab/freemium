@@ -34,14 +34,13 @@ const platformLogos = [
         )
     },
     {
-        name: "Kiwify",
-        hideLabel: true,
+        name: "Kwai",
         isComingSoon: true,
         icon: (
             <img
-                src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Kiwify_logo_horizontal.svg"
-                alt="Kiwify"
-                className="h-9 md:h-12 w-auto object-contain"
+                src="/assets/kwai.svg"
+                alt="Kwai"
+                className="h-10 md:h-16 w-auto object-contain"
             />
         )
     }
@@ -70,11 +69,6 @@ export const TrustLayer = () => {
                                 <div className="h-20 md:h-32 flex items-center justify-center">
                                     <div className="flex items-center gap-2">
                                         {platform.icon}
-                                        {!platform.hideLabel && (
-                                            <span className="text-lg font-black tracking-tight text-brand-dark">
-                                                {platform.name}
-                                            </span>
-                                        )}
                                     </div>
                                 </div>
                                 <div className="h-4 flex items-center justify-center mt-[-8px] md:mt-1">

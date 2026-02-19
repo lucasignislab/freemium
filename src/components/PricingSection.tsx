@@ -54,38 +54,6 @@ const MENSAL_PLANS: Plan[] = [
         icon: <Zap size={24} className="text-brand-green" />
     },
     {
-        name: "Rato",
-        price: "R$ 167",
-        originalPrice: "R$ 187,00",
-        discount: "11% DE DESCONTO",
-        period: "/mês",
-        description: "A escolha favorita dos afiliados.",
-        features: [
-            "E-Book Mensal",
-            "+40 Plataformas conectadas",
-            "Relatórios Diversos",
-            "Marcação de Checkout",
-            "Exportação de Conversão e Checkout",
-            "Biblioteca de Ratos",
-            "Notificação de Ratos",
-            "Dados completos dos acessos à suas páginas",
-            "Construtor de URL completo",
-            "Conversão Automática",
-            "Conversão Automática com URL de Produtor",
-            "Bloqueio Automático de IP"
-        ],
-        limits: [
-            "50 Ratoeiras (Produtos Simultâneos)",
-            "5 Ratoeiras com Conversão Automática",
-            "Plataformas Conectadas Ilimitadas",
-            "3 Perfis do Google Conectados",
-            "5 URLs de Produtor com Conversão Automática"
-        ],
-        buttonText: "GARANTIR MEU ACESSO",
-        highlight: true,
-        icon: <Rocket size={24} className="text-brand-dark" />
-    },
-    {
         name: "Ratazana",
         price: "R$ 247",
         originalPrice: "R$ 297,00",
@@ -114,8 +82,40 @@ const MENSAL_PLANS: Plan[] = [
             "50 URLs de Produtor com Conversão Automática"
         ],
         buttonText: "GARANTIR MEU ACESSO",
+        highlight: true,
+        icon: <Shield size={24} className="text-brand-dark" />
+    },
+    {
+        name: "Rato",
+        price: "R$ 167",
+        originalPrice: "R$ 187,00",
+        discount: "11% DE DESCONTO",
+        period: "/mês",
+        description: "A escolha favorita dos afiliados.",
+        features: [
+            "E-Book Mensal",
+            "+40 Plataformas conectadas",
+            "Relatórios Diversos",
+            "Marcação de Checkout",
+            "Exportação de Conversão e Checkout",
+            "Biblioteca de Ratos",
+            "Notificação de Ratos",
+            "Dados completos dos acessos à suas páginas",
+            "Construtor de URL completo",
+            "Conversão Automática",
+            "Conversão Automática com URL de Produtor",
+            "Bloqueio Automático de IP"
+        ],
+        limits: [
+            "50 Ratoeiras (Produtos Simultâneos)",
+            "5 Ratoeiras com Conversão Automática",
+            "Plataformas Conectadas Ilimitadas",
+            "3 Perfis do Google Conectados",
+            "5 URLs de Produtor com Conversão Automática"
+        ],
+        buttonText: "GARANTIR MEU ACESSO",
         highlight: false,
-        icon: <Shield size={24} className="text-brand-yellow" />
+        icon: <Rocket size={24} className="text-brand-green" />
     }
 ];
 
@@ -189,13 +189,13 @@ const PricingCard = ({
                 </h4>
 
                 <motion.div
-                    animate={{ height: isExpanded ? 'auto' : '240px' }}
+                    animate={{ height: isExpanded ? 'auto' : '280px' }}
                     className="overflow-hidden relative"
                 >
                     <div className="space-y-3 mb-6">
                         {plan.features?.map((feature: string, fIdx: number) => (
                             <div key={fIdx} className="flex items-start gap-3">
-                                <Check size={16} className="mt-0.5 shrink-0 text-brand-dark" />
+                                <Check size={16} className={`mt-0.5 shrink-0 ${plan.highlight ? 'text-brand-dark' : 'text-brand-green'}`} />
                                 <span className="text-sm font-medium leading-tight">{feature}</span>
                             </div>
                         ))}
@@ -214,7 +214,7 @@ const PricingCard = ({
                         <div className="space-y-3">
                             {plan.limits?.map((limit: string, lIdx: number) => (
                                 <div key={lIdx} className="flex items-start gap-3">
-                                    <Check size={16} className="mt-0.5 shrink-0 text-brand-dark" />
+                                    <Check size={16} className={`mt-0.5 shrink-0 ${plan.highlight ? 'text-brand-dark' : 'text-brand-green'}`} />
                                     <span className="text-sm font-medium leading-tight">{limit}</span>
                                 </div>
                             ))}
@@ -253,7 +253,7 @@ const PricingCard = ({
 };
 
 export const PricingSection = () => {
-    const [activePeriod, setActivePeriod] = useState<Period>("MENSAL");
+    const [activePeriod, setActivePeriod] = useState<Period>("ANUAL");
 
     return (
         <section id="pricing" className="py-24 bg-brand-dark text-white relative overflow-hidden">

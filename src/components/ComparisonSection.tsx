@@ -154,7 +154,7 @@ export const ComparisonSection = () => {
                 {/* Mobile: horizontal swipeable carousel */}
                 <div className="md:hidden">
                     <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-4 -mx-4 scrollbar-hide">
-                        {competitors.map((comp, idx) => (
+                        {[...competitors].sort((a, b) => (b.highlight ? 1 : 0) - (a.highlight ? 1 : 0)).map((comp, idx) => (
                             <ComparisonCard key={idx} comp={comp} idx={idx} />
                         ))}
                     </div>
