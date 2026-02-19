@@ -313,7 +313,7 @@ const integrationItems: ChainItem[] = [
     { id: 5, name: "SmartAdv", icon: Zap, details: "Performance Marketing" },
     { id: 6, name: "GuruMedia", icon: BarChart3, details: "Affiliate Network" },
     { id: 7, name: "Digistore24", icon: Globe, details: "Global Marketplace" },
-    { id: 8, name: "AdCombo", icon: Target, details: "CPA Network" },
+    { id: 8, name: "AdCombo", icon: Target, details: "CPA Network", logo: "/assets/adcombo.png" },
     { id: 9, name: "MediaScalers", icon: Layers, details: "Media Buying" },
     { id: 10, name: "TerraLeads", icon: Globe, details: "CPA Network" },
     { id: 11, name: "Braip", icon: TrendingUp, details: "Produtos Físicos" },
