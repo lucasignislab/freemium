@@ -33,6 +33,8 @@ export interface ChainItem {
     icon: LucideIcon;
     details?: string;
     logo?: string;
+    bgClass?: string;
+    imgClass?: string;
 }
 
 // --- Internal Animated Type ---
@@ -67,9 +69,9 @@ const CarouselItemCard: React.FC<CarouselItemProps> = ({ chain, side }) => {
     const xOffset = side === 'left' ? -distance * 50 : distance * 50;
 
     const IconOrLogo = (
-        <div className={`rounded-full border border-white/10 shadow-xl overflow-hidden flex items-center justify-center ${logo ? 'size-12' : 'size-12 p-2 bg-brand-dark'}`}>
+        <div className={`rounded-full border border-white/10 shadow-xl overflow-hidden flex items-center justify-center ${logo ? 'size-12 ' + (chain.bgClass || '') : 'size-12 p-2 bg-brand-dark'}`}>
             {logo ? (
-                <img src={logo} alt={`${name} logo`} className="size-full object-cover" />
+                <img src={logo} alt={`${name} logo`} className={`size-full ${chain.imgClass || 'object-cover rounded-full'}`} />
             ) : (
                 <FallbackIcon className="size-8 text-brand-yellow" />
             )}
@@ -204,9 +206,9 @@ const ChainCarousel: React.FC<ChainCarouselProps> = ({
                             animate={{ scale: 1, opacity: 1 }}
                             className="flex flex-col items-center justify-center gap-0 mt-2 md:mt-4"
                         >
-                            <div className={`shadow-[0_0_30px_rgba(255,184,0,0.3)] rounded-full overflow-hidden flex items-center justify-center ${currentItem.logo ? 'size-20' : 'size-20 p-4 bg-brand-yellow'}`}>
+                            <div className={`shadow-[0_0_30px_rgba(255,184,0,0.3)] rounded-full overflow-hidden flex items-center justify-center ${currentItem.logo ? 'size-20 ' + (currentItem.bgClass || '') : 'size-20 p-4 bg-brand-yellow'}`}>
                                 {currentItem.logo ? (
-                                    <img src={currentItem.logo} alt={`${currentItem.name} logo`} className="size-full object-cover" />
+                                    <img src={currentItem.logo} alt={`${currentItem.name} logo`} className={`size-full ${currentItem.imgClass || 'object-cover rounded-full'}`} />
                                 ) : (
                                     <currentItem.icon className="size-10 text-brand-dark" />
                                 )}
@@ -265,7 +267,7 @@ const ChainCarousel: React.FC<ChainCarouselProps> = ({
                                         className="flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-white/5 transition-colors duration-150 rounded-lg m-2 border border-transparent hover:border-white/5"
                                     >
                                         {chain.logo ? (
-                                            <img src={chain.logo} alt={`${chain.name} logo`} className="size-6 rounded-full object-cover bg-white" />
+                                            <img src={chain.logo} alt={`${chain.name} logo`} className={`size-6 rounded-full ${chain.imgClass || 'object-cover'} ${chain.bgClass || ''}`} />
                                         ) : (
                                             <chain.icon size={20} className="text-brand-yellow" />
                                         )}
@@ -327,7 +329,7 @@ const integrationItems: ChainItem[] = [
     { id: 20, name: "NutriProfits", icon: Activity, details: "Nutra CPA", logo: "/assets/nutriprofits.png" },
     { id: 21, name: "ProfitPay", icon: DollarSign, details: "Payment Gateway", logo: "/assets/profitpay.png" },
     { id: 22, name: "LeadRock", icon: Layers, details: "CPA Network", logo: "/assets/leadrock.png" },
-    { id: 23, name: "Monetizze", icon: Database, details: "Checkout Robusto", logo: "/assets/monetizze.png" },
+    { id: 23, name: "Monetizze", icon: Database, details: "Checkout Robusto", logo: "/assets/monetizze.png", bgClass: "bg-white", imgClass: "object-contain p-2" },
     { id: 24, name: "EverAD", icon: Target, details: "CPA Network", logo: "/assets/EverAd.png" },
     { id: 25, name: "Netvork", icon: Globe, details: "Affiliate Network", logo: "/assets/netvork.png" },
     { id: 26, name: "EverFlow", icon: Share2, details: "Partner Marketing", logo: "/assets/everflow.png" },
@@ -340,17 +342,17 @@ const integrationItems: ChainItem[] = [
     { id: 33, name: "MetaCPA", icon: Shield, details: "Lead Generation", logo: "/assets/metacpa.jpg" },
     { id: 34, name: "Adexico", icon: BarChart3, details: "CPA Network", logo: "/assets/adexico_logo.jpg" },
     { id: 35, name: "ClickDealer", icon: Globe, details: "Global Affiliate", logo: "/assets/clickdealerltd_logo.jpeg" },
-    { id: 36, name: "CashFactories", icon: DollarSign, details: "CPA Network", logo: "/assets/cahsfactories.webp" },
+    { id: 36, name: "CashFactories", icon: DollarSign, details: "CPA Network", logo: "/assets/cahsfactories.webp", bgClass: "bg-white", imgClass: "object-contain p-2" },
     { id: 37, name: "Ambalaya", icon: Target, details: "Affiliate Network", logo: "/assets/ambalaya.jpeg" },
     { id: 38, name: "Aff1", icon: Zap, details: "Global CPA", logo: "/assets/aff1.png" },
     { id: 39, name: "HealthTrader", icon: Activity, details: "Nutra CPA", logo: "/assets/health_trader.png" },
     { id: 40, name: "GiantMobi", icon: Smartphone, details: "Mobile CPA", logo: "/assets/giant_mobi.png" },
     { id: 41, name: "CPAHouse", icon: Layers, details: "Affiliate Network", logo: "/assets/cpa_house.png" },
     { id: 42, name: "CPACombo", icon: Target, details: "CPA Network", logo: "/assets/cpacombo.webp" },
-    { id: 43, name: "Gasmobi", icon: Zap, details: "Performance Marketing", logo: "/assets/gasmobi.webp" },
+    { id: 43, name: "Gasmobi", icon: Zap, details: "Performance Marketing", logo: "/assets/gasmobi.webp", bgClass: "bg-white", imgClass: "object-contain p-2" },
     { id: 44, name: "Kma", icon: Database, details: "Affiliate Network", logo: "/assets/kma.png" },
-    { id: 45, name: "ProfitNXT", icon: TrendingUp, details: "CPA Network", logo: "/assets/profitin.png" },
-    { id: 46, name: "SkyLead", icon: Globe, details: "Lead Generation", logo: "/assets/skylead_logo.png" },
+    { id: 45, name: "ProfitNXT", icon: TrendingUp, details: "CPA Network", logo: "/assets/profitnxt.png" },
+    { id: 46, name: "SkyLead", icon: Globe, details: "Lead Generation", logo: "/assets/skylead_logo.png", bgClass: "bg-white", imgClass: "object-contain p-2" },
     { id: 47, name: "MoreNiche", icon: Activity, details: "Health & Beauty", logo: "/assets/moreniche.png" },
     { id: 48, name: "Logzz", icon: Package, details: "Logística & Checkout", logo: "/assets/logzz.png" },
     { id: 49, name: "Maxbounty", icon: DollarSign, details: "Leading CPA Network", logo: "/assets/maxbounty.png" },
@@ -362,8 +364,8 @@ const integrationItems: ChainItem[] = [
     { id: 55, name: "LeadReaktor", icon: Target, details: "CPA Network", logo: "/assets/lead_reaktor.png" },
     { id: 56, name: "Ticto", icon: Zap, details: "Plataforma de Vendas", logo: "/assets/ticto.png" },
     { id: 57, name: "Hebreus", icon: Shield, details: "Gestão & CRM", logo: "/assets/hebreus.png" },
-    { id: 58, name: "NutraBank", icon: Database, details: "Financial & CPA", logo: "/assets/nutrabank.png" },
-    { id: 59, name: "NetvŌrk", icon: Globe, details: "Affiliate Network", logo: "/assets/NetvŌrk.png" },
+    { id: 58, name: "NutraBank", icon: Database, details: "Financial & CPA", logo: "/assets/nutrabank.png", bgClass: "bg-brand-dark border-brand-yellow/30", imgClass: "object-contain p-2" },
+    { id: 59, name: "NetvŌrk", icon: Globe, details: "Affiliate Network", logo: "/assets/NetvŌrk.png", bgClass: "bg-white", imgClass: "object-contain p-2" },
     { id: 63, name: "Kwai", icon: Smartphone, details: "Social Ads", logo: "/assets/kwai.svg" },
     { id: 64, name: "MetaCPA Plus", icon: Target, details: "CPA Hub", logo: "/assets/metacpa.jpg" },
     { id: 65, name: "Affiliate World", icon: Globe, details: "Event Partner", logo: "/assets/affiliateworld.jpeg" },
