@@ -30,24 +30,6 @@ const features = [
 
 const competitors = [
     {
-        name: "Filtrify",
-        color: "bg-red-600",
-        textColor: "text-red-500",
-        values: [true, false, false, true, false],
-        theme: "dark",
-        icon: filtrifyLogo,
-        blur: true
-    },
-    {
-        name: "Click Defender",
-        color: "bg-blue-600",
-        textColor: "text-blue-500",
-        values: [true, true, false, false, false],
-        theme: "dark",
-        icon: clickdefenderLogo,
-        iconSize: 'h-28'
-    },
-    {
         name: "RAADS (Ratoeira)",
         color: "bg-brand-yellow",
         textColor: "text-brand-yellow",
@@ -56,13 +38,32 @@ const competitors = [
         theme: "gold"
     },
     {
-        name: "Gringas",
+        name: "",
+        color: "bg-red-600",
+        textColor: "text-red-500",
+        values: [true, false, false, true, false],
+        theme: "dark",
+        icon: filtrifyLogo,
+        blur: true
+    },
+    {
+        name: "",
+        color: "bg-blue-600",
+        textColor: "text-blue-500",
+        values: [true, true, false, false, false],
+        theme: "dark",
+        icon: clickdefenderLogo,
+        blur: true,
+        iconSize: 'h-28'
+    },
+    {
+        name: "",
         color: "bg-gray-500",
         textColor: "text-gray-400",
         values: [false, false, false, false, false],
         theme: "muted",
         icon: gringasFlag,
-        blur: true,
+        blur: false,
         iconSize: 'h-28'
     }
 ];
@@ -96,7 +97,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
                     <img
                         src={comp.icon}
                         alt={`${comp.name} Logo`}
-                        className={`${comp.iconSize || 'h-48'} w-auto object-contain ${comp.iconSize ? 'mix-blend-multiply' : ''} ${comp.blur ? 'blur-[2px]' : ''}`}
+                        className={`${comp.iconSize || 'h-48'} w-auto object-contain ${comp.iconSize ? 'mix-blend-multiply' : ''} ${comp.blur ? 'blur-xs' : ''}`}
                     />
                 ) : (
                     <Target className={comp.textColor} />
@@ -109,7 +110,10 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
 
         <div className="px-4">
             {features.map((_feat, fIdx) => (
-                <div key={fIdx} className={`h-24 flex items-center justify-center border-b gap-4 ${comp.highlight ? 'border-white/10' : 'border-gray-100'}`}>
+                <div key={fIdx} className={`min-h-24 md:h-24 py-4 md:py-0 flex flex-col md:flex-row items-center justify-center border-b gap-3 md:gap-4 ${comp.highlight ? 'border-white/10' : 'border-gray-100'}`}>
+                    <span className={`md:hidden text-[11px] font-black uppercase tracking-widest text-center leading-tight max-w-[90%] ${comp.highlight ? 'text-white/90' : 'text-gray-500'}`}>
+                        {_feat.name}
+                    </span>
                     {comp.values[fIdx] ? (
                         <div className={`p-2 rounded-full ${comp.highlight ? 'bg-brand-yellow text-brand-dark' : 'bg-brand-green/10 text-brand-green'}`}>
                             <Check size={20} strokeWidth={3} />
