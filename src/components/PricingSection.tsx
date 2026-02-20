@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Check, Zap, Shield, Rocket, ChevronDown, ChevronUp, X } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 
@@ -163,21 +163,17 @@ const pricingData: Record<Period, Plan[]> = {
 };
 
 const PricingCard = ({
-    plan,
-    idx
+    plan
 }: {
     plan: Plan;
-    idx: number;
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
         <motion.div
             layout
-            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ delay: idx * 0.1 }}
+            transition={{ duration: 0.3 }}
             className={`relative flex flex-col h-full shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none rounded-modern overflow-hidden border transition-all duration-300 ${plan.highlight
                 ? 'bg-white text-brand-dark border-brand-yellow shadow-[0_20px_50px_rgba(255,184,0,0.15)] md:scale-105 z-20'
                 : 'bg-white/5 border-white/10 text-white'
@@ -335,15 +331,12 @@ export const PricingSection = () => {
                 </div>
 
                 <div ref={sliderRef} className={`flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 md:gap-8 mx-auto px-4 py-8 -my-8 items-stretch ${pricingData[activePeriod].length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-7xl'}`}>
-                    <AnimatePresence mode="wait">
-                        {pricingData[activePeriod]?.map((plan, idx) => (
-                            <PricingCard
-                                key={`${activePeriod}-${plan.name}`}
-                                plan={plan}
-                                idx={idx}
-                            />
-                        ))}
-                    </AnimatePresence>
+                    {pricingData[activePeriod]?.map((plan) => (
+                        <PricingCard
+                            key={plan.name}
+                            plan={plan}
+                        />
+                    ))}
                 </div>
 
                 <div className="mt-16 text-center">
