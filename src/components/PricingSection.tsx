@@ -20,6 +20,7 @@ interface Plan {
     installments?: string;
     cents?: string;
     cashPrice?: string;
+    customTag?: string;
 }
 
 const periods: Period[] = ["ANUAL", "SEMESTRAL", "MENSAL"];
@@ -57,6 +58,39 @@ const MENSAL_PLANS: Plan[] = [
         icon: <Zap size={24} className="text-brand-green" />
     },
     {
+        name: "Rato",
+        price: "R$ 167",
+        originalPrice: "R$ 187,00",
+        discount: "11% DE DESCONTO",
+        period: "/mês",
+        description: "A escolha favorita dos afiliados.",
+        features: [
+            "E-Book Mensal",
+            "+40 Plataformas conectadas",
+            "Relatórios Diversos",
+            "Marcação de Checkout",
+            "Exportação de Conversão e Checkout",
+            "Biblioteca de Ratos",
+            "Notificação de Ratos",
+            "Dados completos dos acessos à suas páginas",
+            "Construtor de URL completo",
+            "Conversão Automática",
+            "Conversão Automática com URL de Produtor",
+            "Bloqueio Automático de IP"
+        ],
+        limits: [
+            "50 Ratoeiras (Produtos Simultâneos)",
+            "5 Ratoeiras com Conversão Automática",
+            "Plataformas Conectadas Ilimitadas",
+            "3 Perfis do Google Conectados",
+            "5 URLs de Produtor com Conversão Automática"
+        ],
+        buttonText: "GARANTIR MEU ACESSO",
+        highlight: false,
+        customTag: "O MAIS ESCOLHIDO",
+        icon: <Rocket size={24} className="text-brand-green" />
+    },
+    {
         name: "Ratazana",
         price: "R$ 247",
         originalPrice: "R$ 297,00",
@@ -87,38 +121,6 @@ const MENSAL_PLANS: Plan[] = [
         buttonText: "GARANTIR MEU ACESSO",
         highlight: true,
         icon: <Shield size={24} className="text-brand-dark" />
-    },
-    {
-        name: "Rato",
-        price: "R$ 167",
-        originalPrice: "R$ 187,00",
-        discount: "11% DE DESCONTO",
-        period: "/mês",
-        description: "A escolha favorita dos afiliados.",
-        features: [
-            "E-Book Mensal",
-            "+40 Plataformas conectadas",
-            "Relatórios Diversos",
-            "Marcação de Checkout",
-            "Exportação de Conversão e Checkout",
-            "Biblioteca de Ratos",
-            "Notificação de Ratos",
-            "Dados completos dos acessos à suas páginas",
-            "Construtor de URL completo",
-            "Conversão Automática",
-            "Conversão Automática com URL de Produtor",
-            "Bloqueio Automático de IP"
-        ],
-        limits: [
-            "50 Ratoeiras (Produtos Simultâneos)",
-            "5 Ratoeiras com Conversão Automática",
-            "Plataformas Conectadas Ilimitadas",
-            "3 Perfis do Google Conectados",
-            "5 URLs de Produtor com Conversão Automática"
-        ],
-        buttonText: "GARANTIR MEU ACESSO",
-        highlight: false,
-        icon: <Rocket size={24} className="text-brand-green" />
     }
 ];
 
@@ -176,18 +178,18 @@ const PricingCard = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ delay: idx * 0.1 }}
-            className={`relative flex flex-col rounded-modern border transition-all duration-300 ${plan.highlight
+            className={`relative flex flex-col shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none rounded-modern overflow-hidden border transition-all duration-300 ${plan.highlight
                 ? 'bg-white text-brand-dark border-brand-yellow shadow-[0_20px_50px_rgba(255,184,0,0.15)] md:scale-105 z-20'
                 : 'bg-white/5 border-white/10 text-white'
                 }`}
         >
-            {plan.highlight && (
-                <div className="absolute top-0 left-0 right-0 bg-brand-yellow text-brand-dark text-[10px] font-black py-1 text-center uppercase tracking-widest rounded-t-modern">
-                    A Escolha Definitiva
+            {(plan.highlight || plan.customTag) && (
+                <div className={`absolute top-0 left-0 right-0 ${plan.highlight ? 'bg-brand-yellow text-brand-dark' : 'bg-brand-green text-dark'} text-[10px] font-black py-1 text-center uppercase tracking-widest rounded-t-modern`}>
+                    {plan.customTag || "A Escolha Definitiva"}
                 </div>
             )}
 
-            <div className="p-8 pb-4 text-center border-b border-gray-100/10">
+            <div className={`p-8 pb-4 text-center border-b border-gray-100/10 ${(plan.highlight || plan.customTag) ? 'pt-10' : ''}`}>
                 <h3 className={`text-4xl font-black mb-6 ${plan.highlight ? 'text-brand-dark' : 'text-white'}`}>
                     {plan.name}
                 </h3>
@@ -325,7 +327,7 @@ export const PricingSection = () => {
                     </div>
                 </div>
 
-                <div className={`grid grid-cols-1 ${pricingData[activePeriod].length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-7xl'} gap-8 mx-auto px-4 items-start`}>
+                <div className={`flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 md:gap-8 mx-auto px-4 py-8 -my-8 items-start ${pricingData[activePeriod].length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-7xl'}`}>
                     <AnimatePresence mode="wait">
                         {pricingData[activePeriod]?.map((plan, idx) => (
                             <PricingCard
