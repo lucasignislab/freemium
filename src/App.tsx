@@ -2,6 +2,7 @@ import { Navbar } from "./components/Navbar.tsx"
 import { Hero } from "./components/Hero.tsx"
 import { PainPoints } from "./components/PainPoints.tsx"
 import { TrustLayer } from "./components/TrustLayer.tsx"
+import { HowItWorksVideo } from "./components/HowItWorksVideo.tsx"
 import { ExclusiveTool } from "./components/ExclusiveTool.tsx"
 import { ConversionForm } from "./components/ConversionForm.tsx"
 import { Results } from "./components/Results.tsx"
@@ -30,6 +31,7 @@ const LandingPage = () => {
     <>
       <Hero />
       <TrustLayer />
+      <HowItWorksVideo />
       <ExclusiveTool />
       <PainPoints />
       <HowItWorks />
