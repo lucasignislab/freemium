@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, Zap, Shield, Rocket, ChevronDown, ChevronUp, X } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 type Period = "ANUAL" | "SEMESTRAL" | "MENSAL";
 
@@ -289,6 +289,13 @@ const PricingCard = ({
 
 export const PricingSection = () => {
     const [activePeriod, setActivePeriod] = useState<Period>("ANUAL");
+    const sliderRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (sliderRef.current) {
+            sliderRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        }
+    }, [activePeriod]);
 
     return (
         <section id="pricing" className="py-24 bg-brand-dark text-white relative overflow-hidden">
@@ -327,7 +334,7 @@ export const PricingSection = () => {
                     </div>
                 </div>
 
-                <div className={`flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 md:gap-8 mx-auto px-4 py-8 -my-8 items-start ${pricingData[activePeriod].length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-7xl'}`}>
+                <div ref={sliderRef} className={`flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 md:gap-8 mx-auto px-4 py-8 -my-8 items-start ${pricingData[activePeriod].length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-7xl'}`}>
                     <AnimatePresence mode="wait">
                         {pricingData[activePeriod]?.map((plan, idx) => (
                             <PricingCard
