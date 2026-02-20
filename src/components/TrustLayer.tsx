@@ -16,9 +16,9 @@ const platformLogos = [
         isComingSoon: true,
         icon: (
             <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.png"
+                src="/assets/logometa.png"
                 alt="Meta Ads"
-                className="h-20 md:h-48 w-auto object-contain"
+                className="h-22 md:h-36 w-auto object-contain"
             />
         )
     },
@@ -27,9 +27,9 @@ const platformLogos = [
         isComingSoon: true,
         icon: (
             <img
-                src="https://cdn.simpleicons.org/tiktok/000000"
+                src="/assets/tiktoklogo - Editado.png"
                 alt="TikTok Ads"
-                className="h-14 md:h-24 w-auto object-contain brightness-0 opacity-80"
+                className="h-14 md:h-24 w-auto object-contain"
             />
         )
     },
@@ -40,7 +40,18 @@ const platformLogos = [
             <img
                 src="/assets/kwai.svg"
                 alt="Kwai"
-                className="h-10 md:h-16 w-auto object-contain"
+                className="h-14 md:h-24 w-auto object-contain"
+            />
+        )
+    },
+    {
+        name: "WhatsApp",
+        isComingSoon: true,
+        icon: (
+            <img
+                src="/assets/logowhatsapp.png"
+                alt="WhatsApp"
+                className="h-14 md:h-24 w-auto object-contain"
             />
         )
     }
@@ -66,7 +77,7 @@ export const TrustLayer = () => {
                                 }`}
                         >
                             <div className="flex flex-col items-center">
-                                <div className="h-20 md:h-32 flex items-center justify-center">
+                                <div className="h-24 md:h-40 flex items-center justify-center">
                                     <div className="flex items-center gap-2">
                                         {platform.icon}
                                     </div>

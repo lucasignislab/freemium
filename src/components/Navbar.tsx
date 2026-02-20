@@ -20,7 +20,7 @@ export const Navbar = () => {
             <div className="container-wide h-20 flex items-center justify-between relative z-50">
                 <Link to="/" className="flex items-center justify-center md:justify-start gap-2 flex-1 md:flex-initial">
                     <img
-                        src="/logo_v1.png"
+                        src="/logoraads.png"
                         alt="RAADS Logo"
                         className="w-40 md:w-52 max-h-full h-auto object-contain"
                     />
