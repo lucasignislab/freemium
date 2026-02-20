@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Check, X, Zap, Target } from "lucide-react";
 import raadsLogo from "../assets/raads-logo.png";
+import filtrifyLogo from "../assets/filtrify-logo.png";
+import clickdefenderLogo from "../assets/clickdefender-logo.png";
+import gringasFlag from "../assets/gringas-flag.png";
 
 const features = [
     {
@@ -31,14 +34,18 @@ const competitors = [
         color: "bg-red-600",
         textColor: "text-red-500",
         values: [true, false, false, true, false],
-        theme: "dark"
+        theme: "dark",
+        icon: filtrifyLogo,
+        blur: true
     },
     {
         name: "Click Defender",
         color: "bg-blue-600",
         textColor: "text-blue-500",
         values: [true, true, false, false, false],
-        theme: "dark"
+        theme: "dark",
+        icon: clickdefenderLogo,
+        iconSize: 'h-28'
     },
     {
         name: "RAADS (Ratoeira)",
@@ -53,7 +60,10 @@ const competitors = [
         color: "bg-gray-500",
         textColor: "text-gray-400",
         values: [false, false, false, false, false],
-        theme: "muted"
+        theme: "muted",
+        icon: gringasFlag,
+        blur: true,
+        iconSize: 'h-28'
     }
 ];
 
@@ -65,7 +75,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
         transition={{ delay: idx * 0.1 }}
         className={`relative rounded-modern overflow-hidden border shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none ${comp.highlight
             ? 'border-brand-yellow/50 bg-brand-dark md:scale-105 z-20 shadow-[0_20px_50px_rgba(0,0,0,0.3)]'
-            : 'border-gray-200 bg-gray-100/80 shadow-inner'
+            : comp.icon ? 'border-gray-300 bg-gray-200 shadow-inner' : 'border-gray-200 bg-gray-100/80 shadow-inner'
             }`}
     >
         {comp.highlight && (
@@ -75,12 +85,18 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
         )}
 
         <div className="p-8 pb-4 text-center">
-            <div className={`flex items-center justify-center mx-auto mb-4 ${comp.highlight ? 'h-16 w-auto' : 'w-12 h-12 rounded-sharp ' + comp.color + '/10'}`}>
+            <div className={`flex items-center justify-center mx-auto mb-4 ${comp.highlight ? 'h-16 w-auto' : 'h-28 w-auto'}`}>
                 {comp.highlight ? (
                     <img
                         src={raadsLogo}
                         alt="RAADS Logo"
                         className="h-10 w-auto object-contain"
+                    />
+                ) : comp.icon ? (
+                    <img
+                        src={comp.icon}
+                        alt={`${comp.name} Logo`}
+                        className={`${comp.iconSize || 'h-48'} w-auto object-contain ${comp.iconSize ? 'mix-blend-multiply' : ''} ${comp.blur ? 'blur-[2px]' : ''}`}
                     />
                 ) : (
                     <Target className={comp.textColor} />
