@@ -365,7 +365,7 @@ const integrationItems: ChainItem[] = [
     { id: 56, name: "Ticto", icon: Zap, details: "Plataforma de Vendas", logo: "/assets/ticto.png" },
     { id: 57, name: "Hebreus", icon: Shield, details: "Gestão & CRM", logo: "/assets/hebreus.png" },
     { id: 58, name: "NutraBank", icon: Database, details: "Financial & CPA", logo: "/assets/nutrabank.png", bgClass: "bg-brand-dark border-brand-yellow/30", imgClass: "object-contain p-2" },
-    { id: 59, name: "NetvŌrk", icon: Globe, details: "Affiliate Network", logo: "/assets/NetvŌrk.png", bgClass: "bg-white", imgClass: "object-contain p-2" },
+    { id: 59, name: "NetvŌrk", icon: Globe, details: "Affiliate Network", logo: "/assets/NetvŌrk.png" },
     { id: 63, name: "Kwai", icon: Smartphone, details: "Social Ads", logo: "/assets/kwai.svg" },
     { id: 64, name: "MetaCPA Plus", icon: Target, details: "CPA Hub", logo: "/assets/metacpa.jpg" },
     { id: 65, name: "Affiliate World", icon: Globe, details: "Event Partner", logo: "/assets/affiliateworld.jpeg" },
