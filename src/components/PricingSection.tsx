@@ -178,7 +178,7 @@ const PricingCard = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ delay: idx * 0.1 }}
-            className={`relative flex flex-col shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none rounded-modern overflow-hidden border transition-all duration-300 ${plan.highlight
+            className={`relative flex flex-col h-full shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none rounded-modern overflow-hidden border transition-all duration-300 ${plan.highlight
                 ? 'bg-white text-brand-dark border-brand-yellow shadow-[0_20px_50px_rgba(255,184,0,0.15)] md:scale-105 z-20'
                 : 'bg-white/5 border-white/10 text-white'
                 }`}
@@ -224,7 +224,7 @@ const PricingCard = ({
                 </h4>
 
                 <motion.div
-                    animate={{ height: isExpanded ? 'auto' : '280px' }}
+                    animate={{ height: isExpanded ? 'auto' : '360px' }}
                     className="overflow-hidden relative"
                 >
                     <div className="space-y-3 mb-6">
@@ -257,7 +257,7 @@ const PricingCard = ({
                     </div>
 
                     {!isExpanded && (
-                        <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-inherit to-transparent pointer-events-none" />
+                        <div className={`absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t ${plan.highlight ? 'from-white' : 'from-[#1a1a1a]'} to-transparent pointer-events-none`} />
                     )}
                 </motion.div>
 
@@ -272,7 +272,7 @@ const PricingCard = ({
                     )}
                 </button>
 
-                <div className="mt-8">
+                <div className="mt-auto pt-8">
                     <button
                         className={`w-full py-4 font-black text-xs rounded-modern uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl ${plan.highlight
                             ? 'bg-brand-green text-white'
@@ -334,7 +334,7 @@ export const PricingSection = () => {
                     </div>
                 </div>
 
-                <div ref={sliderRef} className={`flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 md:gap-8 mx-auto px-4 py-8 -my-8 items-start ${pricingData[activePeriod].length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-7xl'}`}>
+                <div ref={sliderRef} className={`flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 md:gap-8 mx-auto px-4 py-8 -my-8 items-stretch ${pricingData[activePeriod].length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-7xl'}`}>
                     <AnimatePresence mode="wait">
                         {pricingData[activePeriod]?.map((plan, idx) => (
                             <PricingCard
@@ -347,7 +347,7 @@ export const PricingSection = () => {
                 </div>
 
                 <div className="mt-16 text-center">
-                    <p className="text-gray-500 text-sm italic">
+                    <p className="text-brand-yellow text-sm italic">
                         * Sujeito a política de uso justo. Cobrança recorrente. Cancele quando quiser.
                     </p>
                 </div>
