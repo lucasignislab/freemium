@@ -85,8 +85,8 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
             </div>
         )}
 
-        <div className="p-8 pb-4 text-center">
-            <div className={`flex items-center justify-center mx-auto mb-4 ${comp.highlight ? 'h-16 w-auto' : 'h-28 w-auto'}`}>
+        <div className="h-[220px] p-8 pb-4 flex flex-col items-center justify-center text-center">
+            <div className={`flex items-center justify-center mx-auto mb-4 ${comp.highlight ? 'h-16 w-auto' : 'h-24 w-auto'}`}>
                 {comp.highlight ? (
                     <img
                         src={raadsLogo}
@@ -97,7 +97,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
                     <img
                         src={comp.icon}
                         alt={`${comp.name} Logo`}
-                        className={`${comp.iconSize || 'h-48'} w-auto object-contain ${comp.iconSize ? 'mix-blend-multiply' : ''} ${comp.blur ? 'blur-xs' : ''}`}
+                        className={`${comp.iconSize || 'h-20'} w-auto object-contain ${comp.iconSize ? 'mix-blend-multiply' : ''} ${comp.blur ? 'blur-xs' : ''}`}
                     />
                 ) : (
                     <Target className={comp.textColor} />
@@ -110,7 +110,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
 
         <div className="px-4">
             {features.map((_feat, fIdx) => (
-                <div key={fIdx} className={`min-h-24 md:h-24 py-4 md:py-0 flex flex-col md:flex-row items-center justify-center border-b gap-3 md:gap-4 ${comp.highlight ? 'border-white/10' : 'border-gray-100'}`}>
+                <div key={fIdx} className={`h-24 py-4 md:py-0 flex flex-col md:flex-row items-center justify-center border-b gap-3 md:gap-4 ${comp.highlight ? 'border-white/10' : 'border-gray-100'}`}>
                     <span className={`md:hidden text-[11px] font-black uppercase tracking-widest text-center leading-tight max-w-[90%] ${comp.highlight ? 'text-white/90' : 'text-gray-500'}`}>
                         {_feat.name}
                     </span>
@@ -158,7 +158,7 @@ export const ComparisonSection = () => {
 
                 {/* Desktop: grid layout */}
                 <div className="hidden md:grid md:grid-cols-5 gap-4">
-                    <div className="flex flex-col pt-32">
+                    <div className="flex flex-col pt-[220px]">
                         {features.map((feature, i) => (
                             <div key={i} className="h-24 flex flex-col justify-center border-b border-gray-100">
                                 <span className="text-sm font-black uppercase tracking-widest text-gray-400">{feature.name}</span>

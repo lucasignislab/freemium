@@ -51,7 +51,7 @@ export const PainPoints = () => {
                                 initial={{ opacity: 0, x: i % 2 !== 0 ? 50 : -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8 }}
-                                className="flex-1 text-center md:text-left flex flex-col items-center md:items-start"
+                                className="flex-1 text-left flex flex-col items-start"
                             >
                                 <span className="text-xs font-black text-gray-400 tracking-[0.3em] uppercase mb-4 block">
                                     {pain.tag}
@@ -63,11 +63,11 @@ export const PainPoints = () => {
                                     className="text-base sm:text-xl text-gray-500 mb-8 leading-relaxed max-w-[300px] xs:max-w-none"
                                     dangerouslySetInnerHTML={{ __html: pain.description }}
                                 />
-                                <div className="space-y-4 pt-4 border-t border-gray-100 w-full flex flex-col items-center md:items-start">
+                                <div className="space-y-4 pt-4 border-t border-gray-100 w-full flex flex-col items-start">
                                     {pain.bullets.map((bullet, idx) => (
-                                        <div key={idx} className="flex gap-3 items-center justify-center md:justify-start">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                                            <p className="text-sm font-bold text-gray-400 uppercase tracking-wide text-center md:text-left">{bullet}</p>
+                                        <div key={idx} className="flex gap-3 items-start justify-start">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 mt-2" />
+                                            <p className="text-sm font-bold text-gray-400 uppercase tracking-wide text-left">{bullet}</p>
                                         </div>
                                     ))}
                                 </div>
