@@ -77,7 +77,7 @@ export const ConversionForm = () => {
                     </ul>
                 </div>
 
-                <div className="w-full md:w-[480px] bg-white rounded-modern p-10 text-brand-dark border-8 border-brand-yellow shadow-2xl relative overflow-hidden">
+                <div className="w-full md:w-[480px] bg-white rounded-modern p-10 text-brand-dark border-8 border-brand-yellow shadow-2xl relative">
                     <AnimatePresence mode="wait">
                         {step === 1 ? (
                             <motion.div
