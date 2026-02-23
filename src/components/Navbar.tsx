@@ -10,7 +10,7 @@ export const Navbar = () => {
 
     const menuLinks = [
         { name: "O Problema", href: "/#pain" },
-        { name: "Como Funciona", href: "/#solution" },
+        { name: "Como Funciona", href: "/#how-it-works-video" },
         { name: "Resultados", href: "/#testimonials" },
         { name: "Design System", href: "/design-system", isSpecial: true },
     ];
