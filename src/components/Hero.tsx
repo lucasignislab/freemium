@@ -57,15 +57,17 @@ export const Hero = () => {
                             transition={{ duration: 0.8, delay: 0.6 }}
                             className="flex flex-col sm:flex-row items-center md:items-start gap-4 mb-8"
                         >
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                className="btn-accent btn scale-110 group whitespace-nowrap"
-                            >
-                                Teste Já - 14 dias grátis
-                                <MousePointerClick className="ml-2 group-hover:translate-x-1 transition-transform" />
-                            </motion.button>
+                            <a href="#solution">
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                    className="btn-accent btn scale-110 group whitespace-nowrap"
+                                >
+                                    Teste Já - 14 dias grátis
+                                    <MousePointerClick className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                </motion.button>
+                            </a>
                         </motion.div>
 
                         {/* Quick value props */}

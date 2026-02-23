@@ -94,15 +94,17 @@ export const ExclusiveTool = () => {
                     viewport={{ once: true }}
                     className="text-center mt-20"
                 >
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                        className="btn-accent btn group"
-                    >
-                        Teste Já - 14 dias grátis
-                        <MousePointerClick className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </motion.button>
+                    <a href="#solution">
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                            className="btn-accent btn group"
+                        >
+                            Teste Já - 14 dias grátis
+                            <MousePointerClick className="ml-2 group-hover:translate-x-1 transition-transform" />
+                        </motion.button>
+                    </a>
                     <p className="text-sm text-gray-400 mt-3 font-medium">Sem cartão de crédito · Cancele quando quiser</p>
                 </motion.div>
             </div>

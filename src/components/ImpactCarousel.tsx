@@ -235,15 +235,17 @@ export const ImpactCarousel = () => {
             </div>
 
             <div className="mt-20 flex justify-center relative z-20">
-                <motion.button
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn btn-accent uppercase text-lg tracking-tight"
-                >
-                    Teste Já - 14 dias grátis
-                </motion.button>
+                <a href="#solution">
+                    <motion.button
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="btn btn-accent uppercase text-lg tracking-tight"
+                    >
+                        Teste Já - 14 dias grátis
+                    </motion.button>
+                </a>
             </div>
 
             {/* Background Decor */}

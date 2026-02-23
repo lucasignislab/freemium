@@ -43,9 +43,11 @@ export const Navbar = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <button className="hidden md:block bg-brand-yellow text-brand-dark px-6 py-2 rounded-modern font-bold hover:scale-105 transition-all active:scale-95 shadow-lg shadow-brand-yellow/20">
-                        Teste Já - 14 dias grátis
-                    </button>
+                    <a href="#solution" className="hidden md:block">
+                        <button className="bg-brand-yellow text-brand-dark px-6 py-2 rounded-modern font-bold hover:scale-105 transition-all active:scale-95 shadow-lg shadow-brand-yellow/20">
+                            Teste Já - 14 dias grátis
+                        </button>
+                    </a>
 
                     <button
                         onClick={toggleMenu}
@@ -78,9 +80,11 @@ export const Navbar = () => {
                                     {link.name}
                                 </a>
                             ))}
-                            <button className="mt-4 w-full bg-brand-yellow text-brand-dark px-6 py-4 rounded-modern font-black uppercase text-sm tracking-widest shadow-lg shadow-brand-yellow/20 active:scale-95 transition-transform">
-                                Teste Já - 14 dias grátis
-                            </button>
+                            <a href="#solution" className="w-full" onClick={() => setIsOpen(false)}>
+                                <button className="w-full bg-brand-yellow text-brand-dark px-6 py-4 rounded-modern font-black uppercase text-sm tracking-widest shadow-lg shadow-brand-yellow/20 active:scale-95 transition-transform text-center">
+                                    Teste Já - 14 dias grátis
+                                </button>
+                            </a>
                         </div>
                     </motion.div>
                 )}
