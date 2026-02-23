@@ -39,7 +39,7 @@ export const ClientsCarousel = () => {
                             key={idx}
                             src={src}
                             alt="Mentores Ratoeira"
-                            className="h-12 md:h-16 w-auto opacity-100 transition-all"
+                            className="h-12 md:h-16 w-auto max-w-none shrink-0 opacity-100 transition-all"
                         />
                     ))}
                 </motion.div>
@@ -65,8 +65,8 @@ export const ClientsCarousel = () => {
                         <img
                             key={idx}
                             src={src}
-                            alt="Plataformas Ratoeira"
-                            className="h-12 md:h-16 w-auto opacity-50 grayscale transition-all hover:opacity-100"
+                            alt="Mentores Ratoeira"
+                            className="h-12 md:h-16 w-auto max-w-none shrink-0 opacity-50 grayscale transition-all hover:opacity-100"
                         />
                     ))}
                 </motion.div>
