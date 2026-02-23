@@ -215,7 +215,7 @@ const PricingCard = ({
             </div>
 
             <div className="p-8 pt-6 flex-1 flex-col flex">
-                <div className="mb-6">
+                <div className="mb-6 md:min-h-[180px]">
                     <h4 className={`text-2xl font-black mb-4 ${plan.highlight ? 'text-brand-dark' : 'text-white'}`}>
                         Limites do Plano
                     </h4>
@@ -236,6 +236,7 @@ const PricingCard = ({
 
                     <motion.div
                         animate={{ height: isExpanded ? 'auto' : '240px' }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
                         className="overflow-hidden relative"
                     >
                         <div className="space-y-3 mb-6">
