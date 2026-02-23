@@ -80,11 +80,13 @@ export const PainPoints = () => {
                                 className="flex-1 relative"
                             >
                                 <div className="absolute -inset-4 bg-red-100/30 rounded-full blur-3xl -z-10" />
-                                <img
-                                    src={pain.image}
-                                    alt={pain.title}
-                                    className="w-full h-auto rounded-modern shadow-2xl border-4 border-white"
-                                />
+                                <div className="overflow-hidden rounded-modern shadow-2xl border-4 border-white">
+                                    <img
+                                        src={pain.image}
+                                        alt={pain.title}
+                                        className={`w-full h-auto ${i === 0 ? 'scale-[1.3] origin-top-left' : ''}`}
+                                    />
+                                </div>
                                 {/* Overlay icon for impact */}
                                 <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-brand-dark rounded-2xl flex items-center justify-center shadow-2xl border-4 border-white">
                                     {i === 0 && <Ghost className="text-red-500 w-10 h-10" />}
