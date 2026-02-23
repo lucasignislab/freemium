@@ -240,7 +240,7 @@ const countries = [
 
 export const ConversionForm = () => {
     const [step, setStep] = useState(1);
-    const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+    const [selectedCountry, setSelectedCountry] = useState(countries.find(c => c.code === "BR") || countries[0]);
     const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const [formData, setFormData] = useState({
