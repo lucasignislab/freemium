@@ -6,7 +6,7 @@ const pains = [
         tag: "DESPERDÍCIO OCULTO",
         title: "Cliques de Bots e Concorrência",
         description: "Até <span class='text-brand-dark font-black'>40% do seu orçamento</span> pode estar sendo drenado por robôs. Sem um escudo digital, você está <span class='text-brand-dark font-black'>pagando para ser atacado</span>.",
-        image: "/assets/pains/pain-bots.png",
+        image: "/assets/pains/dashboard_resumo.png",
         bullets: ["Drenagem silenciosa de saldo", "Inflação artificial de métricas", "Perda de vantagem competitiva"]
     },
     {
