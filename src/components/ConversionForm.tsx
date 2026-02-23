@@ -126,7 +126,7 @@ export const ConversionForm = () => {
                                     />
                                     {countryDropdownOpen && (
                                         <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-modern border border-gray-200 shadow-xl z-50 max-h-60 overflow-y-auto">
-                                            {countries.map((country) => (
+                                            {[...countries].sort((a, b) => a.name.localeCompare(b.name, 'pt-BR')).map((country) => (
                                                 <button
                                                     key={country.code}
                                                     type="button"
