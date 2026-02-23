@@ -1,15 +1,53 @@
-import { useState } from "react";
+@import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, Check } from "lucide-react";
+import { ChevronRight, ChevronDown, Check } from "lucide-react";
+
+const countries = [
+    { code: "BR", flag: "🇧🇷", name: "Brasil", dial: "+55" },
+    { code: "PT", flag: "🇵🇹", name: "Portugal", dial: "+351" },
+    { code: "US", flag: "🇺🇸", name: "Estados Unidos", dial: "+1" },
+    { code: "AR", flag: "🇦🇷", name: "Argentina", dial: "+54" },
+    { code: "CL", flag: "🇨🇱", name: "Chile", dial: "+56" },
+    { code: "CO", flag: "🇨🇴", name: "Colômbia", dial: "+57" },
+    { code: "MX", flag: "🇲🇽", name: "México", dial: "+52" },
+    { code: "UY", flag: "🇺🇾", name: "Uruguai", dial: "+598" },
+    { code: "PY", flag: "🇵🇾", name: "Paraguai", dial: "+595" },
+    { code: "PE", flag: "🇵🇪", name: "Peru", dial: "+51" },
+    { code: "BO", flag: "🇧🇴", name: "Bolívia", dial: "+591" },
+    { code: "EC", flag: "🇪🇨", name: "Equador", dial: "+593" },
+    { code: "VE", flag: "🇻🇪", name: "Venezuela", dial: "+58" },
+    { code: "ES", flag: "🇪🇸", name: "Espanha", dial: "+34" },
+    { code: "FR", flag: "🇫🇷", name: "França", dial: "+33" },
+    { code: "DE", flag: "🇩🇪", name: "Alemanha", dial: "+49" },
+    { code: "IT", flag: "🇮🇹", name: "Itália", dial: "+39" },
+    { code: "GB", flag: "🇬🇧", name: "Reino Unido", dial: "+44" },
+    { code: "JP", flag: "🇯🇵", name: "Japão", dial: "+81" },
+    { code: "AO", flag: "🇦🇴", name: "Angola", dial: "+244" },
+    { code: "MZ", flag: "🇲🇿", name: "Moçambique", dial: "+258" },
+];
 
 export const ConversionForm = () => {
     const [step, setStep] = useState(1);
+    const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+    const [countryDropdownOpen, setCountryDropdownOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
     const [formData, setFormData] = useState({
         nome: "",
         email: "",
         telefone: "",
         faturamento: ""
     });
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setCountryDropdownOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
 
     const nextStep = () => {
         if (formData.nome && formData.email && formData.telefone) {
@@ -69,13 +107,43 @@ export const ConversionForm = () => {
                                     className="w-full p-4 bg-gray-50 rounded-modern border border-gray-200 outline-none focus:border-brand-yellow"
                                 />
 
-                                <input
-                                    type="tel"
-                                    value={formData.telefone}
-                                    onChange={(e) => setFormData(prev => ({ ...prev, telefone: e.target.value }))}
-                                    placeholder="Seu WhatsApp (com DDD)"
-                                    className="w-full p-4 bg-gray-50 rounded-modern border border-gray-200 outline-none focus:border-brand-yellow"
-                                />
+                                <div ref={dropdownRef} className="relative flex w-full bg-gray-50 rounded-modern border border-gray-200 focus-within:border-brand-yellow overflow-hidden">
+                                    <button
+                                        type="button"
+                                        onClick={() => setCountryDropdownOpen(!countryDropdownOpen)}
+                                        className="flex items-center gap-1.5 px-3 border-r border-gray-200 hover:bg-gray-100 transition-colors shrink-0"
+                                    >
+                                        <span className="text-lg">{selectedCountry.flag}</span>
+                                        <span className="text-sm font-bold text-gray-700">{selectedCountry.dial}</span>
+                                        <ChevronDown size={14} className={`text-gray-400 transition-transform ${countryDropdownOpen ? 'rotate-180' : ''}`} />
+                                    </button>
+                                    <input
+                                        type="tel"
+                                        value={formData.telefone}
+                                        onChange={(e) => setFormData(prev => ({ ...prev, telefone: e.target.value }))}
+                                        placeholder="Seu Telefone (XX) X XXXX-XXXX"
+                                        className="flex-1 p-4 bg-transparent outline-none"
+                                    />
+                                    {countryDropdownOpen && (
+                                        <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-modern border border-gray-200 shadow-xl z-50 max-h-60 overflow-y-auto">
+                                            {countries.map((country) => (
+                                                <button
+                                                    key={country.code}
+                                                    type="button"
+                                                    onClick={() => {
+                                                        setSelectedCountry(country);
+                                                        setCountryDropdownOpen(false);
+                                                    }}
+                                                    className={`flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors text-sm ${selectedCountry.code === country.code ? 'bg-brand-yellow/10 font-bold' : ''}`}
+                                                >
+                                                    <span className="text-lg">{country.flag}</span>
+                                                    <span className="flex-1">{country.name}</span>
+                                                    <span className="text-gray-400 font-medium">{country.dial}</span>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
 
                                 <motion.button
                                     whileHover={{ scale: 1.02 }}
