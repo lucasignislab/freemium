@@ -247,6 +247,7 @@ export const ConversionForm = () => {
         nome: "",
         email: "",
         telefone: "",
+        tempoAfiliado: "",
         faturamento: ""
     });
 
@@ -383,21 +384,40 @@ export const ConversionForm = () => {
                                 </div>
 
                                 <select
+                                    value={formData.tempoAfiliado}
+                                    onChange={(e) => setFormData(prev => ({ ...prev, tempoAfiliado: e.target.value }))}
+                                    className="w-full p-4 bg-gray-50 rounded-modern border border-gray-200 outline-none focus:border-brand-yellow font-medium"
+                                    required
+                                >
+                                    <option value="" disabled hidden>Tempo como afiliado</option>
+                                    <option value="nao_anuncio">Não anuncio</option>
+                                    <option value="1_a_6_meses">De 1 a 6 meses</option>
+                                    <option value="6_meses_a_1_ano">De 6 meses a 1 ano</option>
+                                    <option value="1_a_2_anos">De 1 a 2 anos</option>
+                                    <option value="mais_de_2_anos">Mais de 2 anos</option>
+                                </select>
+
+                                <select
                                     value={formData.faturamento}
                                     onChange={(e) => setFormData(prev => ({ ...prev, faturamento: e.target.value }))}
                                     className="w-full p-4 bg-gray-50 rounded-modern border border-gray-200 outline-none focus:border-brand-yellow font-medium"
+                                    required
                                 >
-                                    <option value="">Qual seu faturamento mensal? (Opcional)</option>
-                                    <option value="10k">Até R$ 10k</option>
-                                    <option value="50k">R$ 10k a 50k</option>
-                                    <option value="plus">Acima de R$ 50k</option>
+                                    <option value="" disabled hidden>Qual é o seu faturamento mensal?</option>
+                                    <option value="ainda_nao_vendi">Ainda não vendi</option>
+                                    <option value="ate_1000">Até R$1.000</option>
+                                    <option value="1001_a_5000">R$1.001 - R$5.000</option>
+                                    <option value="5001_a_10000">R$5.001 - R$10.000</option>
+                                    <option value="10001_a_50000">R$10.001 a R$50.000</option>
+                                    <option value="acima_de_50000">Acima de R$50.000</option>
                                 </select>
 
                                 <motion.button
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                    className="btn-primary btn w-full"
+                                    disabled={!formData.tempoAfiliado || !formData.faturamento}
+                                    className="btn-primary btn w-full disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     QUERO MEU ACESSO GRÁTIS
                                 </motion.button>
