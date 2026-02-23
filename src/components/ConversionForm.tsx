@@ -12,7 +12,7 @@ export const ConversionForm = () => {
     });
 
     const nextStep = () => {
-        if (formData.nome && formData.email) {
+        if (formData.nome && formData.email && formData.telefone) {
             setStep(prev => prev + 1);
         }
     };
@@ -69,12 +69,20 @@ export const ConversionForm = () => {
                                     className="w-full p-4 bg-gray-50 rounded-modern border border-gray-200 outline-none focus:border-brand-yellow"
                                 />
 
+                                <input
+                                    type="tel"
+                                    value={formData.telefone}
+                                    onChange={(e) => setFormData(prev => ({ ...prev, telefone: e.target.value }))}
+                                    placeholder="Seu WhatsApp (com DDD)"
+                                    className="w-full p-4 bg-gray-50 rounded-modern border border-gray-200 outline-none focus:border-brand-yellow"
+                                />
+
                                 <motion.button
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                     onClick={nextStep}
-                                    disabled={!formData.nome || !formData.email}
+                                    disabled={!formData.nome || !formData.email || !formData.telefone}
                                     className="btn-accent btn w-full group disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     Continuar
