@@ -1,4 +1,4 @@
-@import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronDown, Check } from "lucide-react";
 
@@ -107,7 +107,7 @@ export const ConversionForm = () => {
                                     className="w-full p-4 bg-gray-50 rounded-modern border border-gray-200 outline-none focus:border-brand-yellow"
                                 />
 
-                                <div ref={dropdownRef} className="relative flex w-full bg-gray-50 rounded-modern border border-gray-200 focus-within:border-brand-yellow overflow-hidden">
+                                <div ref={dropdownRef} className="relative flex w-full bg-gray-50 rounded-modern border border-gray-200 focus-within:border-brand-yellow">
                                     <button
                                         type="button"
                                         onClick={() => setCountryDropdownOpen(!countryDropdownOpen)}
