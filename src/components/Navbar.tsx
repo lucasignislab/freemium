@@ -18,7 +18,11 @@ export const Navbar = () => {
     return (
         <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
             <div className="container-wide h-20 flex items-center justify-between relative z-50">
-                <Link to="/" className="flex items-center justify-center md:justify-start gap-2 flex-1 md:flex-initial">
+                <Link
+                    to="/"
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    className="flex items-center justify-center md:justify-start gap-2 flex-1 md:flex-initial"
+                >
                     <img
                         src="/logoraads.png"
                         alt="RAADS Logo"
