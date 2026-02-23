@@ -20,7 +20,7 @@ const pains = [
         tag: "SEGURANÇA DO ATIVO",
         title: "IP Bloqueado",
         description: "Atividades suspeitas e cliques inválidos aumentam as chances de suspensão. Um bloqueio hoje pode significar o <span class='text-brand-dark font-black'>fim da sua operação</span> amanhã.",
-        image: "/assets/pains/pain-ban.png",
+        image: "/assets/pains/ip_bloqueado.png",
         bullets: ["Risco constante de suspensão", "Perda de pixel e inteligência", "Interrupção imediata do fluxo de caixa"]
     }
 ];
@@ -84,7 +84,7 @@ export const PainPoints = () => {
                                     <img
                                         src={pain.image}
                                         alt={pain.title}
-                                        className={`w-full h-auto ${(i === 0 || i === 1) ? 'scale-[1.3] origin-top-left' : ''}`}
+                                        className={`w-full h-auto ${(i === 0 || i === 1 || i === 2) ? 'scale-[1.3] origin-top-left' : ''}`}
                                     />
                                 </div>
                                 {/* Overlay icon for impact */}
