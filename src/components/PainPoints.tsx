@@ -13,7 +13,7 @@ const pains = [
         tag: "FALTA DE VISIBILIDADE",
         title: "Ponto Cego no Rastreamento",
         description: "O Google Ads não revela a jornada completa. Se você não sabe <span class='text-brand-dark font-black'>EXATAMENTE</span> qual clique gerou o lucro, você não está escalando, está <span class='text-brand-dark font-black'>apostando</span>.",
-        image: "/assets/pains/pain-tracking.png",
+        image: "/assets/pains/economizometro.png",
         bullets: ["Vendas que não marcam no painel", "Dificuldade em identificar o criativo campeão", "CPA irreal mascarando prejuízo"]
     },
     {
@@ -84,7 +84,7 @@ export const PainPoints = () => {
                                     <img
                                         src={pain.image}
                                         alt={pain.title}
-                                        className={`w-full h-auto ${i === 0 ? 'scale-[1.3] origin-top-left' : ''}`}
+                                        className={`w-full h-auto ${(i === 0 || i === 1) ? 'scale-[1.3] origin-top-left' : ''}`}
                                     />
                                 </div>
                                 {/* Overlay icon for impact */}
