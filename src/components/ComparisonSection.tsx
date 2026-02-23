@@ -85,8 +85,8 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
             </div>
         )}
 
-        <div className="h-[220px] p-8 pb-4 flex flex-col items-center justify-center text-center">
-            <div className={`flex items-center justify-center mx-auto mb-4 ${comp.highlight ? 'h-16 w-auto' : 'h-24 w-auto'}`}>
+        <div className="h-[220px] p-8 pb-4 flex flex-col items-center justify-start text-center">
+            <div className={`flex items-center justify-center mx-auto mb-6 h-28`}>
                 {comp.highlight ? (
                     <img
                         src={raadsLogo}
@@ -103,9 +103,11 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
                     <Target className={comp.textColor} />
                 )}
             </div>
-            <h3 className={`text-xl font-black uppercase tracking-tighter ${comp.highlight ? 'text-white' : 'text-gray-900'}`}>
-                {comp.name}
-            </h3>
+            <div className="h-12 flex items-center justify-center">
+                <h3 className={`text-xl font-black uppercase tracking-tighter ${comp.highlight ? 'text-white' : 'text-gray-900'}`}>
+                    {comp.name}
+                </h3>
+            </div>
         </div>
 
         <div className="px-4">

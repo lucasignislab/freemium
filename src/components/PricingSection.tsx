@@ -190,18 +190,18 @@ const PricingCard = ({
                     {plan.name}
                 </h3>
 
-                <div className={`relative inline-block px-4 py-8 w-full ${plan.highlight ? 'bg-brand-yellow' : 'bg-gray-400/20'}`}>
+                <div className={`relative inline-block px-4 py-6 md:py-8 w-full ${plan.highlight ? 'bg-brand-yellow' : 'bg-gray-400/20'}`}>
                     <div className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 inline-block mb-2">
                         {plan.discount}
                     </div>
                     <div className="flex items-center justify-center gap-1">
                         {plan.installments && (
-                            <span className="text-xl font-black">{plan.installments}</span>
+                            <span className="text-base md:text-xl font-black">{plan.installments}</span>
                         )}
-                        <span className="text-xl font-black">R$</span>
-                        <span className="text-6xl font-black leading-none">{plan.price.replace("R$ ", "")}</span>
+                        <span className="text-base md:text-xl font-black">R$</span>
+                        <span className="text-5xl md:text-6xl font-black leading-none">{plan.price.replace("R$ ", "")}</span>
                         <div className="text-left">
-                            <span className="text-lg font-black block leading-none">{plan.cents || ",00"}/mês</span>
+                            <span className="text-sm md:text-lg font-black block leading-none">{plan.cents || ",00"}/mês</span>
                         </div>
                     </div>
                     <div className="text-xs line-through opacity-50 mt-2">de {plan.originalPrice}</div>
@@ -214,48 +214,50 @@ const PricingCard = ({
                 </div>
             </div>
 
-            <div className="p-8 pt-6 flex-1 flex flex-col">
-                <h4 className={`text-2xl font-black mb-6 ${plan.highlight ? 'text-brand-dark' : 'text-white'}`}>
-                    Funcionalidades
-                </h4>
-
-                <motion.div
-                    animate={{ height: isExpanded ? 'auto' : '360px' }}
-                    className="overflow-hidden relative"
-                >
-                    <div className="space-y-3 mb-6">
-                        {plan.features?.map((feature: string, fIdx: number) => (
-                            <div key={fIdx} className="flex items-start gap-3">
+            <div className="p-8 pt-6 flex-1 flex-col flex">
+                <div className="mb-6">
+                    <h4 className={`text-2xl font-black mb-4 ${plan.highlight ? 'text-brand-dark' : 'text-white'}`}>
+                        Limites do Plano
+                    </h4>
+                    <div className="space-y-3">
+                        {plan.limits?.map((limit: string, lIdx: number) => (
+                            <div key={lIdx} className="flex items-start gap-3">
                                 <Check size={16} className={`mt-0.5 shrink-0 ${plan.highlight ? 'text-brand-dark' : 'text-brand-green'}`} />
-                                <span className="text-sm font-medium leading-tight">{feature}</span>
-                            </div>
-                        ))}
-                        {plan.unavailable?.map((feature: string, fIdx: number) => (
-                            <div key={fIdx} className="flex items-start gap-3 opacity-40">
-                                <X size={16} className="mt-0.5 shrink-0 text-red-600" />
-                                <span className="text-sm font-medium leading-tight line-through text-red-600">{feature}</span>
+                                <span className="text-sm font-medium leading-tight">{limit}</span>
                             </div>
                         ))}
                     </div>
+                </div>
 
-                    <div className="pt-4 border-t border-gray-100/20">
-                        <h4 className={`text-2xl font-black mb-4 ${plan.highlight ? 'text-brand-dark' : 'text-white'}`}>
-                            Limites do Plano
-                        </h4>
-                        <div className="space-y-3">
-                            {plan.limits?.map((limit: string, lIdx: number) => (
-                                <div key={lIdx} className="flex items-start gap-3">
+                <div className="pt-6 border-t border-gray-100/10">
+                    <h4 className={`text-2xl font-black mb-6 ${plan.highlight ? 'text-brand-dark' : 'text-white'}`}>
+                        Funcionalidades
+                    </h4>
+
+                    <motion.div
+                        animate={{ height: isExpanded ? 'auto' : '240px' }}
+                        className="overflow-hidden relative"
+                    >
+                        <div className="space-y-3 mb-6">
+                            {plan.features?.map((feature: string, fIdx: number) => (
+                                <div key={fIdx} className="flex items-start gap-3">
                                     <Check size={16} className={`mt-0.5 shrink-0 ${plan.highlight ? 'text-brand-dark' : 'text-brand-green'}`} />
-                                    <span className="text-sm font-medium leading-tight">{limit}</span>
+                                    <span className="text-sm font-medium leading-tight">{feature}</span>
+                                </div>
+                            ))}
+                            {plan.unavailable?.map((feature: string, fIdx: number) => (
+                                <div key={fIdx} className="flex items-start gap-3 opacity-40">
+                                    <X size={16} className="mt-0.5 shrink-0 text-red-600" />
+                                    <span className="text-sm font-medium leading-tight line-through text-red-600">{feature}</span>
                                 </div>
                             ))}
                         </div>
-                    </div>
 
-                    {!isExpanded && (
-                        <div className={`absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t ${plan.highlight ? 'from-white' : 'from-[#1a1a1a]'} to-transparent pointer-events-none`} />
-                    )}
-                </motion.div>
+                        {!isExpanded && (
+                            <div className={`absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t ${plan.highlight ? 'from-white' : 'from-[#1a1a1a]'} to-transparent pointer-events-none`} />
+                        )}
+                    </motion.div>
+                </div>
 
                 <button
                     onClick={() => setIsExpanded(!isExpanded)}
@@ -332,7 +334,7 @@ export const PricingSection = () => {
                     </div>
                 </div>
 
-                <div ref={sliderRef} className={`flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 md:gap-8 mx-auto px-4 py-8 -my-8 items-stretch ${pricingData[activePeriod].length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-7xl'}`}>
+                <div ref={sliderRef} className={`flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 md:gap-8 mx-auto px-4 py-8 -my-8 md:items-start ${pricingData[activePeriod].length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3 max-w-7xl'}`}>
                     {pricingData[activePeriod]?.map((plan) => (
                         <PricingCard
                             key={plan.name}
