@@ -250,6 +250,80 @@ export const ConversionForm = () => {
         tempoAfiliado: "",
         faturamento: ""
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    // Capture and persist UTMs to SessionStorage
+    useEffect(() => {
+        const queryParams = new URLSearchParams(window.location.search);
+        const utmKeys = [
+            "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
+            "raads1", "raads2", "raads3", "raads4", "raads5"
+        ];
+
+        utmKeys.forEach(key => {
+            if (queryParams.has(key)) {
+                sessionStorage.setItem(key, queryParams.get(key) || "");
+            }
+        });
+    }, []);
+
+    const handleFinalSubmit = async () => {
+        setIsSubmitting(true);
+        const fullPhone = `${selectedCountry.dial} ${formData.telefone}`;
+
+        // 1. Prepare data for N8N webhook
+        const webhookData = {
+            name: formData.nome,
+            email: formData.email,
+            phone: fullPhone,
+            tempo_afiliado: formData.tempoAfiliado,
+            faturamento_afiliado: formData.faturamento
+        };
+
+        // 2. Dispatch to Webhook (Non-blocking with timeout)
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+            await fetch('https://n8n.srv1145908.hstgr.cloud/webhook/form-elementor', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(webhookData),
+                signal: controller.signal
+            });
+
+            clearTimeout(timeoutId);
+        } catch (error) {
+            console.error("Webhook submission error:", error);
+            // Ignored so we don't break user redirect
+        }
+
+        // 3. Build Redirect URL
+        const redirectUrl = new URL("https://app.ratoeiraads.com.br/freemium/cadastro");
+
+        redirectUrl.searchParams.append("name", formData.nome);
+        redirectUrl.searchParams.append("email", formData.email);
+        redirectUrl.searchParams.append("phone", fullPhone);
+        redirectUrl.searchParams.append("tempo_afiliado", formData.tempoAfiliado);
+        redirectUrl.searchParams.append("faturamento_afiliado", formData.faturamento);
+
+        const utmKeys = [
+            "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
+            "raads1", "raads2", "raads3", "raads4", "raads5"
+        ];
+
+        utmKeys.forEach(key => {
+            const val = sessionStorage.getItem(key);
+            if (val) {
+                redirectUrl.searchParams.append(key, val);
+            }
+        });
+
+        // 4. Redirect
+        window.location.href = redirectUrl.toString();
+    };
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -416,10 +490,11 @@ export const ConversionForm = () => {
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                                    disabled={!formData.tempoAfiliado || !formData.faturamento}
+                                    onClick={handleFinalSubmit}
+                                    disabled={!formData.tempoAfiliado || !formData.faturamento || isSubmitting}
                                     className="btn-primary btn w-full disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    QUERO MEU ACESSO GRÁTIS
+                                    {isSubmitting ? "PROCESSANDO..." : "QUERO MEU ACESSO GRÁTIS"}
                                 </motion.button>
                                 <p className="text-[10px] text-center text-gray-400">
                                     Ao continuar, você concorda com nossos Termos de Uso.
