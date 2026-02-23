@@ -49,7 +49,7 @@ export const ExclusiveTool = () => {
                                 initial={{ opacity: 0, x: i % 2 !== 0 ? 50 : -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8 }}
-                                className="flex-1 text-center md:text-left flex flex-col items-center md:items-start"
+                                className="flex-1 text-left flex flex-col items-start"
                             >
                                 <span className="text-xs font-black text-gray-400 tracking-[0.3em] uppercase mb-4 block">
                                     {feature.tag}
@@ -59,10 +59,10 @@ export const ExclusiveTool = () => {
                                 </h3>
                                 <div className="space-y-4">
                                     {feature.description.split(';').map((bullet, idx) => (
-                                        <div key={idx} className="flex gap-3 items-center justify-center md:justify-start">
-                                            <CheckCircle2 className="text-brand-green shrink-0" size={20} />
+                                        <div key={idx} className="flex gap-3 items-start justify-start">
+                                            <CheckCircle2 className="text-brand-green shrink-0 mt-1" size={20} />
                                             <p
-                                                className="text-lg text-gray-600 font-medium text-center md:text-left"
+                                                className="text-lg text-gray-600 font-medium text-left"
                                                 dangerouslySetInnerHTML={{ __html: bullet.trim() }}
                                             />
                                         </div>

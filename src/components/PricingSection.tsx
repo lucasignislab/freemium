@@ -269,14 +269,16 @@ const PricingCard = ({
                 </button>
 
                 <div className="mt-auto pt-8">
-                    <button
-                        className={`w-full py-4 font-black text-xs rounded-modern uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl ${plan.highlight
-                            ? 'bg-brand-green text-white'
-                            : 'bg-brand-green text-white'
-                            }`}
-                    >
-                        {plan.buttonText}
-                    </button>
+                    <a href="#solution">
+                        <button
+                            className={`w-full py-4 font-black text-xs rounded-modern uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl ${plan.highlight
+                                ? 'bg-brand-green text-white'
+                                : 'bg-brand-green text-white'
+                                }`}
+                        >
+                            {plan.buttonText}
+                        </button>
+                    </a>
                 </div>
             </div>
         </motion.div>
