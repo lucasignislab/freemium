@@ -64,7 +64,7 @@ export const Hero = () => {
                                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                                     className="btn-accent btn scale-110 group whitespace-nowrap"
                                 >
-                                    <span>Teste Já - 7 dias grátis</span>
+                                    <span>Testar Grátis — 7 Dias</span>
                                     <MousePointerClick className="ml-2 group-hover:translate-x-1 transition-transform" />
                                 </motion.button>
                             </a>
