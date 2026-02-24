@@ -174,7 +174,7 @@ export const Results = () => {
                             <Zap className="ml-2 group-hover:scale-125 transition-transform text-brand-dark" size={20} />
                         </motion.button>
                     </a>
-                    <p className="text-sm text-gray-400 mt-3 font-medium">Teste grátis por 14 dias · Sem compromisso</p>
+                    <p className="text-sm text-gray-400 mt-3 font-medium">Teste grátis por 7 dias · Sem compromisso</p>
                 </motion.div>
             </div>
         </section>

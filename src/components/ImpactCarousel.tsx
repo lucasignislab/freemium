@@ -243,7 +243,7 @@ export const ImpactCarousel = () => {
                         whileTap={{ scale: 0.95 }}
                         className="btn btn-accent uppercase text-lg tracking-tight"
                     >
-                        Teste Já - 14 dias grátis
+                        <span>Teste Já - 7 dias grátis</span>
                     </motion.button>
                 </a>
             </div>

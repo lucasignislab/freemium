@@ -82,7 +82,7 @@ export const Navbar = () => {
                             ))}
                             <a href="#solution" className="w-full" onClick={() => setIsOpen(false)}>
                                 <button className="w-full bg-brand-yellow text-brand-dark px-6 py-4 rounded-modern font-black uppercase text-sm tracking-widest shadow-lg shadow-brand-yellow/20 active:scale-95 transition-transform text-center">
-                                    Teste Já - 14 dias grátis
+                                    <span>Teste Já - 7 dias grátis</span>
                                 </button>
                             </a>
                         </div>

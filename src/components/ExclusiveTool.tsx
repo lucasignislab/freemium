@@ -101,7 +101,7 @@ export const ExclusiveTool = () => {
                             transition={{ type: "spring", stiffness: 400, damping: 10 }}
                             className="btn-accent btn group"
                         >
-                            Teste Já - 14 dias grátis
+                            <span>Teste Já - 7 dias grátis</span>
                             <MousePointerClick className="ml-2 group-hover:translate-x-1 transition-transform" />
                         </motion.button>
                     </a>
