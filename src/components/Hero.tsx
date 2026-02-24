@@ -25,10 +25,10 @@ export const Hero = () => {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-[28px] xs:text-4xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6 uppercase"
+                            className="text-[28px] xs:text-4xl md:text-7xl font-black tracking-tight leading-[1.4] md:leading-[1.1] mb-6 uppercase"
                         >
                             VOCÊ SABE DE <span className="text-brand-yellow whitespace-nowrap">QUAL CAMPANHA</span> <br className="sm:hidden" />
-                            <span className="whitespace-nowrap">VEIO <span className="underline decoration-brand-green underline-offset-8">CADA VENDA</span></span> <br className="sm:hidden" />
+                            <span className="whitespace-nowrap">VEIO <span className="underline decoration-brand-green underline-offset-2 md:underline-offset-8">CADA VENDA</span></span> <br className="sm:hidden" />
                             QUE FEZ ESSE MÊS?
                         </motion.h1>
 
