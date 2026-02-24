@@ -3,21 +3,21 @@ import { CheckCircle2, MousePointerClick } from "lucide-react";
 
 const features = [
     {
-        tag: "TECNOLOGIA BRASILEIRA",
-        title: "Tracking de conversões de verdade",
-        description: "Identifica <span class='text-brand-dark font-black'>quase 100% das vendas</span>; Mostra qual clique gerou cada conversão; Permite usar CPA, Maximizar Conversões e <span class='text-brand-dark font-black'>escala segura</span>.",
+        tag: "RASTREAMENTO DE PRECISÃO",
+        title: "Cada venda rastreada. Cada clique identificado.",
+        description: "Identifica <span class='text-brand-dark font-black'>quase 100% das conversões</span> — inclusive as que o Google não registrou; Mostra qual clique, campanha e criativo gerou cada venda real; Permite usar Smart Bidding com <span class='text-brand-dark font-black'>dados limpos</span> para escalar com segurança",
         image: "https://ratoeiraadsoficial.com.br/wp-content/uploads/2026/01/tracking-de-conversoes-de-verdade.webp"
     },
     {
-        tag: "ESCUDO ANTI-BOTS",
-        title: "Anti-fraude automático",
-        description: "Detecta bots e “ratos”; <span class='text-brand-dark font-black'>Bloqueia IPs fraudulentos automaticamente</span>; Reduz desperdício desde o primeiro dia.",
+        tag: "BLINDAGEM ANTI-FRAUDE",
+        title: "Bots e concorrentes bloqueados. Orçamento preservado.",
+        description: "Detecta bots e cliques de concorrentes antes de atingirem seu anúncio; <span class='text-brand-dark font-black'>Bloqueia IPs fraudulentos automaticamente</span>, sem intervenção manual; Orçamento 100% direcionado a tráfego humano desde o primeiro dia",
         image: "https://ratoeiraadsoficial.com.br/wp-content/uploads/2026/01/BLOQUEIO-DE-RATOS-E-BOTS.webp"
     },
     {
-        tag: "GESTÃO SIMPLIFICADA",
-        title: "Dashboard Consolidado Total",
-        description: "Acompanhe seu <span class='text-brand-dark font-black'>lucro real</span>, ROI e métricas vitais em um só lugar, de forma clara e objetiva para quem anuncia no Google.",
+        tag: "VISÃO CONSOLIDADA",
+        title: "Todas as métricas que importam. Uma tela só.",
+        description: "Chega de abrir 4 plataformas para saber se está no lucro. <span class='text-brand-dark font-black'>Margem real, ROI, CPA e caixa</span> em um painel feito para quem anuncia no Google.",
         image: "https://ratoeiraadsoficial.com.br/wp-content/uploads/2026/01/UM-DASHBOARD-INCRIVEL.webp"
     }
 ];
@@ -32,13 +32,13 @@ export const ExclusiveTool = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         className="inline-block px-4 py-1 bg-brand-yellow/10 text-brand-yellow font-black text-xs tracking-widest rounded-full mb-6"
                     >
-                        PIONEIRISMO NACIONAL
+                        A PRIMEIRA E MAIS COMPLETA FERRAMENTA BRASILEIRA PARA GOOGLE ADS
                     </motion.div>
                     <h2 className="text-[26px] xs:text-3xl sm:text-4xl md:text-6xl font-black tracking-tighter leading-[1.2] md:leading-[1.15]">
-                        A primeira ferramenta <br className="sm:hidden" />
-                        brasileira criada <br className="sm:hidden" />
-                        <span className="text-brand-green">exclusivamente</span> para <br className="sm:hidden" />
-                        afiliados de Google Ads.
+                        A única ferramenta brasileira <br className="sm:hidden" />
+                        que rastreia, protege e dá <br className="sm:hidden" />
+                        <span className="text-brand-green">visão total</span> da sua <br className="sm:hidden" />
+                        operação no Google Ads.
                     </h2>
                 </div>
 
@@ -101,7 +101,7 @@ export const ExclusiveTool = () => {
                             transition={{ type: "spring", stiffness: 400, damping: 10 }}
                             className="btn-accent btn group"
                         >
-                            <span>Teste Já - 7 dias grátis</span>
+                            <span>Testar Grátis — 7 Dias</span>
                             <MousePointerClick className="ml-2 group-hover:translate-x-1 transition-transform" />
                         </motion.button>
                     </a>
