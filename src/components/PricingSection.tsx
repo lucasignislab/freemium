@@ -20,6 +20,7 @@ interface Plan {
     cents?: string;
     cashPrice?: string;
     customTag?: string;
+    link?: string;
 }
 
 const periods: Period[] = ["ANUAL", "SEMESTRAL", "MENSAL"];
@@ -43,7 +44,8 @@ const MENSAL_PLANS: Plan[] = [
         unavailable: [],
         buttonText: "GARANTIR MEU ACESSO",
         highlight: false,
-        icon: <Zap size={24} className="text-brand-green" />
+        icon: <Zap size={24} className="text-brand-green" />,
+        link: "https://clkdmg.site/subscribe/a0fc08f9-b7ef-4572-9d60-e6393199563c"
     },
     {
         name: "Rato",
@@ -62,7 +64,8 @@ const MENSAL_PLANS: Plan[] = [
         buttonText: "GARANTIR MEU ACESSO AGORA",
         highlight: false,
         customTag: "O MAIS ESCOLHIDO",
-        icon: <Rocket size={24} className="text-brand-green" />
+        icon: <Rocket size={24} className="text-brand-green" />,
+        link: "https://clkdmg.site/subscribe/ratoeiraads-ratomensal"
     },
     {
         name: "Ratazana",
@@ -82,7 +85,8 @@ const MENSAL_PLANS: Plan[] = [
         buttonText: "GARANTIR MEU ACESSO AGORA",
         highlight: true,
         customTag: "PARA OPERAÇÕES MAIORES",
-        icon: <Shield size={24} className="text-brand-dark" />
+        icon: <Shield size={24} className="text-brand-dark" />,
+        link: "https://clkdmg.site/subscribe/a0fc08d6-ae0a-4d89-9cb6-98bfc9763851"
     }
 ];
 
@@ -96,13 +100,15 @@ const pricingData: Record<Period, Plan[]> = {
             cents: ",52",
             originalPrice: "R$897,00",
             cashPrice: "por R$797,00 à vista",
-            discount: "11% NO SEMESTRAL"
+            discount: "11% NO SEMESTRAL",
+            link: "https://clkdmg.site/subscribe/a0fc08d6-bf5e-4475-963e-40960af2d577"
         } : p.name === "Rato" ? {
             price: "R$ 205",
             cents: ",80",
             originalPrice: "R$1.397,00",
             cashPrice: "por R$1.097,00 à vista",
-            discount: "21% NO SEMESTRAL"
+            discount: "21% NO SEMESTRAL",
+            link: "https://clkdmg.site/subscribe/ratoeiraads-ratosemestral"
         } : {})
     })),
     ANUAL: MENSAL_PLANS.filter(p => p.name !== "Camundongo").map(p => ({
@@ -113,13 +119,15 @@ const pricingData: Record<Period, Plan[]> = {
             cents: ",31",
             originalPrice: "R$1.597,00",
             cashPrice: "por R$1.347,00 à vista",
-            discount: "16% NO ANUAL"
+            discount: "16% NO ANUAL",
+            link: "https://clkdmg.site/subscribe/a0fc08d6-cfb7-4321-ab3b-01e729162465"
         } : p.name === "Rato" ? {
             price: "R$ 185",
             cents: ",85",
             originalPrice: "R$2.597,00",
             cashPrice: "por R$1.797,00 à vista",
-            discount: "31% NO ANUAL"
+            discount: "31% NO ANUAL",
+            link: "https://clkdmg.site/subscribe/a0fe91e6-3880-48db-833d-e2db3576154d"
         } : {})
     }))
 };
@@ -190,7 +198,7 @@ const PricingCard = ({
                 </div>
 
                 <div className="mt-auto pt-8">
-                    <a href="#solution">
+                    <a href={plan.link || "#pricing"} target={plan.link ? "_blank" : undefined} rel={plan.link ? "noopener noreferrer" : undefined}>
                         <button
                             className={`w-full py-4 font-black text-xs rounded-modern uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl ${plan.highlight
                                 ? 'bg-brand-green text-white'
@@ -200,6 +208,58 @@ const PricingCard = ({
                             {plan.buttonText}
                         </button>
                     </a>
+                </div>
+            </div>
+        </motion.div>
+    );
+};
+
+const ROICalculator = () => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 mx-auto max-w-4xl p-8 rounded-modern border border-brand-green/30 bg-white/5 backdrop-blur-sm relative overflow-hidden group"
+        >
+            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <img src="/MASCOTE SEM FUNDO AMARELO.png" alt="Ratoeira Mascote" className="w-[120px] h-[120px] object-contain" />
+            </div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                <div className="flex-1">
+                    <p className="text-lg md:text-xl font-medium leading-relaxed text-gray-200">
+                        A conta é simples: se você investe <span className="text-white font-black">R$3.000</span> por mês em Google Ads e <span className="text-red-500 font-black">25%</span> vai para fraude — média do mercado — você está desperdiçando <span className="text-red-500 font-black underline decoration-2">R$750</span> por mês em cliques que nunca vão converter.
+                    </p>
+
+                    <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 bg-black/40 p-6 rounded-xl border border-white/5">
+                        <div className="text-center">
+                            <span className="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Investimento Mensal</span>
+                            <span className="text-2xl font-black text-white">R$ 3.000</span>
+                        </div>
+                        <span className="text-2xl font-black text-brand-green">×</span>
+                        <div className="text-center">
+                            <span className="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Taxa de Fraude</span>
+                            <span className="text-2xl font-black text-red-500">25%</span>
+                        </div>
+                        <span className="text-2xl font-black text-brand-green">=</span>
+                        <div className="text-center px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-lg">
+                            <span className="block text-[10px] uppercase tracking-widest text-red-400 mb-1">Seu Desperdício</span>
+                            <span className="text-2xl font-black text-red-500">R$ 750 / mês</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="w-px h-32 bg-white/10 hidden md:block" />
+
+                <div className="flex-1 text-center md:text-left pt-12">
+                    <p className="text-lg font-bold text-brand-green mb-4">
+                        O plano Rato custa R$ 167 por mês.
+                        <span className="block text-white font-medium text-sm mt-1">Você recupera o investimento antes do fim do primeiro ciclo de cobrança.</span>
+                    </p>
+                    <p className="text-xl font-black text-white italic">
+                        "Não é um custo. É a ferramenta que faz o seu orçamento atual render mais."
+                    </p>
                 </div>
             </div>
         </motion.div>
@@ -272,6 +332,8 @@ export const PricingSection = () => {
                         />
                     ))}
                 </div>
+
+                <ROICalculator />
 
                 {/* Shared Features Grid */}
                 <div className="mt-24 pt-16 border-t border-white/10 max-w-6xl mx-auto px-4">

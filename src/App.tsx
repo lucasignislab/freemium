@@ -14,6 +14,8 @@ import { IntegrationsSection } from "./components/IntegrationsSection.tsx"
 import { ClientsCarousel } from "./components/ClientsCarousel.tsx"
 import { Footer } from "./components/Footer.tsx"
 import { FAQSection } from "./components/FAQSection.tsx"
+import { TermsOfUse } from "./pages/TermsOfUse.tsx"
+import { PrivacyPolicy } from "./pages/PrivacyPolicy.tsx"
 import { DesignSystem } from "./pages/DesignSystem.tsx"
 import { motion, useScroll, useSpring } from "framer-motion"
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
@@ -71,6 +73,8 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/terms-of-use" element={<TermsOfUse />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/design-system" element={<DesignSystem />} />
           </Routes>
         </main>

@@ -8,23 +8,19 @@ import gringasFlag from "../assets/gringas-flag.png";
 const features = [
     {
         name: "Tracking Real de Conversões",
-        description: "Cada venda atribuída ao clique correto. Não 75%. Quase 100%.",
+        description: "Próximo de 100% de precisão.",
     },
     {
-        name: "Bloqueio Automático de Fraudes",
-        description: "Bots e cliques de concorrentes bloqueados sem intervenção.",
+        name: "Bloqueio Automático de Bots",
+        description: "Defesa inteligente sem intervenção manual.",
     },
     {
         name: "Dashboard de Lucro Consolidado",
-        description: "Lucro real, CPA, ROI e margem em uma tela. Sem planilha.",
+        description: "Visão única de margem, ROI e caixa real.",
     },
     {
-        name: "Proteção de Pixel (Server-Side)",
-        description: "Dados limpos chegam ao Google. Algoritmo aprende a converter.",
-    },
-    {
-        name: "Suporte em Português, no Brasil",
-        description: "De quem conhece o mercado de afiliado BR.",
+        name: "Suporte VIP no Brasil",
+        description: "Atendimento todos os dias.",
     },
     {
         name: "Preço Acessível no Brasil",
@@ -36,7 +32,7 @@ const features = [
     },
     {
         name: "Foco Total em Traqueamento",
-        description: "Sem inventar funções inúteis para o afiliado.",
+        description: "Sem ficar inventando funcionalidades sem utilidade.",
     }
 ];
 
@@ -45,7 +41,7 @@ const competitors = [
         name: "Ratoeira",
         color: "bg-brand-yellow",
         textColor: "text-brand-yellow",
-        values: [true, true, true, true, true, true, true, true],
+        values: [true, true, true, true, true, true, true],
         highlight: true,
         theme: "gold"
     },
@@ -53,7 +49,7 @@ const competitors = [
         name: "",
         color: "bg-red-600",
         textColor: "text-red-500",
-        values: [false, true, false, false, false, true, false, false],
+        values: [false, true, false, false, true, false, false],
         theme: "dark",
         icon: filtrifyLogo,
         blur: true
@@ -62,7 +58,7 @@ const competitors = [
         name: "",
         color: "bg-blue-600",
         textColor: "text-blue-500",
-        values: [false, true, false, false, false, true, false, true],
+        values: [false, true, false, false, true, false, true],
         theme: "dark",
         icon: clickdefenderLogo,
         blur: true,
@@ -72,7 +68,7 @@ const competitors = [
         name: "",
         color: "bg-gray-500",
         textColor: "text-gray-400",
-        values: [true, false, true, false, false, false, true, false],
+        values: [true, false, true, false, false, true, false],
         theme: "muted",
         icon: gringasFlag,
         blur: false,
@@ -86,55 +82,55 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: idx * 0.1 }}
-        className={`relative rounded-modern overflow-hidden border shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none ${comp.highlight
-            ? 'border-brand-yellow/50 bg-brand-dark md:scale-105 z-20 shadow-[0_20px_50px_rgba(0,0,0,0.3)]'
-            : comp.icon ? 'border-gray-300 bg-gray-200 shadow-inner' : 'border-gray-200 bg-gray-100/80 shadow-inner'
+        className={`relative rounded-modern overflow-hidden border shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none transition-all duration-300 ${comp.highlight
+            ? 'border-brand-yellow bg-brand-dark z-20 shadow-[0_0_40px_rgba(255,184,0,0.15)]'
+            : comp.icon ? 'border-gray-200 bg-gray-50/50' : 'border-gray-100 bg-gray-50/30'
             }`}
     >
-        {comp.highlight && (
-            <div className="absolute top-0 left-0 right-0 bg-brand-yellow text-brand-dark text-[10px] font-black py-1 text-center uppercase tracking-widest">
-                A Escolha Definitiva
-            </div>
-        )}
+        <div className="h-[220px] p-8 pb-4 flex flex-col items-center justify-center text-center relative">
+            {comp.highlight && (
+                <div className="absolute top-0 left-0 right-0 bg-brand-yellow text-brand-dark text-[10px] font-black py-2 text-center uppercase tracking-widest">
+                    A Escolha Definitiva
+                </div>
+            )}
 
-        <div className="h-[220px] p-8 pb-4 flex flex-col items-center justify-start text-center">
-            <div className={`flex items-center justify-center mx-auto mb-6 h-28`}>
+            <div className={`flex items-center justify-center mx-auto mb-4 h-24 mt-4 text-brand-yellow`}>
                 {comp.highlight ? (
                     <img
                         src={raadsLogo}
                         alt="RAADS Logo"
-                        className="h-10 w-auto object-contain"
+                        className="h-12 w-auto object-contain"
                     />
                 ) : comp.icon ? (
                     <img
                         src={comp.icon}
                         alt={`${comp.name} Logo`}
-                        className={`${comp.iconSize || 'h-20'} w-auto object-contain ${comp.iconSize ? 'mix-blend-multiply' : ''} ${comp.blur ? 'blur-xs' : ''}`}
+                        className={`${comp.iconSize || 'h-20'} w-auto object-contain ${comp.blur ? 'blur-[1px] opacity-40 grayscale' : ''}`}
                     />
                 ) : (
-                    <Target className={comp.textColor} />
+                    <Target className={comp.textColor} size={40} />
                 )}
             </div>
-            <div className="h-12 flex items-center justify-center">
-                <h3 className={`text-xl font-black uppercase tracking-tighter ${comp.highlight ? 'text-white' : 'text-gray-900'}`}>
-                    {comp.name}
+            <div className="h-8 flex items-center justify-center">
+                <h3 className={`text-lg font-black uppercase tracking-tighter ${comp.highlight ? 'text-white' : 'text-gray-400'}`}>
+                    {comp.name || (comp.icon ? "" : "Gringas")}
                 </h3>
             </div>
         </div>
 
-        <div className="px-4">
+        <div className="">
             {features.map((_feat, fIdx) => (
-                <div key={fIdx} className={`h-28 md:h-24 py-4 md:py-0 flex flex-col md:flex-row items-center justify-center border-b gap-3 md:gap-4 ${comp.highlight ? 'border-white/10' : 'border-gray-100'}`}>
-                    <span className={`md:hidden text-[11px] font-black uppercase tracking-widest text-center leading-tight max-w-[90%] ${comp.highlight ? 'text-white/90' : 'text-gray-500'}`}>
+                <div key={fIdx} className={`h-24 flex flex-col items-center justify-center border-t gap-2 ${comp.highlight ? 'border-white/10' : 'border-gray-200/50'}`}>
+                    <span className={`md:hidden text-[10px] font-black uppercase tracking-widest text-center leading-tight max-w-[80%] ${comp.highlight ? 'text-brand-yellow' : 'text-gray-400'}`}>
                         {_feat.name}
                     </span>
                     {comp.values[fIdx] ? (
-                        <div className={`p-2 rounded-full ${comp.highlight ? 'bg-brand-yellow text-brand-dark' : 'bg-brand-green/10 text-brand-green'}`}>
-                            <Check size={20} strokeWidth={3} />
+                        <div className={`p-1.5 rounded-full ${comp.highlight ? 'bg-brand-green text-brand-dark' : 'bg-brand-green/20 text-brand-green'}`}>
+                            <Check size={18} strokeWidth={4} />
                         </div>
                     ) : (
-                        <div className={`p-2 rounded-full ${comp.highlight ? 'bg-red-500/20 text-red-500' : 'bg-red-500/10 text-red-500/50'}`}>
-                            <X size={20} strokeWidth={3} />
+                        <div className={`p-1.5 rounded-full ${comp.highlight ? 'bg-red-500/20 text-red-500' : 'bg-red-500/10 text-red-500/30'}`}>
+                            <X size={18} strokeWidth={4} />
                         </div>
                     )}
                 </div>
@@ -142,9 +138,9 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
         </div>
 
         {comp.highlight && (
-            <div className="p-8">
-                <button className="w-full py-3 bg-brand-yellow text-brand-dark font-black text-xs rounded-sharp hover:scale-110 active:scale-95 transition-all uppercase tracking-widest shadow-lg shadow-brand-yellow/30">
-                    EU QUERO A RATOEIRA
+            <div className="p-6 border-t border-white/10">
+                <button className="w-full py-4 bg-brand-yellow text-brand-dark font-black text-xs rounded-modern hover:bg-white transition-colors uppercase tracking-widest shadow-xl shadow-brand-yellow/20">
+                    GARANTIR RATOEIRA
                 </button>
             </div>
         )}
@@ -174,9 +170,9 @@ export const ComparisonSection = () => {
                 <div className="hidden md:grid md:grid-cols-5 gap-4">
                     <div className="flex flex-col pt-[220px]">
                         {features.map((feature, i) => (
-                            <div key={i} className="h-24 flex flex-col justify-center border-b border-gray-100">
+                            <div key={i} className="h-24 flex flex-col justify-center border-t border-gray-100">
                                 <span className="text-sm font-black uppercase tracking-widest text-gray-400">{feature.name}</span>
-                                <span className="text-[10px] text-gray-500 mt-1">{feature.description}</span>
+                                <span className="text-[10px] text-gray-400 mt-1 font-medium">{feature.description}</span>
                             </div>
                         ))}
                     </div>

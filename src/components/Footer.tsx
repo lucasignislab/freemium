@@ -1,4 +1,5 @@
 // RAADS Footer
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
     return (
@@ -30,23 +31,30 @@ export const Footer = () => {
                         <div className="flex flex-col items-center md:items-start">
                             <h4 className="font-bold text-brand-dark mb-4 text-xs uppercase tracking-widest">Suporte</h4>
                             <ul className="space-y-3 text-sm text-gray-500 text-center md:text-left">
-                                <li><a href="#" className="hover:text-brand-yellow transition-colors">WhatsApp</a></li>
-                                <li><a href="#" className="hover:text-brand-yellow transition-colors">Central de Ajuda</a></li>
+                                <li><a href="https://ratoeiraads.com/site" className="hover:text-brand-yellow transition-colors">WhatsApp</a></li>
+                                <li><a href="https://ratoeira-ads.gitbook.io/help-ratoeira" className="hover:text-brand-yellow transition-colors">Central de Ajuda</a></li>
 
                             </ul>
                         </div>
                         <div className="flex flex-col items-center md:items-start col-span-2 md:col-span-1">
                             <h4 className="font-bold text-brand-dark mb-4 text-xs uppercase tracking-widest">Legal</h4>
                             <ul className="space-y-3 text-sm text-gray-500 text-center md:text-left">
-                                <li><a href="#" className="hover:text-brand-yellow transition-colors">Privacidade</a></li>
-                                <li><a href="#" className="hover:text-brand-yellow transition-colors">Termos</a></li>
+                                <li><Link to="/privacy-policy" className="hover:text-brand-yellow transition-colors">Privacidade</Link></li>
+                                <li><Link to="/terms-of-use" className="hover:text-brand-yellow transition-colors">Termos</Link></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-50 gap-4 text-center">
-                    <p className="text-xs text-gray-400">
+                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-50 gap-6 text-center md:text-left">
+                    <div className="flex flex-col gap-1">
+                        <a href="tel:19996837348" className="text-xs text-brand-dark font-bold hover:text-brand-yellow transition-colors">(19) 99683-7348</a>
+                        <p className="text-[10px] text-gray-400 leading-tight">
+                            Alameda Rio Negro, 503, Alphaville - Sala 2020, Barueri/SP<br />
+                            06454-000
+                        </p>
+                    </div>
+                    <p className="text-[10px] text-gray-400">
                         © 2026 Ratoeira Ads Digital Marketing - 55.824.986/0001-06. Todos os direitos reservados.
                     </p>
                     <div className="flex gap-6">
