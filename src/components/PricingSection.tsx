@@ -223,7 +223,7 @@ const ROICalculator = () => {
             className="mt-16 mx-auto max-w-4xl p-8 rounded-modern border border-brand-green/30 bg-white/5 backdrop-blur-sm relative overflow-hidden group"
         >
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <img src="/MASCOTE SEM FUNDO AMARELO.png" alt="Ratoeira Mascote" className="w-[120px] h-[120px] object-contain" />
+                <img src="/mascote.png" alt="Ratoeira Mascote" className="w-[120px] h-[120px] object-contain" />
             </div>
 
             <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
