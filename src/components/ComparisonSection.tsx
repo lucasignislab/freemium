@@ -25,6 +25,18 @@ const features = [
     {
         name: "Suporte em Português, no Brasil",
         description: "De quem conhece o mercado de afiliado BR.",
+    },
+    {
+        name: "Preço Acessível no Brasil",
+        description: "Nada de custo em dolares exorbitantes.",
+    },
+    {
+        name: "Performance e Estabilidade",
+        description: "Sistema confiável e que não fica caindo.",
+    },
+    {
+        name: "Foco Total em Traqueamento",
+        description: "Sem inventar funções inúteis para o afiliado.",
     }
 ];
 
@@ -33,7 +45,7 @@ const competitors = [
         name: "Ratoeira",
         color: "bg-brand-yellow",
         textColor: "text-brand-yellow",
-        values: [true, true, true, true, true],
+        values: [true, true, true, true, true, true, true, true],
         highlight: true,
         theme: "gold"
     },
@@ -41,7 +53,7 @@ const competitors = [
         name: "",
         color: "bg-red-600",
         textColor: "text-red-500",
-        values: [false, true, false, false, false],
+        values: [false, true, false, false, false, true, false, false],
         theme: "dark",
         icon: filtrifyLogo,
         blur: true
@@ -50,7 +62,7 @@ const competitors = [
         name: "",
         color: "bg-blue-600",
         textColor: "text-blue-500",
-        values: [false, true, false, false, false],
+        values: [false, true, false, false, false, true, false, true],
         theme: "dark",
         icon: clickdefenderLogo,
         blur: true,
@@ -60,7 +72,7 @@ const competitors = [
         name: "",
         color: "bg-gray-500",
         textColor: "text-gray-400",
-        values: [true, false, true, false, false],
+        values: [true, false, true, false, false, false, true, false],
         theme: "muted",
         icon: gringasFlag,
         blur: false,
