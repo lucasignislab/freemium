@@ -277,7 +277,7 @@ export const PricingSection = () => {
                 <div className="mt-24 pt-16 border-t border-white/10 max-w-6xl mx-auto px-4">
                     <div className="text-center mb-12">
                         <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-2">
-                            Funcionalidades <span className="text-brand-green italic">Inclusas</span>
+                            Funcionalidades <span className="text-brand-yellow italic">Inclusas</span>
                         </h3>
                         <p className="text-gray-400 text-sm md:text-base">
                             Recursos poderosos presentes em todos os planos da Ratoeira Ads.
