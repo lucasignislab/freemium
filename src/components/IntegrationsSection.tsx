@@ -399,14 +399,14 @@ export const IntegrationsSection = () => {
                         className="inline-flex items-center gap-2 px-3 py-1 bg-brand-yellow/10 text-brand-yellow font-black text-[10px] tracking-[0.2em] rounded-full mb-1 md:mb-6 border border-brand-yellow/20"
                     >
                         <Globe size={12} />
-                        ECOSSISTEMA COMPLETO
+                        CONECTA COM TUDO QUE VOCÊ JÁ USA
                     </motion.div>
                     <h2 className="text-[28px] xs:text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[1.2] mb-1 md:mb-6 text-white">
-                        Mais de <br className="xs:hidden" /> <span className="text-brand-yellow italic">70 plataformas</span> <br />
-                        totalmente integradas
+                        Mais de 70 plataformas. <br />
+                        <span className="text-brand-yellow italic text-2xl xs:text-3xl md:text-5xl block mt-2">Conexão em minutos. Zero retrabalho.</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Conecte seu rastreamento com as principais redes de anúncios, checkouts e ferramentas do mercado em poucos segundos.
+                    <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+                        Seus checkouts, plataformas de afiliados e redes conectados de uma vez. Uma configuração, rastreamento de tudo.
                     </p>
                 </div>
 
