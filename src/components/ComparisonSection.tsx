@@ -8,28 +8,32 @@ import gringasFlag from "../assets/gringas-flag.png";
 const features = [
     {
         name: "Tracking Real de Conversões",
-        description: "Próximo de 100% de precisão",
+        description: "Cada venda atribuída ao clique correto. Não 75%. Quase 100%.",
     },
     {
-        name: "Bloqueio Automático de Bots",
-        description: "Defesa inteligente sem intervenção manual.",
+        name: "Bloqueio Automático de Fraudes",
+        description: "Bots e cliques de concorrentes bloqueados sem intervenção.",
     },
     {
         name: "Dashboard de Lucro Consolidado",
-        description: "Visão única de margem, ROI e caixa real.",
+        description: "Lucro real, CPA, ROI e margem em uma tela. Sem planilha.",
     },
     {
-        name: "Suporte VIP no Brasil",
-        description: "Atendimento todos os dias",
+        name: "Proteção de Pixel (Server-Side)",
+        description: "Dados limpos chegam ao Google. Algoritmo aprende a converter.",
+    },
+    {
+        name: "Suporte em Português, no Brasil",
+        description: "De quem conhece o mercado de afiliado BR.",
     }
 ];
 
 const competitors = [
     {
-        name: "RAADS (Ratoeira)",
+        name: "Ratoeira",
         color: "bg-brand-yellow",
         textColor: "text-brand-yellow",
-        values: [true, true, true, true],
+        values: [true, true, true, true, true],
         highlight: true,
         theme: "gold"
     },
@@ -37,7 +41,7 @@ const competitors = [
         name: "",
         color: "bg-red-600",
         textColor: "text-red-500",
-        values: [false, true, false, false],
+        values: [false, true, false, false, false],
         theme: "dark",
         icon: filtrifyLogo,
         blur: true
@@ -46,7 +50,7 @@ const competitors = [
         name: "",
         color: "bg-blue-600",
         textColor: "text-blue-500",
-        values: [false, true, false, false],
+        values: [false, true, false, false, false],
         theme: "dark",
         icon: clickdefenderLogo,
         blur: true,
@@ -56,7 +60,7 @@ const competitors = [
         name: "",
         color: "bg-gray-500",
         textColor: "text-gray-400",
-        values: [true, false, true, false],
+        values: [true, false, true, false, false],
         theme: "muted",
         icon: gringasFlag,
         blur: false,
@@ -108,7 +112,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
 
         <div className="px-4">
             {features.map((_feat, fIdx) => (
-                <div key={fIdx} className={`h-24 py-4 md:py-0 flex flex-col md:flex-row items-center justify-center border-b gap-3 md:gap-4 ${comp.highlight ? 'border-white/10' : 'border-gray-100'}`}>
+                <div key={fIdx} className={`h-28 md:h-24 py-4 md:py-0 flex flex-col md:flex-row items-center justify-center border-b gap-3 md:gap-4 ${comp.highlight ? 'border-white/10' : 'border-gray-100'}`}>
                     <span className={`md:hidden text-[11px] font-black uppercase tracking-widest text-center leading-tight max-w-[90%] ${comp.highlight ? 'text-white/90' : 'text-gray-500'}`}>
                         {_feat.name}
                     </span>
@@ -128,7 +132,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
         {comp.highlight && (
             <div className="p-8">
                 <button className="w-full py-3 bg-brand-yellow text-brand-dark font-black text-xs rounded-sharp hover:scale-110 active:scale-95 transition-all uppercase tracking-widest shadow-lg shadow-brand-yellow/30">
-                    EU QUERO O RAADS
+                    EU QUERO A RATOEIRA
                 </button>
             </div>
         )}
@@ -146,11 +150,11 @@ export const ComparisonSection = () => {
                         className="inline-flex items-center gap-2 px-3 py-1 bg-brand-yellow/10 text-brand-yellow font-black text-[10px] tracking-[0.2em] rounded-full mb-6 border border-brand-yellow/20"
                     >
                         <Zap size={12} />
-                        COMO ÉRAMOS, COMO SOMOS
+                        POR QUE A RATOEIRA VENCE
                     </motion.div>
                     <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[1.3] mb-6 text-brand-dark">
-                        Porque escolher a <span className="text-brand-yellow italic">Ratoeira</span> <br />
-                        <span className="text-brand-dark underline decoration-brand-yellow decoration-4 underline-offset-8">A melhor do mercado</span>
+                        Uma ferramenta. <br />
+                        <span className="text-brand-dark underline decoration-brand-yellow decoration-4 underline-offset-8">Três problemas resolvidos.</span>
                     </h2>
                 </div>
 
