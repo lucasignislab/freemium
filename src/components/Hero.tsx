@@ -18,7 +18,7 @@ export const Hero = () => {
                             className="inline-flex items-center gap-2 bg-brand-yellow/10 text-brand-yellow px-4 py-2 rounded-full font-bold text-xs sm:text-sm mb-6 border border-brand-yellow/20"
                         >
                             <AlertTriangle size={16} />
-                            CONTEÚDO PARA ANUNCIANTES<br className="sm:hidden" /> NO GOOGLE ADS
+                            PARA AFILIADOS QUE ANUNCIAM<br className="sm:hidden" /> NO GOOGLE ADS
                         </motion.div>
 
                         <motion.h1
