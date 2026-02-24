@@ -91,7 +91,7 @@ export const FAQSection = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section id="faq" className="py-24 bg-brand-dark text-white overflow-hidden relative border-t border-white/5">
+        <section id="faq" className="py-24 bg-[#FDFCF9] text-brand-dark overflow-hidden relative border-t border-gray-100">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-green/5 blur-[120px] rounded-full -z-10" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-yellow/5 blur-[120px] rounded-full -z-10" />
 
@@ -101,15 +101,15 @@ export const FAQSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center gap-2 px-4 py-1 bg-white/5 text-gray-400 font-black text-xs tracking-widest rounded-full mb-6 border border-white/10"
+                        className="inline-flex items-center gap-2 px-4 py-1 bg-gray-100 text-gray-500 font-black text-xs tracking-widest rounded-full mb-6 border border-gray-200"
                     >
                         <HelpCircle size={14} />
                         DÚVIDAS FREQUENTES
                     </motion.div>
-                    <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
+                    <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6 text-brand-dark">
                         FAQ
                     </h2>
-                    <p className="text-xl text-gray-400">
+                    <p className="text-xl text-gray-600">
                         Tudo o que você precisa saber para começar a blindar sua escala hoje mesmo.
                     </p>
                 </div>
@@ -127,8 +127,8 @@ export const FAQSection = () => {
                                 className={cn(
                                     "rounded-modern border transition-all duration-300 overflow-hidden",
                                     isOpen
-                                        ? "bg-white/10 border-white/20 shadow-xl"
-                                        : "bg-white/5 border-white/10 hover:bg-white/8 hover:border-white/20"
+                                        ? "bg-white border-brand-yellow/30 shadow-xl"
+                                        : "bg-white/50 border-gray-200 hover:bg-white hover:border-gray-300"
                                 )}
                             >
                                 <button
@@ -137,7 +137,7 @@ export const FAQSection = () => {
                                 >
                                     <span className={cn(
                                         "text-lg md:text-xl font-bold transition-colors duration-300",
-                                        isOpen ? "text-brand-yellow" : "text-white"
+                                        isOpen ? "text-brand-dark" : "text-gray-700"
                                     )}>
                                         {faq.question}
                                     </span>
@@ -145,7 +145,7 @@ export const FAQSection = () => {
                                         "w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300",
                                         isOpen
                                             ? "bg-brand-yellow border-brand-yellow text-brand-dark rotate-0"
-                                            : "border-white/20 text-white rotate-0"
+                                            : "border-gray-200 text-gray-400 rotate-0"
                                     )}>
                                         {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                                     </div>
@@ -159,7 +159,7 @@ export const FAQSection = () => {
                                             exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.3, ease: "easeInOut" }}
                                         >
-                                            <div className="px-6 pb-6 pt-2 text-gray-400 leading-relaxed text-base md:text-lg">
+                                            <div className="px-6 pb-6 pt-2 text-gray-600 leading-relaxed text-base md:text-lg">
                                                 {faq.answer}
                                             </div>
                                         </motion.div>
