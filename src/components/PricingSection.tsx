@@ -365,7 +365,7 @@ export const PricingSection = () => {
                                 category: "🧠 Inteligência e Estratégia",
                                 features: [
                                     { title: "E-Book de Estratégia Mensal", desc: "Conteúdo exclusivo sobre como escalar e proteger suas operações." },
-                                    { title: "+40 Plataformas de Afiliados Integradas", desc: "Conecte com Hotmart, Kiwify, Braip e dezenas de outras gringas." },
+                                    { title: "+70 Plataformas de Afiliados Integradas", desc: "Conecte com Hotmart, Kiwify, Braip e dezenas de outras gringas." },
                                     { title: "Relatórios Completos de Performance", desc: "Analise lucro real, CPA e ROI em um único dashboard profissional." },
                                     { title: "Histórico Completo de Acessos", desc: "Veja exatamente o caminho que cada cliente fez antes de comprar." }
                                 ]
