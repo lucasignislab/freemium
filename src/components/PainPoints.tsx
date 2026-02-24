@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { AlertTriangle, Ghost, EyeOff, ShieldX } from "lucide-react";
 import { CardSpotlight } from "./ui/card-spotlight";
 
@@ -102,25 +103,27 @@ export const PainPoints = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="mt-32 p-10 md:p-16 bg-brand-dark rounded-modern text-white relative overflow-hidden"
+                    className="mt-32"
                 >
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-yellow/10 blur-[100px] -z-0" />
-                    <div className="relative z-10 max-w-4xl mx-auto">
-                        <h4 className="text-xl md:text-2xl font-black mb-8 text-brand-yellow uppercase tracking-tight">
-                            "EU ACHEI QUE O PROBLEMA ERA O CRIATIVO..."
-                        </h4>
-                        <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed font-medium">
-                            <p>
-                                Um afiliado que rodava R$8.000 por mês no Google Ads veio até nós achando que o problema era criativo. Ele já tinha testado 12 variações de anúncio. Já tinha trocado a oferta. Já tinha pausado e reativado campanhas mais vezes do que conseguia contar.
-                            </p>
-                            <p>
-                                Quando conectou a Ratoeira pela primeira vez, descobriu três coisas em menos de 24 horas: <strong className="text-white">29% das suas conversões nunca tinham sido registradas</strong>. Um concorrente direto estava clicando nos anúncios dele todos os dias. E o criativo que ele tinha pausado "por não performar" era, na verdade, o melhor da conta.
-                            </p>
-                            <p className="text-white font-black italic">
-                                O problema nunca tinha sido o criativo. Era que ele não conseguia ver o que estava acontecendo de verdade.
-                            </p>
+                    <CardSpotlight className="p-10 md:p-16 bg-brand-dark rounded-modern text-white relative overflow-hidden border-none shadow-2xl">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-yellow/10 blur-[100px] z-0" />
+                        <div className="relative z-10 max-w-4xl mx-auto">
+                            <h4 className="text-xl md:text-2xl font-black mb-8 text-brand-yellow uppercase tracking-tight">
+                                "EU ACHEI QUE O PROBLEMA ERA O CRIATIVO..."
+                            </h4>
+                            <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed font-medium">
+                                <p>
+                                    Um afiliado que rodava R$8.000 por mês no Google Ads veio até nós achando que o problema era criativo. Ele já tinha testado 12 variações de anúncio. Já tinha trocado a oferta. Já tinha pausado e reativado campanhas mais vezes do que conseguia contar.
+                                </p>
+                                <p>
+                                    Quando conectou a Ratoeira pela primeira vez, descobriu três coisas em menos de 24 horas: <strong className="text-white">29% das suas conversões nunca tinham sido registradas</strong>. Um concorrente direto estava clicando nos anúncios dele todos os dias. E o criativo que ele tinha pausado "por não performar" era, na verdade, o melhor da conta.
+                                </p>
+                                <p className="text-white font-black italic">
+                                    O problema nunca tinha sido o criativo. Era que ele não conseguia ver o que estava acontecendo de verdade.
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </CardSpotlight>
                 </motion.div>
             </div>
         </section>
