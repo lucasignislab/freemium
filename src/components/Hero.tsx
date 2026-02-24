@@ -108,9 +108,12 @@ export const Hero = () => {
                         <div className="absolute -inset-8 bg-brand-yellow/10 rounded-full blur-3xl -z-10" />
 
                         <div className="relative">
-                            <img
-                                src="https://ratoeiraadsoficial.com.br/wp-content/uploads/2026/01/UM-DASHBOARD-INCRIVEL.webp"
-                                alt="Dashboard Ratoeira Ads - Painel de proteção e rastreamento"
+                            <video
+                                src="/assets/video1.mp4"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
                                 className="w-full h-auto rounded-modern shadow-2xl border-4 border-white"
                             />
                             <div className="absolute -bottom-4 -left-4 bg-brand-dark text-white px-4 py-2 rounded-modern shadow-xl flex items-center gap-2 text-sm font-bold z-10 transition-transform hover:scale-105">
