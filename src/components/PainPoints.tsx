@@ -3,25 +3,25 @@ import { AlertTriangle, Ghost, EyeOff, ShieldX } from "lucide-react";
 
 const pains = [
     {
-        tag: "DESPERDÍCIO OCULTO",
-        title: "Cliques de Bots e Concorrência",
-        description: "Até <span class='text-brand-dark font-black'>40% do seu orçamento</span> pode estar sendo drenado por robôs. Sem um escudo digital, você está <span class='text-brand-dark font-black'>pagando para ser atacado</span>.",
+        tag: "HEMORRAGIA INVISÍVEL",
+        title: "Bots e Concorrentes Consumindo Seu Orçamento",
+        description: "Até <span class='text-brand-dark font-black'>40% do seu tráfego</span> não é humano. Cada bot que clica drena orçamento e ainda ensina o Google a buscar mais gente que <span class='text-brand-dark font-black'>nunca vai comprar</span>.",
         image: "/assets/pains/dashboard_resumo.png",
-        bullets: ["Drenagem silenciosa de saldo", "Inflação artificial de métricas", "Perda de vantagem competitiva"]
+        bullets: ["Saldo desaparece sem conversão real", "Métricas parecem boas, mas o caixa sangra", "Algoritmo otimizando para o perfil errado"]
     },
     {
-        tag: "FALTA DE VISIBILIDADE",
-        title: "Ponto Cego no Rastreamento",
-        description: "O Google Ads não revela a jornada completa. Se você não sabe <span class='text-brand-dark font-black'>EXATAMENTE</span> qual clique gerou o lucro, você não está escalando, está <span class='text-brand-dark font-black'>apostando</span>.",
+        tag: "PONTO CEGO NO DADO",
+        title: "Você Tem Pixel. Mas Não Tem Certeza.",
+        description: "Ter pixel instalado <span class='text-brand-dark font-black'>não é ter rastreamento</span>. Se você está rastreando 60–75% das conversões, está escalando com base em <span class='text-brand-dark font-black'>dados errados</span> — sem perceber.",
         image: "/assets/pains/economizometro.png",
-        bullets: ["Vendas que não marcam no painel", "Dificuldade em identificar o criativo campeão", "CPA irreal mascarando prejuízo"]
+        bullets: ["Vendas reais que somem do painel", "Você não sabe qual criativo é realmente o campeão", "CPA irreal mascarando prejuízo real"]
     },
     {
-        tag: "SEGURANÇA DO ATIVO",
-        title: "IP Bloqueado",
-        description: "Atividades suspeitas e cliques inválidos aumentam as chances de suspensão. Um bloqueio hoje pode significar o <span class='text-brand-dark font-black'>fim da sua operação</span> amanhã.",
+        tag: "RISCO DA OPERAÇÃO",
+        title: "Uma Suspensão Encerra o Que Você Construiu",
+        description: "Cliques inválidos <span class='text-brand-dark font-black'>não passam despercebidos</span> pelo Google. Uma suspensão não apaga só o acesso — leva junto o pixel, o histórico e <span class='text-brand-dark font-black'>meses de aprendizado</span> do algoritmo.",
         image: "/assets/pains/ip_bloqueado.png",
-        bullets: ["Risco constante de suspensão", "Perda de pixel e inteligência", "Interrupção imediata do fluxo de caixa"]
+        bullets: ["Operação pode parar do dia para a noite", "Histórico e inteligência do pixel perdidos", "Sem receita enquanto tenta recuperar o acesso"]
     }
 ];
 
