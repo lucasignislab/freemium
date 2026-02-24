@@ -49,18 +49,17 @@ const MENSAL_PLANS: Plan[] = [
         name: "Rato",
         price: "R$ 167",
         originalPrice: "R$ 187,00",
-        discount: "11% DE DESCONTO",
+        discount: "11% NO MENSAL",
         period: "/mês",
         description: "A escolha favorita dos afiliados.",
         limits: [
-            "E-Book Mensal",
-            "50 Ratoeiras (Produtos Simultâneos)",
-            "5 Ratoeiras com Conversão Automática",
-            "Plataformas Conectadas Ilimitadas",
-            "3 Perfis do Google Conectados",
-            "5 URLs de Produtor com Conversão Automática"
+            "50 Produtos Rastreados Simultaneamente",
+            "5 com Conversão 100% Automática",
+            "Integrações com Plataformas Ilimitadas",
+            "3 Contas Google Ads Conectadas",
+            "5 Links de Produtor com Rastreamento Automático"
         ],
-        buttonText: "GARANTIR MEU ACESSO",
+        buttonText: "GARANTIR MEU ACESSO AGORA",
         highlight: false,
         customTag: "O MAIS ESCOLHIDO",
         icon: <Rocket size={24} className="text-brand-green" />
@@ -69,19 +68,20 @@ const MENSAL_PLANS: Plan[] = [
         name: "Ratazana",
         price: "R$ 247",
         originalPrice: "R$ 297,00",
-        discount: "17% DE DESCONTO",
+        discount: "17% NO MENSAL",
         period: "/mês",
         description: "Para grandes operações e agências.",
         limits: [
-            "E-Book Mensal",
+            "E-Book de Estratégia Mensal",
             "100 Ratoeiras (Produtos Simultâneos)",
             "50 Ratoeiras com Conversão Automática",
             "Plataformas Conectadas Ilimitadas",
             "10 Perfis do Google Conectados",
             "50 URLs de Produtor com Conversão Automática"
         ],
-        buttonText: "GARANTIR MEU ACESSO",
+        buttonText: "GARANTIR MEU ACESSO AGORA",
         highlight: true,
+        customTag: "PARA OPERAÇÕES MAIORES",
         icon: <Shield size={24} className="text-brand-dark" />
     }
 ];
@@ -96,13 +96,13 @@ const pricingData: Record<Period, Plan[]> = {
             cents: ",52",
             originalPrice: "R$897,00",
             cashPrice: "por R$797,00 à vista",
-            discount: "11% DE DESCONTO"
+            discount: "11% NO SEMESTRAL"
         } : p.name === "Rato" ? {
             price: "R$ 205",
             cents: ",80",
             originalPrice: "R$1.397,00",
             cashPrice: "por R$1.097,00 à vista",
-            discount: "21% DE DESCONTO"
+            discount: "21% NO SEMESTRAL"
         } : {})
     })),
     ANUAL: MENSAL_PLANS.filter(p => p.name !== "Camundongo").map(p => ({
@@ -113,13 +113,13 @@ const pricingData: Record<Period, Plan[]> = {
             cents: ",31",
             originalPrice: "R$1.597,00",
             cashPrice: "por R$1.347,00 à vista",
-            discount: "16% DE DESCONTO"
+            discount: "16% NO ANUAL"
         } : p.name === "Rato" ? {
             price: "R$ 185",
             cents: ",85",
             originalPrice: "R$2.597,00",
             cashPrice: "por R$1.797,00 à vista",
-            discount: "31% DE DESCONTO"
+            discount: "31% NO ANUAL"
         } : {})
     }))
 };
@@ -239,7 +239,7 @@ export const PricingSection = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-7xl font-black tracking-tighter uppercase mb-8"
                     >
-                        Conheça nossos <span className="text-brand-yellow italic">Planos</span>
+                        Escolha Seu <span className="text-brand-yellow italic">Nível de Proteção</span>
                     </motion.h2>
 
                     <div className="flex justify-center mb-16">
@@ -277,10 +277,10 @@ export const PricingSection = () => {
                 <div className="mt-24 pt-16 border-t border-white/10 max-w-6xl mx-auto px-4">
                     <div className="text-center mb-12">
                         <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-2">
-                            Funcionalidades <span className="text-brand-yellow italic">Inclusas</span>
+                            O Que Você <span className="text-brand-yellow italic">Recebe</span>
                         </h3>
                         <p className="text-gray-400 text-sm md:text-base">
-                            Recursos poderosos presentes em todos os planos da Ratoeira Ads.
+                            Recursos poderosos presentes em todos os planos da Ratoeira.
                         </p>
                     </div>
 
@@ -290,26 +290,30 @@ export const PricingSection = () => {
                     >
                         {[
                             {
-                                category: "📊 Rastreamento e Conversões",
+                                category: "📊 Rastreamento e Conversão",
                                 features: [
-                                    { title: "Envio automático de checkout e conversão", desc: "Seus eventos chegam no Google Ads sem atraso e sem erro manual" },
-                                    { title: "Maior taxa de traqueamento do mercado", desc: "Nenhum concorrente consegue registrar tantas vendas como nós" },
-                                    { title: "Conversão automática com URL do produtor", desc: "Traqueia e envia vendas automaticamente mesmo quando anunciando direto para URL do produtor" },
-                                    { title: "Construtor de URL completo", desc: "Crie links prontos com UTMs, parâmetros e tracking em segundos." }
+                                    { title: "Conversão 100% Automática", desc: "Seus eventos chegam no Google Ads sem atraso e sem erro manual." },
+                                    { title: "Rastreamento Automático por URL de Produtor", desc: "Monitore vendas mesmo sem ter acesso direto à página de vendas." },
+                                    { title: "Marcação Automática de Checkout", desc: "Identifique quem chegou na beira da compra e otimize seu funil." },
+                                    { title: "Exportação de Dados de Conversão", desc: "Leve seus dados para onde precisar com exportação completa." },
+                                    { title: "Construtor de UTM Avançado", desc: "Crie links profissionais rastreáveis em poucos segundos." }
                                 ]
                             },
                             {
-                                category: "🧠 Inteligência e Controle",
+                                category: "🧠 Inteligência e Estratégia",
                                 features: [
-                                    { title: "Dashboard financeiro completo", desc: "Veja lucro real, ROI e performance por campanha, produto e criativo." },
-                                    { title: "Acesso a todos visitantes das suas páginas", desc: "Saiba exatamente quem clicou, de onde veio e como se comportou." }
+                                    { title: "E-Book de Estratégia Mensal", desc: "Conteúdo exclusivo sobre como escalar e proteger suas operações." },
+                                    { title: "+40 Plataformas de Afiliados Integradas", desc: "Conecte com Hotmart, Kiwify, Braip e dezenas de outras gringas." },
+                                    { title: "Relatórios Completos de Performance", desc: "Analise lucro real, CPA e ROI em um único dashboard profissional." },
+                                    { title: "Histórico Completo de Acessos", desc: "Veja exatamente o caminho que cada cliente fez antes de comprar." }
                                 ]
                             },
                             {
-                                category: "🛡️ Proteção e Performance",
+                                category: "🛡️ Proteção e Segurança",
                                 features: [
-                                    { title: "Bloqueio automático de IP", desc: "Corta tráfego ruim e cliques inválidos antes de queimar seu orçamento." },
-                                    { title: "Economizômetro", desc: "Nosso bloqueio automático de IP economiza centenas de reais do seu bolso" }
+                                    { title: "Bloqueio Automático de IPs Fraudulentos", desc: "Economize seu orçamento bloqueando cliques inválidos em tempo real." },
+                                    { title: "Biblioteca de Bots Identificados", desc: "Nossa base de dados global protege você contra padrões já conhecidos." },
+                                    { title: "Alertas de Atividade Suspeita em Tempo Real", desc: "Seja notificado no momento em que um ataque de fraude for detectado." }
                                 ]
                             }
                         ].map((cat, catIdx) => (
@@ -357,7 +361,7 @@ export const PricingSection = () => {
 
                 <div className="mt-16 text-center">
                     <p className="text-brand-yellow text-sm italic">
-                        * Sujeito a política de uso justo. Cobrança recorrente. Cancele quando quiser.
+                        * Cobrança recorrente. Cancele quando quiser. Sujeito à política de uso justo.
                     </p>
                 </div>
             </div>
