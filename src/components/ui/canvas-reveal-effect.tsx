@@ -1,5 +1,5 @@
 "use client";
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
@@ -38,7 +38,7 @@ export const CanvasRevealEffect = ({
                 />
             </div>
             {showGradient && (
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-950 to-[84%]" />
+                <div className="absolute inset-0 bg-linear-to-t from-gray-950 to-84%" />
             )}
         </div>
     );
@@ -117,27 +117,44 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
     );
 };
 
-const ShaderMaterial = ({ source, uniforms, maxFps = 60 }: { source: string; uniforms: any; maxFps?: number }) => {
+const ShaderMaterial = ({
+    source,
+    uniforms,
+    maxFps = 60,
+}: {
+    source: string;
+    uniforms: Record<string, { value: unknown; type: string }>;
+    maxFps?: number;
+}) => {
     const { size } = useThree();
-    const ref = useRef<THREE.Mesh>();
-    let lastFrameTime = 0;
+    const ref = useRef<THREE.Mesh>(null!);
+    const lastFrameTime = useRef(0);
 
     useFrame(({ clock }) => {
         if (!ref.current) return;
         const timestamp = clock.getElapsedTime();
-        if (timestamp - lastFrameTime < 1 / maxFps) return;
-        lastFrameTime = timestamp;
-        const material: any = ref.current.material;
+        if (timestamp - lastFrameTime.current < 1 / maxFps) return;
+        lastFrameTime.current = timestamp;
+        const material = ref.current.material as THREE.ShaderMaterial;
         material.uniforms.u_time.value = timestamp;
     });
 
     const material = useMemo(() => {
-        const preparedUniforms: any = { u_time: { value: 0 }, u_resolution: { value: new THREE.Vector2(size.width * 2, size.height * 2) } };
+        const preparedUniforms: Record<string, { value: unknown }> = {
+            u_time: { value: 0 },
+            u_resolution: {
+                value: new THREE.Vector2(size.width * 2, size.height * 2),
+            },
+        };
         for (const name in uniforms) {
             const u = uniforms[name];
             if (u.type === "uniform1f") preparedUniforms[name] = { value: u.value };
-            else if (u.type === "uniform3fv") preparedUniforms[name] = { value: u.value.map((v: any) => new THREE.Vector3().fromArray(v)) };
-            else if (u.type === "uniform1fv") preparedUniforms[name] = { value: u.value };
+            else if (u.type === "uniform3fv")
+                preparedUniforms[name] = {
+                    value: (u.value as number[][]).map((v) => new THREE.Vector3().fromArray(v)),
+                };
+            else if (u.type === "uniform1fv")
+                preparedUniforms[name] = { value: u.value };
         }
         return new THREE.ShaderMaterial({
             vertexShader: `precision mediump float; in vec2 coordinates; out vec2 fragCoord; void main(){ gl_Position = vec4(position.xy, 0.0, 1.0); fragCoord = (position.xy + vec2(1.0)) * 0.5 * vec2(${size.width * 2}, ${size.height * 2}); fragCoord.y = ${size.height * 2}.0 - fragCoord.y; }`,
@@ -145,9 +162,24 @@ const ShaderMaterial = ({ source, uniforms, maxFps = 60 }: { source: string; uni
         });
     }, [size, source, uniforms]);
 
-    return <mesh ref={ref as any}><planeGeometry args={[2, 2]} /><primitive object={material} attach="material" /></mesh>;
+    return (
+        <mesh ref={ref}>
+            <planeGeometry args={[2, 2]} />
+            <primitive object={material} attach="material" />
+        </mesh>
+    );
 };
 
-const Shader = ({ source, uniforms, maxFps = 60 }: any) => (
-    <Canvas className="absolute inset-0 h-full w-full"><ShaderMaterial source={source} uniforms={uniforms} maxFps={maxFps} /></Canvas>
+const Shader = ({
+    source,
+    uniforms,
+    maxFps = 60,
+}: {
+    source: string;
+    uniforms: Record<string, { value: unknown; type: string }>;
+    maxFps?: number;
+}) => (
+    <Canvas className="absolute inset-0 h-full w-full">
+        <ShaderMaterial source={source} uniforms={uniforms} maxFps={maxFps} />
+    </Canvas>
 );
