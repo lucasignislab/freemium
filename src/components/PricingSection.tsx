@@ -142,7 +142,7 @@ const PricingCard = ({
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className={`relative flex flex-col h-full shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none rounded-modern overflow-hidden border transition-all duration-300 ${plan.highlight
+            className={`relative flex flex-col shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none rounded-modern overflow-hidden border transition-all duration-300 self-stretch ${plan.highlight
                 ? 'bg-white text-brand-dark border-brand-yellow shadow-[0_20px_50px_rgba(255,184,0,0.15)] z-20 hover:scale-[1.02]'
                 : 'bg-white/5 border-white/10 text-white hover:bg-white/10 hover:scale-[1.01]'
                 }`}
@@ -183,7 +183,7 @@ const PricingCard = ({
             </div>
 
             <div className="p-8 pt-6 flex-1 flex flex-col text-left">
-                <div className="mb-6 min-h-[140px]">
+                <div className="mb-6 flex-1">
                     <h4 className={`text-2xl font-black mb-4 ${plan.highlight ? 'text-brand-dark' : 'text-white'}`}>
                         Limites do Plano
                     </h4>
@@ -197,7 +197,7 @@ const PricingCard = ({
                     </div>
                 </div>
 
-                <div className="mt-auto pt-8">
+                <div className="mt-8">
                     <a href={plan.link || "#pricing"} target={plan.link ? "_blank" : undefined} rel={plan.link ? "noopener noreferrer" : undefined}>
                         <button
                             className={`w-full py-4 font-black text-xs rounded-modern uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl ${plan.highlight
