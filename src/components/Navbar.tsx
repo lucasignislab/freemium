@@ -13,7 +13,6 @@ export const Navbar = () => {
         { name: "Como Funciona", href: "/#how-it-works-video" },
         { name: "Resultados", href: "/#testimonials" },
         { name: "Planos", href: "/#pricing" },
-        { name: "Design System", href: "/design-system", isSpecial: true },
     ];
 
     return (
@@ -36,7 +35,7 @@ export const Navbar = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className={`hover:text-brand-green transition-colors ${link.isSpecial ? 'font-bold text-brand-green' : ''}`}
+                            className="hover:text-brand-green transition-colors"
                         >
                             {link.name}
                         </a>
@@ -75,8 +74,7 @@ export const Navbar = () => {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className={`py-3 w-full text-lg font-black tracking-tight border-b border-gray-50 last:border-0 hover:text-brand-green transition-colors ${link.isSpecial ? 'text-brand-green' : 'text-brand-dark'
-                                        }`}
+                                    className="py-3 w-full text-lg font-black tracking-tight border-b border-gray-50 last:border-0 hover:text-brand-green transition-colors text-brand-dark"
                                 >
                                     {link.name}
                                 </a>
