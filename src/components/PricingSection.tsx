@@ -328,6 +328,13 @@ export const PricingSection = () => {
                             </div>
                         ))}
                     </div>
+
+                    {/* Mobile Scroll Indicator Dots */}
+                    <div className="flex justify-center gap-2 mt-8 md:hidden">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green/40"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green/20"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green/20"></div>
+                    </div>
                 </div>
 
                 <div className="mt-16 text-center">
