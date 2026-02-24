@@ -7,7 +7,7 @@ const platformLogos = [
             <img
                 src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg"
                 alt="Google Ads"
-                className="h-14 md:h-24 w-auto object-contain"
+                className="h-20 md:h-24 w-auto object-contain"
             />
         )
     },
@@ -18,7 +18,7 @@ const platformLogos = [
             <img
                 src="/assets/logometa.png"
                 alt="Meta Ads"
-                className="h-22 md:h-36 w-auto object-contain"
+                className="h-28 md:h-36 w-auto object-contain"
             />
         )
     },
@@ -29,7 +29,7 @@ const platformLogos = [
             <img
                 src="/assets/tiktoklogo - Editado.png"
                 alt="TikTok Ads"
-                className="h-14 md:h-24 w-auto object-contain"
+                className="h-20 md:h-24 w-auto object-contain"
             />
         )
     },
@@ -40,7 +40,7 @@ const platformLogos = [
             <img
                 src="/assets/kwai-new.png"
                 alt="Kwai"
-                className="h-14 md:h-24 w-auto object-contain"
+                className="h-20 md:h-24 w-auto object-contain"
             />
         )
     },
@@ -51,7 +51,7 @@ const platformLogos = [
             <img
                 src="/assets/whatsapp-v2.png"
                 alt="WhatsApp"
-                className="h-14 md:h-24 w-auto object-contain"
+                className="h-20 md:h-24 w-auto object-contain"
             />
         )
     }
@@ -66,7 +66,7 @@ export const TrustLayer = () => {
                 </p>
 
                 {/* P0-3: Real platform logos with icons */}
-                <div className="flex justify-center items-center gap-[48px] mb-12">
+                <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-6 md:gap-[48px] mb-12">
                     {platformLogos.map((platform, i) => (
                         <motion.div
                             key={platform.name}
