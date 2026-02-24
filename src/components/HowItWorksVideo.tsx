@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
 
 export const HowItWorksVideo = () => {
     return (
@@ -31,19 +30,15 @@ export const HowItWorksVideo = () => {
                     <div className="absolute -inset-4 bg-brand-yellow/20 rounded-4xl blur-3xl -z-10 group-hover:bg-brand-yellow/30 transition-colors duration-500" />
 
                     {/* Video Container */}
-                    <div className="relative aspect-video bg-brand-dark rounded-2xl md:rounded-4xl border-4 md:border-8 border-white/5 shadow-2xl overflow-hidden flex items-center justify-center">
-
-                        {/* Placeholder Content - Replace with actual <video> or <iframe> later */}
-                        <div className="absolute inset-0 bg-linear-to-br from-brand-dark to-brand-green/20" />
-
-                        {/* Fake Play Button Overlay */}
-                        <div className="relative z-10 w-20 h-20 md:w-28 md:h-28 bg-brand-yellow text-brand-dark rounded-full flex items-center justify-center shadow-xl cursor-pointer hover:scale-110 transition-transform duration-300">
-                            <Play size={40} className="ml-2" fill="currentColor" />
-                        </div>
-
-                        <div className="absolute bottom-6 left-0 right-0 text-center text-white/50 text-sm font-medium z-10">
-                            O vídeo será inserido aqui
-                        </div>
+                    <div className="relative aspect-video bg-brand-dark rounded-2xl md:rounded-4xl border-4 md:border-8 border-white/5 shadow-2xl overflow-hidden">
+                        <iframe
+                            className="absolute top-0 left-0 w-full h-full"
+                            src="https://www.youtube.com/embed/iG3RtYyQ8qI"
+                            title="Como funciona a Ratoeira Ads"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        ></iframe>
                     </div>
                 </motion.div>
             </div>
