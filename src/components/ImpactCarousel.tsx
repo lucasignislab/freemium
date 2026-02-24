@@ -13,33 +13,33 @@ interface ImpactSlide {
 const IMPACT_SLIDES: ImpactSlide[] = [
     {
         id: 1,
-        title: "Você descobre o que realmente dá lucro",
-        description: "Identifique as campanhas que enchem o caixa, não apenas as que geram cliques irrelevantes.",
+        title: "Você sabe, pela primeira vez, de onde vem cada venda",
+        description: "Sem estimativa. O dado real, do clique certo, na campanha certa. Para escalar o que funciona e cortar o que não funciona.",
         bgImage: "/assets/impact_card_bg_profit_1770916691471.png"
     },
     {
         id: 2,
-        title: "Para de escalar campanhas erradas",
-        description: "Corte o desperdício imediatamente e foque o orçamento onde o retorno é 100% real.",
+        title: "Você para de investir em campanha que drena sem converter",
+        description: "Corte o desperdício imediatamente. Identifique onde seu dinheiro está sendo jogado fora e proteja sua margem de lucro.",
         bgImage: "/assets/impact_card_bg_data_sec_1770916727213.png"
     },
     {
         id: 3,
-        title: "Economiza orçamento com fraude bloqueada",
-        description: "Proteção automática contra bots e cliques repetidos desde o primeiro segundo de ativação.",
+        title: "Seus concorrentes param de clicar no seu anúncio de graça",
+        description: "Acabe com a festa de quem quer derrubar seu saldo. Bloqueio automático de IPs maliciosos para que seu anúncio só apareça para clientes reais.",
         bgImage: "/assets/impact_card_bg_economy_1770916787535.png"
     },
     {
         id: 4,
-        title: "Consegue otimizar com confiança",
-        description: "Use dados precisos para ajustar lances e públicos sem medo de errar ou queimar verba.",
+        title: "Você enxerga lucro, margem e ROI sem abrir 4 plataformas",
+        description: "A clareza que você sempre quis. Todos os dados vitais da sua operação financeira centralizados em um único painel profissional.",
         bgImage: "/assets/impact_card_bg_optimization_1770916802323.png"
     },
     {
         id: 5,
-        title: "Sai do achismo",
-        description: "Decisões baseadas em lucro, ROI e margem real. Troque suposições por resultados no caixa.",
-        bgImage: "/assets/impact_card_bg_profit_1770916691471.png" // Fallback using the first one
+        title: "Você otimiza com certeza — não com esperança",
+        description: "Escala segura baseada em dados, não em palpites. Tome decisões lucrativas com a confiança de quem enxerga o jogo completo.",
+        bgImage: "/assets/impact_card_bg_profit_1770916691471.png"
     }
 ];
 
@@ -148,11 +148,11 @@ export const ImpactCarousel = () => {
                         className="inline-flex items-center gap-2 px-3 py-1 bg-brand-yellow/10 text-brand-yellow font-black text-[10px] tracking-[0.2em] rounded-full mb-6 border border-brand-yellow/20"
                     >
                         <ShieldCheck size={12} />
-                        IMPACTO REAL
+                        NA PRÁTICA, DIA A DIA
                     </motion.div>
                     <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-tight mb-4">
-                        O que muda de verdade <br />
-                        <span className="text-brand-yellow italic">na sua prática:</span>
+                        O que muda quando a <br />
+                        <span className="text-brand-yellow italic">Ratoeira entra em campo:</span>
                     </h2>
                 </div>
             </div>
@@ -243,7 +243,7 @@ export const ImpactCarousel = () => {
                         whileTap={{ scale: 0.95 }}
                         className="btn btn-accent uppercase text-lg tracking-tight"
                     >
-                        <span>Teste Já - 7 dias grátis</span>
+                        <span>Testar Grátis — 7 Dias</span>
                     </motion.button>
                 </a>
             </div>
