@@ -347,13 +347,13 @@ export const ConversionForm = () => {
             <div className="container-wide flex flex-col md:flex-row gap-20 items-center text-center md:text-left">
                 <div className="flex-1 flex flex-col items-center md:items-start">
                     <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-8">
-                        REASSUMA O <span className="text-brand-yellow">CONTROLE</span> HOJE.
+                        PARE DE <span className="text-brand-yellow">ADIVINHAR</span>. <br /> COMECE A SABER.
                     </h2>
                     <p className="text-xl text-gray-400 mb-8 max-w-xl">
-                        Em menos de 5 minutos você blinda sua conta do Google Ads e começa a rastrear o que realmente importa: seu lucro.
+                        Em 5 minutos você ativa o rastreamento real, a proteção anti-fraude e o dashboard completo. E começa a saber exatamente o que está acontecendo na sua operação.
                     </p>
                     <ul className="space-y-4 w-full flex flex-col items-center md:items-start">
-                        {["Rastreamento 100% Precision", "Bloqueio Automático de Bots", "Relatórios de Lucro Real"].map((item) => (
+                        {["Rastreamento de Quase 100%", "Bloqueio de Fraudes 24/7", "Dashboard Completo"].map((item) => (
                             <li key={item} className="flex items-center gap-3 font-bold justify-center md:justify-start">
                                 <div className="w-6 h-6 bg-brand-green rounded-full flex items-center justify-center shrink-0">
                                     <Check size={14} className="text-white" />
@@ -376,7 +376,7 @@ export const ConversionForm = () => {
                             >
                                 <div className="space-y-2">
                                     <p className="text-xs font-black uppercase text-brand-yellow tracking-widest">Passo 01/02</p>
-                                    <h3 className="text-2xl font-black">Comece seu teste grátis</h3>
+                                    <h3 className="text-2xl font-black">Ative seu teste de 7 dias</h3>
                                 </div>
 
                                 <input
