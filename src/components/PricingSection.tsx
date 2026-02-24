@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Zap, Shield, Rocket, ChevronDown, ChevronUp, X } from "lucide-react";
+import { Check, Zap, Shield, Rocket } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 
 type Period = "ANUAL" | "SEMESTRAL" | "MENSAL";
@@ -11,7 +11,6 @@ interface Plan {
     discount: string;
     period: string;
     description: string;
-    features: string[];
     limits: string[];
     unavailable?: string[];
     buttonText: string;
@@ -33,16 +32,6 @@ const MENSAL_PLANS: Plan[] = [
         discount: "21% DE DESCONTO",
         period: "/mês",
         description: "Para quem está começando a escalar.",
-        features: [
-            "+40 Plataformas conectadas",
-            "Relatórios Diversos",
-            "Marcação de Checkout",
-            "Exportação de Conversão e Checkout",
-            "Biblioteca de Ratos",
-            "Notificação de Ratos",
-            "Dados completos dos acessos à suas páginas",
-            "Construtor de URL completo"
-        ],
         limits: [
             "E-Book Mensal",
             "3 Ratoeiras (Produtos Simultâneos)",
@@ -63,19 +52,6 @@ const MENSAL_PLANS: Plan[] = [
         discount: "11% DE DESCONTO",
         period: "/mês",
         description: "A escolha favorita dos afiliados.",
-        features: [
-            "+40 Plataformas conectadas",
-            "Relatórios Diversos",
-            "Marcação de Checkout",
-            "Exportação de Conversão e Checkout",
-            "Biblioteca de Ratos",
-            "Notificação de Ratos",
-            "Dados completos dos acessos à suas páginas",
-            "Construtor de URL completo",
-            "Conversão Automática",
-            "Conversão Automática com URL de Produtor",
-            "Bloqueio Automático de IP"
-        ],
         limits: [
             "E-Book Mensal",
             "50 Ratoeiras (Produtos Simultâneos)",
@@ -96,19 +72,6 @@ const MENSAL_PLANS: Plan[] = [
         discount: "17% DE DESCONTO",
         period: "/mês",
         description: "Para grandes operações e agências.",
-        features: [
-            "+40 Plataformas conectadas",
-            "Relatórios Diversos",
-            "Marcação de Checkout",
-            "Exportação de Conversão e Checkout",
-            "Biblioteca de Ratos",
-            "Notificação de Ratos",
-            "Dados completos dos acessos à suas páginas",
-            "Construtor de URL completo",
-            "Conversão Automática",
-            "Conversão Automática com URL de Produtor",
-            "Bloqueio Automático de IP"
-        ],
         limits: [
             "E-Book Mensal",
             "100 Ratoeiras (Produtos Simultâneos)",
@@ -166,8 +129,6 @@ const PricingCard = ({
 }: {
     plan: Plan;
 }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-
     return (
         <motion.div
             initial={{ opacity: 1, y: 0 }}
@@ -213,8 +174,8 @@ const PricingCard = ({
                 </div>
             </div>
 
-            <div className="p-8 pt-6 flex-1 flex-col flex">
-                <div className="mb-6 min-h-[180px]">
+            <div className="p-8 pt-6 flex-1 flex-col flex text-left">
+                <div className="mb-6 min-h-[140px]">
                     <h4 className={`text-2xl font-black mb-4 ${plan.highlight ? 'text-brand-dark' : 'text-white'}`}>
                         Limites do Plano
                     </h4>
@@ -227,48 +188,6 @@ const PricingCard = ({
                         ))}
                     </div>
                 </div>
-
-                <div className="pt-6 border-t border-gray-100/10">
-                    <h4 className={`text-2xl font-black mb-6 ${plan.highlight ? 'text-brand-dark' : 'text-white'}`}>
-                        Funcionalidades
-                    </h4>
-
-                    <motion.div
-                        animate={{ height: isExpanded ? 'auto' : '240px' }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
-                        className="overflow-hidden relative"
-                    >
-                        <div className="space-y-3 mb-6">
-                            {plan.features?.map((feature: string, fIdx: number) => (
-                                <div key={fIdx} className="flex items-start gap-3">
-                                    <Check size={16} className={`mt-0.5 shrink-0 ${plan.highlight ? 'text-brand-dark' : 'text-brand-green'}`} />
-                                    <span className="text-sm font-medium leading-tight">{feature}</span>
-                                </div>
-                            ))}
-                            {plan.unavailable?.map((feature: string, fIdx: number) => (
-                                <div key={fIdx} className="flex items-start gap-3 opacity-40">
-                                    <X size={16} className="mt-0.5 shrink-0 text-red-600" />
-                                    <span className="text-sm font-medium leading-tight line-through text-red-600">{feature}</span>
-                                </div>
-                            ))}
-                        </div>
-
-                        {!isExpanded && (
-                            <div className={`absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t ${plan.highlight ? 'from-white' : 'from-[#1a1a1a]'} to-transparent pointer-events-none`} />
-                        )}
-                    </motion.div>
-                </div>
-
-                <button
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    className="flex items-center justify-center gap-2 mt-4 py-2 text-xs font-black uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity"
-                >
-                    {isExpanded ? (
-                        <>Fechar <ChevronUp size={16} /></>
-                    ) : (
-                        <>Leia mais <ChevronDown size={16} /></>
-                    )}
-                </button>
 
                 <div className="mt-auto pt-8">
                     <a href="#solution">
