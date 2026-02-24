@@ -38,7 +38,7 @@ const platformLogos = [
         isComingSoon: true,
         icon: (
             <img
-                src="/assets/kwai.svg"
+                src="/assets/kwai-new.png"
                 alt="Kwai"
                 className="h-14 md:h-24 w-auto object-contain"
             />
@@ -49,7 +49,7 @@ const platformLogos = [
         isComingSoon: true,
         icon: (
             <img
-                src="/assets/logowhatsapp.png"
+                src="/assets/whatsapp-v2.png"
                 alt="WhatsApp"
                 className="h-14 md:h-24 w-auto object-contain"
             />
@@ -66,7 +66,7 @@ export const TrustLayer = () => {
                 </p>
 
                 {/* P0-3: Real platform logos with icons */}
-                <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14 mb-12">
+                <div className="flex justify-center items-center gap-[48px] mb-12">
                     {platformLogos.map((platform, i) => (
                         <motion.div
                             key={platform.name}
@@ -78,11 +78,9 @@ export const TrustLayer = () => {
                         >
                             <div className="flex flex-col items-center">
                                 <div className="h-24 md:h-40 flex items-center justify-center">
-                                    <div className="flex items-center gap-2">
-                                        {platform.icon}
-                                    </div>
+                                    {platform.icon}
                                 </div>
-                                <div className="h-4 flex items-center justify-center mt-[-8px] md:mt-1">
+                                <div className="h-4 flex items-center justify-center mt-1">
                                     {platform.isComingSoon && (
                                         <span className="text-[10px] font-black text-gray-500 uppercase tracking-tighter">
                                             Em breve
