@@ -208,7 +208,18 @@ const PricingCard = ({
 
 export const PricingSection = () => {
     const [activePeriod, setActivePeriod] = useState<Period>("ANUAL");
+    const [activeFeatureIdx, setActiveFeatureIdx] = useState(0);
     const sliderRef = useRef<HTMLDivElement>(null);
+
+    const handleFeatureScroll = (e: React.UIEvent<HTMLDivElement>) => {
+        const container = e.currentTarget;
+        const scrollLeft = container.scrollLeft;
+        const width = container.offsetWidth;
+        const index = Math.round(scrollLeft / width);
+        if (index !== activeFeatureIdx) {
+            setActiveFeatureIdx(index);
+        }
+    };
 
     useEffect(() => {
         if (sliderRef.current) {
@@ -273,7 +284,10 @@ export const PricingSection = () => {
                         </p>
                     </div>
 
-                    <div className="flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 -mx-4 px-4 pb-8 md:pb-0 md:mx-0 md:px-0 md:grid-cols-3">
+                    <div
+                        onScroll={handleFeatureScroll}
+                        className="flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 -mx-4 px-4 pb-8 md:pb-0 md:mx-0 md:px-0 md:grid-cols-3"
+                    >
                         {[
                             {
                                 category: "📊 Rastreamento e Conversões",
@@ -331,9 +345,13 @@ export const PricingSection = () => {
 
                     {/* Mobile Scroll Indicator Dots */}
                     <div className="flex justify-center gap-2 mt-8 md:hidden">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green/40"></div>
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green/20"></div>
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-green/20"></div>
+                        {[0, 1, 2].map((idx) => (
+                            <div
+                                key={idx}
+                                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${activeFeatureIdx === idx ? 'bg-brand-green w-4' : 'bg-brand-green/20'
+                                    }`}
+                            />
+                        ))}
                     </div>
                 </div>
 
