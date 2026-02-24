@@ -362,6 +362,9 @@ export const ConversionForm = () => {
                             </li>
                         ))}
                     </ul>
+                    <div className="mt-8 text-brand-yellow font-bold text-sm max-w-sm md:max-w-xs leading-relaxed">
+                        "Cada dia sem rastreamento real é uma venda que foi — e que você nunca vai saber qual campanha gerou."
+                    </div>
                 </div>
 
                 <div className="w-full md:w-[480px] bg-white rounded-modern p-10 text-brand-dark border-8 border-brand-yellow shadow-2xl relative">
