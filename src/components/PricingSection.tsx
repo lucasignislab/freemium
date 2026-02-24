@@ -34,7 +34,6 @@ const MENSAL_PLANS: Plan[] = [
         period: "/mês",
         description: "Para quem está começando a escalar.",
         features: [
-            "E-Book Mensal",
             "+40 Plataformas conectadas",
             "Relatórios Diversos",
             "Marcação de Checkout",
@@ -45,6 +44,7 @@ const MENSAL_PLANS: Plan[] = [
             "Construtor de URL completo"
         ],
         limits: [
+            "E-Book Mensal",
             "3 Ratoeiras (Produtos Simultâneos)",
             "2 Plataformas Conectadas (receber notificação)"
         ],
@@ -65,7 +65,6 @@ const MENSAL_PLANS: Plan[] = [
         period: "/mês",
         description: "A escolha favorita dos afiliados.",
         features: [
-            "E-Book Mensal",
             "+40 Plataformas conectadas",
             "Relatórios Diversos",
             "Marcação de Checkout",
@@ -79,6 +78,7 @@ const MENSAL_PLANS: Plan[] = [
             "Bloqueio Automático de IP"
         ],
         limits: [
+            "E-Book Mensal",
             "50 Ratoeiras (Produtos Simultâneos)",
             "5 Ratoeiras com Conversão Automática",
             "Plataformas Conectadas Ilimitadas",
@@ -98,7 +98,6 @@ const MENSAL_PLANS: Plan[] = [
         period: "/mês",
         description: "Para grandes operações e agências.",
         features: [
-            "E-Book Mensal",
             "+40 Plataformas conectadas",
             "Relatórios Diversos",
             "Marcação de Checkout",
@@ -112,6 +111,7 @@ const MENSAL_PLANS: Plan[] = [
             "Bloqueio Automático de IP"
         ],
         limits: [
+            "E-Book Mensal",
             "100 Ratoeiras (Produtos Simultâneos)",
             "50 Ratoeiras com Conversão Automática",
             "Plataformas Conectadas Ilimitadas",
