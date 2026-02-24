@@ -4,26 +4,26 @@ import { Search, Filter, Rocket, ChevronRight, Activity } from "lucide-react";
 const steps = [
     {
         number: "01",
-        title: "Escaneamento de Elite",
-        description: "Nossa IA analisa cada clique em tempo real, cruzando padrões de comportamento, IP e hardware para identificar bots e cliques maliciosos.",
+        title: "Rastreamento Real de Cada Venda",
+        description: "Cada conversão capturada, identificada e atribuída ao clique correto — inclusive as que o pixel básico perde.",
         icon: <Search className="text-brand-green" size={32} />,
-        detail: "99.8% de Precisão",
+        detail: "Quase 100% de Precisão",
         color: "brand-green"
     },
     {
         number: "02",
-        title: "Filtragem Inteligente",
-        description: "O tráfego 'sujo' é isolado instantaneamente. Apenas usuários reais e com intenção de compra passam pelo nosso filtro de segurança.",
+        title: "Proteção Automática 24/7",
+        description: "Bots e cliques de concorrentes são bloqueados antes de atingirem seu orçamento. Apenas tráfego humano real chega aos seus anúncios.",
         icon: <Filter className="text-brand-yellow" size={32} />,
         detail: "Bloqueio em < 10ms",
         color: "brand-yellow"
     },
     {
         number: "03",
-        title: "Escala Blindada",
-        description: "Seu pixel recebe apenas dados limpos, otimizando a inteligência do Google Ads e reduzindo seu CPA drasticamente.",
+        title: "Visão Total da Operação",
+        description: "Dados limpos chegam ao seu dashboard. Margem, ROI, CPA e performance de cada campanha em uma tela — para otimizar e escalar com certeza.",
         icon: <Rocket className="text-brand-green" size={32} />,
-        detail: "ROI Maximizado",
+        detail: "Decisões com Dados Reais",
         color: "brand-green"
     }
 ];
@@ -40,15 +40,15 @@ export const HowItWorks = () => {
                             className="inline-flex items-center gap-2 px-3 py-1 bg-brand-green/10 text-brand-green font-black text-[10px] tracking-[0.2em] rounded-full mb-6 border border-brand-green/20"
                         >
                             <Activity size={12} />
-                            FLUXO DE PROTEÇÃO
+                            TRÊS MÓDULOS. UM SISTEMA.
                         </motion.div>
                         <h2 className="text-4xl md:text-7xl font-black leading-tight tracking-tighter uppercase">
                             Como a <span className="text-brand-yellow italic">Ratoeira</span> <br />
-                            Constrói seu Lucro
+                            Trabalha por Você
                         </h2>
                     </div>
                     <p className="text-gray-500 font-medium text-lg max-w-sm border-l-0 md:border-l-2 border-brand-green pl-0 md:pl-6 md:mb-2 text-center md:text-left">
-                        Um processo invisível que blinda sua conta enquanto você foca na escala.
+                        Rastreamento, proteção e visão funcionando juntos, em segundo plano.
                     </p>
                 </div>
 
