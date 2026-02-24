@@ -32,23 +32,23 @@ const stats = [
         value: 42,
         suffix: "%",
         prefix: "-",
-        label: "Redução média no CPA",
-        description: "Anunciantes param de pagar por cliques de bots e focam em humanos."
+        label: "No CPA médio dos usuários",
+        description: "Sem pagar por bots, cada real vai para cliques que realmente convertem."
     },
     {
         icon: <ShieldCheck className="text-brand-yellow" />,
         value: 100,
         suffix: "%",
-        label: "Proteção contra bots",
-        description: "Nossa IA identifica e bloqueia fraudes em tempo real."
+        label: "Das fraudes bloqueadas automaticamente",
+        description: "Bloqueio 24h — enquanto você dorme, a Ratoeira protege."
     },
     {
         icon: <Zap className="text-brand-green" />,
         value: 3.5,
         suffix: "x",
         decimals: 1,
-        label: "Aumento no ROAS",
-        description: "Budget liberado para escalar o que realmente converte."
+        label: "No ROAS médio em 30 dias",
+        description: "Dados limpos ensinam o Google a buscar compradores. ROAS sobe naturalmente."
     }
 ];
 
@@ -83,10 +83,10 @@ export const Results = () => {
                             className="text-[28px] xs:text-4xl md:text-6xl font-black leading-tight mb-6"
                         >
                             RESULTADOS QUE <br />
-                            <span className="text-brand-green">PAGAM</span> <br className="sm:hidden" /> A FERRAMENTA.
+                            <span className="text-brand-green">APARECEM</span> <br className="sm:hidden" /> NO EXTRATO.
                         </motion.h2>
                         <p className="text-xl text-gray-500 max-w-xl">
-                            Não é sobre software, é sobre lucro líquido. Veja como as maiores operações do Brasil estão blindando seu caixa.
+                            Não é sobre software. É sobre o dinheiro que sobra no caixa quando você para de perder para fraude e rastreamento incompleto.
                         </p>
                     </div>
 
@@ -95,13 +95,13 @@ export const Results = () => {
                             <p className="font-bold text-3xl mb-1">
                                 <Counter value={1.2} suffix="M" prefix="R$ " decimals={1} />
                             </p>
-                            <p className="text-sm text-gray-400 uppercase tracking-widest font-black">Investimento Protegido</p>
+                            <p className="text-sm text-gray-400 uppercase tracking-widest font-black">Investimento Recuperado da Fraude</p>
                         </div>
                         <div className="bg-brand-dark p-8 rounded-modern shadow-2xl text-white mt-4 md:mt-10 flex flex-col items-center md:items-start text-center md:text-left">
                             <p className="font-bold text-3xl mb-1 text-brand-green">
                                 <Counter value={240} suffix="%" prefix="+" />
                             </p>
-                            <p className="text-sm text-gray-400 uppercase tracking-widest font-black">Em Conversões Reais</p>
+                            <p className="text-sm text-gray-400 uppercase tracking-widest font-black">A Mais em Conversões Rastreadas</p>
                         </div>
                     </div>
                 </div>
