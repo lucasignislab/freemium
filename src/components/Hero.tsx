@@ -87,6 +87,14 @@ export const Hero = () => {
                                 <Zap size={16} className="text-brand-green" /> Dashboard Completo
                             </span>
                         </motion.div>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.6, delay: 0.9 }}
+                            className="text-xs text-gray-400 mt-6 italic opacity-80"
+                        >
+                            * Cada clique de bot que passa hoje ensina o algoritmo a trazer mais. Amanhã custa mais caro.
+                        </motion.p>
                     </div>
 
                     {/* Right side — Product Mockup (45%) */}
