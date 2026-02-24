@@ -36,7 +36,7 @@ export const ExclusiveTool = () => {
                     </motion.div>
                     <h2 className="text-[26px] xs:text-3xl sm:text-4xl md:text-6xl font-black tracking-tighter leading-[1.2] md:leading-[1.15]">
                         A única ferramenta brasileira <br className="sm:hidden" />
-                        que rastreia, protege e dá <br className="sm:hidden" />
+                        que rastreia, <span className="text-brand-yellow">protege</span> e dá <br className="sm:hidden" />
                         <span className="text-brand-green">visão total</span> da sua <br className="sm:hidden" />
                         operação no Google Ads.
                     </h2>
