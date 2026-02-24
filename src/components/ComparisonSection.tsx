@@ -52,8 +52,7 @@ const competitors = [
         values: [false, true, false, false, true, false, false],
         theme: "dark",
         icon: filtrifyLogo,
-        blur: true,
-        needsDarkBg: true
+        blur: true
     },
     {
         name: "",
@@ -85,7 +84,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
         transition={{ delay: idx * 0.1 }}
         className={`relative rounded-modern overflow-hidden border shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none transition-all duration-300 ${comp.highlight
             ? 'border-brand-yellow bg-brand-dark z-20 shadow-[0_0_40px_rgba(255,184,0,0.15)]'
-            : comp.icon ? 'border-gray-200 bg-gray-50/50' : 'border-gray-100 bg-gray-50/30'
+            : comp.icon ? 'border-gray-600 bg-gray-800' : 'border-gray-600 bg-gray-800'
             }`}
     >
         <div className="h-[220px] p-8 pb-4 flex flex-col items-center justify-center text-center relative">
@@ -95,7 +94,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
                 </div>
             )}
 
-            <div className={`flex items-center justify-center mx-auto mb-4 h-24 mt-4 ${comp.highlight ? 'text-brand-yellow' : (comp as any).needsDarkBg ? 'bg-brand-dark rounded-modern px-6 py-2' : ''}`}>
+            <div className={`flex items-center justify-center mx-auto mb-4 h-24 mt-4 text-brand-yellow`}>
                 {comp.highlight ? (
                     <img
                         src={raadsLogo}
@@ -113,7 +112,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
                 )}
             </div>
             <div className="h-8 flex items-center justify-center">
-                <h3 className={`text-lg font-black uppercase tracking-tighter ${comp.highlight ? 'text-white' : 'text-gray-400'}`}>
+                <h3 className={`text-lg font-black uppercase tracking-tighter ${comp.highlight ? 'text-white' : 'text-gray-300'}`}>
                     {comp.name || (comp.icon ? "" : "Gringas")}
                 </h3>
             </div>
@@ -121,8 +120,8 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
 
         <div className="">
             {features.map((_feat, fIdx) => (
-                <div key={fIdx} className={`h-24 flex flex-col items-center justify-center border-t gap-2 ${comp.highlight ? 'border-white/10' : 'border-gray-200/50'}`}>
-                    <span className={`md:hidden text-[10px] font-black uppercase tracking-widest text-center leading-tight max-w-[80%] ${comp.highlight ? 'text-brand-yellow' : 'text-gray-400'}`}>
+                <div key={fIdx} className={`h-24 flex flex-col items-center justify-center border-t gap-2 ${comp.highlight ? 'border-white/10' : 'border-gray-700'}`}>
+                    <span className={`md:hidden text-[10px] font-black uppercase tracking-widest text-center leading-tight max-w-[80%] ${comp.highlight ? 'text-brand-yellow' : 'text-gray-300'}`}>
                         {_feat.name}
                     </span>
                     {comp.values[fIdx] ? (
