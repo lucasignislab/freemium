@@ -27,9 +27,9 @@ export const Hero = () => {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-[28px] xs:text-4xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6 uppercase"
                         >
-                            VOCÊ ESTÁ <span className="text-brand-yellow">PAGANDO</span> <br className="sm:hidden" />
-                            PARA OS BOTS <span className="underline decoration-brand-green underline-offset-8">ROUBAREM</span> <br className="sm:hidden" />
-                            SEU DINHEIRO?
+                            VOCÊ SABE <span className="text-brand-yellow">DE QUAL CAMPANHA</span> <br className="sm:hidden" />
+                            VEIO <span className="underline decoration-brand-green underline-offset-8">CADA VENDA</span> <br className="sm:hidden" />
+                            QUE FEZ ESSE MÊS?
                         </motion.h1>
 
                         {/* P0-2: Micro-copy explicativo */}
@@ -39,7 +39,7 @@ export const Hero = () => {
                             transition={{ duration: 0.6, delay: 0.3 }}
                             className="text-sm font-bold text-brand-green uppercase tracking-widest mb-4"
                         >
-                            Ferramenta brasileira de proteção e rastreamento para Google Ads
+                            Sistema brasileiro de rastreamento real, bloqueio de fraudes e dashboard completo para quem anuncia no Google Ads.
                         </motion.p>
 
                         <motion.p
@@ -48,7 +48,7 @@ export const Hero = () => {
                             transition={{ duration: 0.8, delay: 0.4 }}
                             className="text-base sm:text-lg md:text-xl text-gray-500 mb-8 leading-relaxed max-w-[320px] xs:max-w-xl md:max-w-2xl mx-auto md:mx-0"
                         >
-                            Milhões de reais são perdidos todos os dias por anunciantes que não rastreiam 100% das vendas e permitem que cliques fraudulentos esgotem seu orçamento.
+                            Rastreamento incompleto, bots drenando budget e métricas espalhadas em 4 plataformas — três problemas que custam dinheiro todo dia enquanto você não percebe.
                         </motion.p>
 
                         <motion.div
