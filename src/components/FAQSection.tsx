@@ -95,7 +95,7 @@ export const FAQSection = () => {
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-green/5 blur-[120px] rounded-full -z-10" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-yellow/5 blur-[120px] rounded-full -z-10" />
 
-            <div className="container-wide max-w-4xl">
+            <div className="container-wide max-w-6xl">
                 <div className="text-center mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -114,60 +114,121 @@ export const FAQSection = () => {
                     </p>
                 </div>
 
-                <div className="space-y-4">
-                    {faqs.map((faq, index) => {
-                        const isOpen = openIndex === index;
-                        return (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.05 }}
-                                className={cn(
-                                    "rounded-modern border transition-all duration-300 overflow-hidden",
-                                    isOpen
-                                        ? "bg-brand-dark border-brand-yellow/30 shadow-2xl"
-                                        : "bg-brand-dark border-brand-dark/5 shadow-sm hover:border-brand-dark/20 hover:shadow-md"
-                                )}
-                            >
-                                <button
-                                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                                    className="w-full p-6 text-left flex items-center justify-between gap-4"
-                                >
-                                    <span className={cn(
-                                        "text-lg md:text-xl font-bold transition-colors duration-300",
-                                        isOpen ? "text-brand-yellow" : "text-white"
-                                    )}>
-                                        {faq.question}
-                                    </span>
-                                    <div className={cn(
-                                        "w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300",
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+                    {/* First Column */}
+                    <div className="space-y-4">
+                        {faqs.slice(0, 6).map((faq, index) => {
+                            const isOpen = openIndex === index;
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.05 }}
+                                    className={cn(
+                                        "rounded-modern border transition-all duration-300 overflow-hidden",
                                         isOpen
-                                            ? "bg-brand-yellow border-brand-yellow text-brand-dark rotate-0"
-                                            : "border-white/20 text-white rotate-0"
-                                    )}>
-                                        {isOpen ? <Minus size={20} /> : <Plus size={20} />}
-                                    </div>
-                                </button>
-
-                                <AnimatePresence initial={false}>
-                                    {isOpen && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                                        >
-                                            <div className="px-6 pb-6 pt-2 text-gray-400 leading-relaxed text-base md:text-lg">
-                                                {faq.answer}
-                                            </div>
-                                        </motion.div>
+                                            ? "bg-brand-dark border-brand-yellow/30 shadow-2xl"
+                                            : "bg-brand-dark border-brand-dark/5 shadow-sm hover:border-brand-dark/20 hover:shadow-md"
                                     )}
-                                </AnimatePresence>
-                            </motion.div>
-                        );
-                    })}
+                                >
+                                    <button
+                                        onClick={() => setOpenIndex(isOpen ? null : index)}
+                                        className="w-full p-6 text-left flex items-center justify-between gap-4"
+                                    >
+                                        <span className={cn(
+                                            "text-lg md:text-xl font-bold transition-colors duration-300",
+                                            isOpen ? "text-brand-yellow" : "text-white"
+                                        )}>
+                                            {faq.question}
+                                        </span>
+                                        <div className={cn(
+                                            "w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300",
+                                            isOpen
+                                                ? "bg-brand-yellow border-brand-yellow text-brand-dark rotate-0"
+                                                : "border-white/20 text-white rotate-0"
+                                        )}>
+                                            {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                                        </div>
+                                    </button>
+
+                                    <AnimatePresence initial={false}>
+                                        {isOpen && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                            >
+                                                <div className="px-6 pb-6 pt-2 text-gray-400 leading-relaxed text-base md:text-lg">
+                                                    {faq.answer}
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </motion.div>
+                            );
+                        })}
+                    </div>
+
+                    {/* Second Column */}
+                    <div className="space-y-4">
+                        {faqs.slice(6).map((faq, idx) => {
+                            const index = idx + 6;
+                            const isOpen = openIndex === index;
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.05 }}
+                                    className={cn(
+                                        "rounded-modern border transition-all duration-300 overflow-hidden",
+                                        isOpen
+                                            ? "bg-brand-dark border-brand-yellow/30 shadow-2xl"
+                                            : "bg-brand-dark border-brand-dark/5 shadow-sm hover:border-brand-dark/20 hover:shadow-md"
+                                    )}
+                                >
+                                    <button
+                                        onClick={() => setOpenIndex(isOpen ? null : index)}
+                                        className="w-full p-6 text-left flex items-center justify-between gap-4"
+                                    >
+                                        <span className={cn(
+                                            "text-lg md:text-xl font-bold transition-colors duration-300",
+                                            isOpen ? "text-brand-yellow" : "text-white"
+                                        )}>
+                                            {faq.question}
+                                        </span>
+                                        <div className={cn(
+                                            "w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300",
+                                            isOpen
+                                                ? "bg-brand-yellow border-brand-yellow text-brand-dark rotate-0"
+                                                : "border-white/20 text-white rotate-0"
+                                        )}>
+                                            {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                                        </div>
+                                    </button>
+
+                                    <AnimatePresence initial={false}>
+                                        {isOpen && (
+                                            <motion.div
+                                                initial={{ height: 0, opacity: 0 }}
+                                                animate={{ height: "auto", opacity: 1 }}
+                                                exit={{ height: 0, opacity: 0 }}
+                                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                            >
+                                                <div className="px-6 pb-6 pt-2 text-gray-400 leading-relaxed text-base md:text-lg">
+                                                    {faq.answer}
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </motion.div>
+                            );
+                        })}
+                    </div>
                 </div>
 
                 <div className="mt-16 text-center">
