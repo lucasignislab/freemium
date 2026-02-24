@@ -8,7 +8,7 @@ import gringasFlag from "../assets/gringas-flag.png";
 const features = [
     {
         name: "Tracking Real de Conversões",
-        description: "Precisão absoluta no rastreio de cada centavo.",
+        description: "Próximo de 100% de precisão",
     },
     {
         name: "Bloqueio Automático de Bots",
@@ -19,12 +19,8 @@ const features = [
         description: "Visão única de margem, ROI e caixa real.",
     },
     {
-        name: "Proteção de Pixel (Server-Side)",
-        description: "Evita que robôs sujem a inteligência da sua conta.",
-    },
-    {
         name: "Suporte VIP no Brasil",
-        description: "Acompanhamento de quem entende o mercado local.",
+        description: "Atendimento todos os dias",
     }
 ];
 
@@ -33,7 +29,7 @@ const competitors = [
         name: "RAADS (Ratoeira)",
         color: "bg-brand-yellow",
         textColor: "text-brand-yellow",
-        values: [true, true, true, true, true],
+        values: [true, true, true, true],
         highlight: true,
         theme: "gold"
     },
@@ -41,7 +37,7 @@ const competitors = [
         name: "",
         color: "bg-red-600",
         textColor: "text-red-500",
-        values: [true, false, false, true, false],
+        values: [false, true, false, false],
         theme: "dark",
         icon: filtrifyLogo,
         blur: true
@@ -50,7 +46,7 @@ const competitors = [
         name: "",
         color: "bg-blue-600",
         textColor: "text-blue-500",
-        values: [true, true, false, false, false],
+        values: [false, true, false, false],
         theme: "dark",
         icon: clickdefenderLogo,
         blur: true,
@@ -60,7 +56,7 @@ const competitors = [
         name: "",
         color: "bg-gray-500",
         textColor: "text-gray-400",
-        values: [false, false, false, false, false],
+        values: [true, false, true, false],
         theme: "muted",
         icon: gringasFlag,
         blur: false,
@@ -154,7 +150,7 @@ export const ComparisonSection = () => {
                     </motion.div>
                     <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase leading-[1.3] mb-6 text-brand-dark">
                         Porque escolher a <span className="text-brand-yellow italic">Ratoeira</span> <br />
-                        <span className="text-brand-dark">Os benefícios são infinitos</span>
+                        <span className="text-brand-dark underline decoration-brand-yellow decoration-4 underline-offset-8">A melhor do mercado</span>
                     </h2>
                 </div>
 
