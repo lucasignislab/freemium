@@ -62,7 +62,7 @@ export const TrustLayer = () => {
         <section className="py-12 bg-gray-50/50 border-y border-gray-100 overflow-hidden">
             <div className="container-wide">
                 <p className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">
-                    Integrado com as maiores plataformas do mundo
+                    Conectado às plataformas que os maiores afiliados já usam:
                 </p>
 
                 {/* P0-3: Real platform logos with icons */}
@@ -95,10 +95,10 @@ export const TrustLayer = () => {
                 {/* P0-4: Social Proof Text */}
                 <div className="flex flex-col items-center justify-center gap-2 text-center">
                     <p className="text-brand-dark font-bold text-lg">
-                        +10.000 Anunciantes Protegidos
+                        +10.000 Afiliados Protegidos e Rastreando
                     </p>
                     <p className="text-gray-500 text-sm">
-                        Recuperando mais de R$ 2M em lucros evitados todos os meses.
+                        Mais de R$ 2M em orçamento recuperado da fraude e vendas rastreadas todo mês.
                     </p>
                 </div>
             </div>
