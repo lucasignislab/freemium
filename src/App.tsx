@@ -13,6 +13,7 @@ import { ComparisonSection } from "./components/ComparisonSection.tsx"
 import { IntegrationsSection } from "./components/IntegrationsSection.tsx"
 import { ClientsCarousel } from "./components/ClientsCarousel.tsx"
 import { Footer } from "./components/Footer.tsx"
+import { FAQSection } from "./components/FAQSection.tsx"
 import { DesignSystem } from "./pages/DesignSystem.tsx"
 import { motion, useScroll, useSpring } from "framer-motion"
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
@@ -42,6 +43,7 @@ const LandingPage = () => {
       <PricingSection />
       <ClientsCarousel />
       <ConversionForm />
+      <FAQSection />
     </>
   );
 };
