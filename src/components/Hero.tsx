@@ -28,7 +28,7 @@ export const Hero = () => {
                             className="text-[28px] xs:text-4xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6 uppercase"
                         >
                             VOCÊ SABE <span className="text-brand-yellow">DE <span className="whitespace-nowrap">QUAL CAMPANHA</span></span> <br className="sm:hidden" />
-                            VEIO <span className="underline decoration-brand-green underline-offset-8">CADA VENDA</span> <br className="sm:hidden" />
+                            <span className="whitespace-nowrap">VEIO <span className="underline decoration-brand-green underline-offset-8">CADA VENDA</span></span> <br className="sm:hidden" />
                             QUE FEZ ESSE MÊS?
                         </motion.h1>
 
