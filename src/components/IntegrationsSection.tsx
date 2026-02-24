@@ -174,7 +174,7 @@ const ChainCarousel: React.FC<ChainCarouselProps> = ({
     const currentItem = items[currentIndex];
 
     return (
-        <div id='explore-section' className={`md:space-y-12 scroll-mt-24 ${className}`}>
+        <div className={`md:space-y-12 ${className}`}>
             <div className='flex flex-col xl:flex-row max-w-7xl mx-auto px-4 md:px-8 gap-4 md:gap-12 justify-center items-center'>
                 <motion.div
                     className="relative w-full max-w-md xl:max-w-2xl h-[450px] items-center justify-center hidden xl:flex -left-14"
@@ -380,7 +380,7 @@ const integrationItems: ChainItem[] = [
 
 export const IntegrationsSection = () => {
     return (
-        <section className="py-24 bg-brand-dark relative overflow-hidden">
+        <section id="explore-section" className="py-24 bg-brand-dark relative overflow-hidden scroll-mt-24">
             {/* Background elements */}
             <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-brand-yellow/20 to-transparent" />
 
