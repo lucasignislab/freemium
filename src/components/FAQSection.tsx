@@ -127,8 +127,8 @@ export const FAQSection = () => {
                                 className={cn(
                                     "rounded-modern border transition-all duration-300 overflow-hidden",
                                     isOpen
-                                        ? "bg-white border-brand-yellow/30 shadow-xl"
-                                        : "bg-white/50 border-gray-200 hover:bg-white hover:border-gray-300"
+                                        ? "bg-brand-dark border-brand-yellow/30 shadow-2xl"
+                                        : "bg-brand-dark border-brand-dark/5 shadow-sm hover:border-brand-dark/20 hover:shadow-md"
                                 )}
                             >
                                 <button
@@ -137,7 +137,7 @@ export const FAQSection = () => {
                                 >
                                     <span className={cn(
                                         "text-lg md:text-xl font-bold transition-colors duration-300",
-                                        isOpen ? "text-brand-dark" : "text-gray-700"
+                                        isOpen ? "text-brand-yellow" : "text-white"
                                     )}>
                                         {faq.question}
                                     </span>
@@ -145,7 +145,7 @@ export const FAQSection = () => {
                                         "w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300",
                                         isOpen
                                             ? "bg-brand-yellow border-brand-yellow text-brand-dark rotate-0"
-                                            : "border-gray-200 text-gray-400 rotate-0"
+                                            : "border-white/20 text-white rotate-0"
                                     )}>
                                         {isOpen ? <Minus size={20} /> : <Plus size={20} />}
                                     </div>
@@ -159,7 +159,7 @@ export const FAQSection = () => {
                                             exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.3, ease: "easeInOut" }}
                                         >
-                                            <div className="px-6 pb-6 pt-2 text-gray-600 leading-relaxed text-base md:text-lg">
+                                            <div className="px-6 pb-6 pt-2 text-gray-400 leading-relaxed text-base md:text-lg">
                                                 {faq.answer}
                                             </div>
                                         </motion.div>
