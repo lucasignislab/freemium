@@ -55,6 +55,7 @@ const MENSAL_PLANS: Plan[] = [
         period: "/mês",
         description: "A escolha favorita dos afiliados.",
         limits: [
+            "E-Book de Estratégia Mensal",
             "50 Produtos Rastreados Simultaneamente",
             "5 com Conversão 100% Automática",
             "Integrações com Plataformas Ilimitadas",
