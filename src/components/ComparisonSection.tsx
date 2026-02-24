@@ -52,7 +52,8 @@ const competitors = [
         values: [false, true, false, false, true, false, false],
         theme: "dark",
         icon: filtrifyLogo,
-        blur: true
+        blur: true,
+        needsDarkBg: true
     },
     {
         name: "",
@@ -94,7 +95,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
                 </div>
             )}
 
-            <div className={`flex items-center justify-center mx-auto mb-4 h-24 mt-4 text-brand-yellow`}>
+            <div className={`flex items-center justify-center mx-auto mb-4 h-24 mt-4 ${comp.highlight ? 'text-brand-yellow' : (comp as any).needsDarkBg ? 'bg-brand-dark rounded-modern px-6 py-2' : ''}`}>
                 {comp.highlight ? (
                     <img
                         src={raadsLogo}
@@ -105,7 +106,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
                     <img
                         src={comp.icon}
                         alt={`${comp.name} Logo`}
-                        className={`${comp.iconSize || 'h-20'} w-auto object-contain ${comp.blur ? 'blur-[1px] opacity-20 grayscale brightness-0' : ''}`}
+                        className={`${comp.iconSize || 'h-20'} w-auto object-contain ${comp.blur ? 'blur-[1px] opacity-70' : ''}`}
                     />
                 ) : (
                     <Target className={comp.textColor} size={40} />
