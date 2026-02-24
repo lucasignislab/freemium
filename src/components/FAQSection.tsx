@@ -30,7 +30,7 @@ const faqs = [
                 <p>
                     Se a plataforma mostrar mais pedidos do que o tracking registrou, cada unidade de diferença é uma venda que o Google não soube que aconteceu — e o Smart Bidding está otimizando com dados incompletos.
                 </p>
-                <p className="font-bold text-brand-dark">
+                <p className="font-bold text-white">
                     A maioria dos afiliados que faz esse teste encontra diferença de 15% a 35%. A migração para a Ratoeira leva menos de 30 minutos, o tracking funciona imediatamente, e a garantia de 7 dias existe para você comparar os dois lado a lado sem risco.
                 </p>
             </div>
