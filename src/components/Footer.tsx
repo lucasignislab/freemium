@@ -14,7 +14,7 @@ export const Footer = () => {
                             />
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
-                            A ferramenta definitiva para anunciantes profissionais que não aceitam perder dinheiro para robôs.
+                            Rastreamento real, proteção anti-fraude e dashboard completo para afiliados profissionais do Google Ads.
                         </p>
                     </div>
 
