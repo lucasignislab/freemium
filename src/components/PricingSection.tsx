@@ -356,15 +356,17 @@ export const PricingSection = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { title: "+40 Plataformas", desc: "Integração total com as maiores redes" },
+                            { title: "+40 Plataformas conectadas", desc: "Integração total com as maiores redes" },
                             { title: "Relatórios Diversos", desc: "Visão 360º de todas as suas métricas" },
                             { title: "Marcação de Checkout", desc: "Rastreio preciso em todas as etapas" },
-                            { title: "Exportação de Dados", desc: "Exportação fácil de conversões e checkouts" },
+                            { title: "Exportação de Conversão e Checkout", desc: "Exportação fácil de dados vitais de venda" },
                             { title: "Biblioteca de Ratos", desc: "Base de dados atualizada de acessos suspeitos" },
-                            { title: "Notificação em Tempo Real", desc: "Fique sabendo de cada ação no seu funil" },
-                            { title: "Dados Completos", desc: "Informações detalhadas de todos os acessos" },
-                            { title: "Construtor de URL", desc: "Ferramenta profissional para trackeamento" },
-                            { title: "E-book Mensal", desc: "Conteúdo exclusivo sobre tráfego e proteção" }
+                            { title: "Notificação de Ratos", desc: "Fique sabendo de cada ação no seu funil" },
+                            { title: "Dados completos dos acessos", desc: "Informações detalhadas de todo o seu tráfego" },
+                            { title: "Construtor de URL completo", desc: "Ferramenta profissional para trackeamento" },
+                            { title: "Conversão Automática", desc: "Tecnologia exclusiva para otimização de pixels" },
+                            { title: "Conversão com URL de Produtor", desc: "Escala máxima para afiliados profissionais" },
+                            { title: "Bloqueio Automático de IP", desc: "Proteção ativa contra acessos fraudulentos" }
                         ].map((item, idx) => (
                             <motion.div
                                 key={idx}
