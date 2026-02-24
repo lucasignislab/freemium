@@ -46,13 +46,12 @@ const MENSAL_PLANS: Plan[] = [
         limits: [
             "E-Book Mensal",
             "3 Ratoeiras (Produtos Simultâneos)",
-            "2 Plataformas Conectadas (receber notificação)"
+            "2 Plataformas Conectadas (receber notificação)",
+            "Sem Conversão Automática",
+            "Sem Conversão Automática com URL de Produtor",
+            "Sem Bloqueio Automático de IP"
         ],
-        unavailable: [
-            "Conversão Automática",
-            "Conversão Automática com URL de Produtor",
-            "Bloqueio Automático de IP"
-        ],
+        unavailable: [],
         buttonText: "GARANTIR MEU ACESSO",
         highlight: false,
         icon: <Zap size={24} className="text-brand-green" />
