@@ -343,6 +343,51 @@ export const PricingSection = () => {
                     ))}
                 </div>
 
+                {/* Shared Features Grid */}
+                <div className="mt-24 pt-16 border-t border-white/10 max-w-6xl mx-auto px-4">
+                    <div className="text-center mb-12">
+                        <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight mb-2">
+                            Funcionalidades <span className="text-brand-green italic">Inclusas</span>
+                        </h3>
+                        <p className="text-gray-400 text-sm md:text-base">
+                            Recursos poderosos presentes em todos os planos da Ratoeira Ads.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            { title: "+40 Plataformas", desc: "Integração total com as maiores redes" },
+                            { title: "Relatórios Diversos", desc: "Visão 360º de todas as suas métricas" },
+                            { title: "Marcação de Checkout", desc: "Rastreio preciso em todas as etapas" },
+                            { title: "Exportação de Dados", desc: "Exportação fácil de conversões e checkouts" },
+                            { title: "Biblioteca de Ratos", desc: "Base de dados atualizada de acessos suspeitos" },
+                            { title: "Notificação em Tempo Real", desc: "Fique sabendo de cada ação no seu funil" },
+                            { title: "Dados Completos", desc: "Informações detalhadas de todos os acessos" },
+                            { title: "Construtor de URL", desc: "Ferramenta profissional para trackeamento" },
+                            { title: "E-book Mensal", desc: "Conteúdo exclusivo sobre tráfego e proteção" }
+                        ].map((item, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: idx * 0.05 }}
+                                viewport={{ once: true }}
+                                className="bg-white/5 border border-white/5 p-6 rounded-2xl hover:bg-white/10 transition-colors group"
+                            >
+                                <div className="flex items-center gap-4 mb-2">
+                                    <div className="bg-brand-green/20 p-2 rounded-lg group-hover:bg-brand-green/30 transition-colors">
+                                        <Check size={18} className="text-brand-green" />
+                                    </div>
+                                    <h4 className="font-bold text-white text-lg">{item.title}</h4>
+                                </div>
+                                <p className="text-gray-400 text-sm leading-relaxed pl-12">
+                                    {item.desc}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
                 <div className="mt-16 text-center">
                     <p className="text-brand-yellow text-sm italic">
                         * Sujeito a política de uso justo. Cobrança recorrente. Cancele quando quiser.
