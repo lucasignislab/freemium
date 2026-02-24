@@ -22,9 +22,9 @@ export const Footer = () => {
                         <div className="flex flex-col items-center md:items-start">
                             <h4 className="font-bold text-brand-dark mb-4 text-xs uppercase tracking-widest">Produto</h4>
                             <ul className="space-y-3 text-sm text-gray-500 text-center md:text-left">
-                                <li><a href="#" className="hover:text-brand-yellow transition-colors">Funcionalidades</a></li>
-                                <li><a href="#" className="hover:text-brand-yellow transition-colors">Integrações</a></li>
-                                <li><a href="#" className="hover:text-brand-yellow transition-colors">Preços</a></li>
+                                <li><a href="/#how-it-works-video" className="hover:text-brand-yellow transition-colors">Funcionalidades</a></li>
+                                <li><a href="/#explore-section" className="hover:text-brand-yellow transition-colors">Integrações</a></li>
+                                <li><a href="/#pricing" className="hover:text-brand-yellow transition-colors">Preços</a></li>
                             </ul>
                         </div>
                         <div className="flex flex-col items-center md:items-start">
