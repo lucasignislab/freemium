@@ -12,6 +12,7 @@ export const Navbar = () => {
         { name: "O Problema", href: "/#pain" },
         { name: "Como Funciona", href: "/#how-it-works-video" },
         { name: "Resultados", href: "/#testimonials" },
+        { name: "Planos", href: "/#pricing" },
         { name: "Design System", href: "/design-system", isSpecial: true },
     ];
 
