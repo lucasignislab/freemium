@@ -151,7 +151,7 @@ export const Results = () => {
 
                     <div className="text-center mt-12">
                         <p className="text-gray-400 font-bold uppercase tracking-widest text-xs">
-                            Estes resultados são de quem já parou de perder dinheiro para o Google.
+                            Resultados reais de usuários. Cada operação é diferente — mas parar de perder começa por aqui.
                         </p>
                     </div>
                 </div>
@@ -170,11 +170,11 @@ export const Results = () => {
                             transition={{ type: "spring", stiffness: 400, damping: 10 }}
                             className="btn-accent btn group"
                         >
-                            Quero blindar minha conta agora
+                            Quero Blindar Minha Conta Agora
                             <Zap className="ml-2 group-hover:scale-125 transition-transform text-brand-dark" size={20} />
                         </motion.button>
                     </a>
-                    <p className="text-sm text-gray-400 mt-3 font-medium">Teste grátis por 7 dias · Sem compromisso</p>
+                    <p className="text-sm text-gray-400 mt-3 font-medium">7 dias grátis · Sem compromisso · Cancele quando quiser</p>
                 </motion.div>
             </div>
         </section>
