@@ -273,7 +273,7 @@ export const PricingSection = () => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 -mx-4 px-4 pb-8 md:pb-0 md:mx-0 md:px-0 md:grid-cols-2 lg:grid-cols-3">
                         {[
                             { title: "+40 Plataformas conectadas", desc: "Integração total com as maiores redes" },
                             { title: "Relatórios Diversos", desc: "Visão 360º de todas as suas métricas" },
@@ -293,7 +293,7 @@ export const PricingSection = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.05 }}
                                 viewport={{ once: true }}
-                                className="bg-white/5 border border-white/5 p-6 rounded-2xl hover:bg-white/10 transition-colors group"
+                                className="bg-white/5 border border-white/5 p-6 rounded-2xl hover:bg-white/10 transition-colors group shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none"
                             >
                                 <div className="flex items-center gap-4 mb-2">
                                     <div className="bg-brand-green/20 p-2 rounded-lg group-hover:bg-brand-green/30 transition-colors">
