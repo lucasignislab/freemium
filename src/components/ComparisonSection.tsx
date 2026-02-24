@@ -52,7 +52,8 @@ const competitors = [
         values: [false, true, false, false, true, false, false],
         theme: "dark",
         icon: filtrifyLogo,
-        blur: true
+        blur: true,
+        iconSize: 'h-28'
     },
     {
         name: "",
