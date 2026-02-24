@@ -46,7 +46,7 @@ export const Navbar = () => {
                 <div className="flex items-center gap-4">
                     <a href="#solution" className="hidden md:block">
                         <button className="bg-brand-yellow text-brand-dark px-6 py-2 rounded-modern font-bold hover:scale-105 transition-all active:scale-95 shadow-lg shadow-brand-yellow/20">
-                            Teste Já - 14 dias grátis
+                            Teste Já - 7 dias grátis
                         </button>
                     </a>
 
