@@ -10,13 +10,13 @@ export const HowItWorksVideo = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         className="inline-block px-4 py-1 bg-brand-yellow/10 text-brand-yellow font-black text-xs tracking-widest rounded-full mb-6"
                     >
-                        PASSO A PASSO
+                        VEJA POR DENTRO DA FERRAMENTA
                     </motion.div>
                     <h2 className="text-[28px] xs:text-4xl md:text-6xl font-black tracking-tighter leading-[1.15] mb-6 text-white">
                         Como Funciona
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Veja na prática como a Ratoeira protege suas campanhas e recupera seu lucro em poucos passos simples.
+                        Em 3 minutos veja como a Ratoeira rastreia cada venda, bloqueia fraudes e dá visão completa da sua operação no Google Ads.
                     </p>
                 </div>
 
