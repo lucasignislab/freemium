@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { AlertTriangle, Ghost, EyeOff, ShieldX } from "lucide-react";
+import { CardSpotlight } from "./ui/card-spotlight";
 
 const pains = [
     {
