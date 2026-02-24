@@ -78,10 +78,10 @@ export const Hero = () => {
                             className="flex flex-wrap gap-6 text-sm text-gray-500 justify-center md:justify-start"
                         >
                             <span className="flex items-center gap-1.5 font-semibold">
-                                <Shield size={16} className="text-brand-green" /> Anti-Fraude
+                                <BarChart3 size={16} className="text-brand-yellow" /> Rastreamento Real
                             </span>
                             <span className="flex items-center gap-1.5 font-semibold">
-                                <BarChart3 size={16} className="text-brand-yellow" /> Tracking Real
+                                <Shield size={16} className="text-brand-green" /> Bloqueio de Fraudes
                             </span>
                             <span className="flex items-center gap-1.5 font-semibold">
                                 <Zap size={16} className="text-brand-green" /> Dashboard Completo
