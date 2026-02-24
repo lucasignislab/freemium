@@ -273,38 +273,59 @@ export const PricingSection = () => {
                         </p>
                     </div>
 
-                    <div className="flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 -mx-4 px-4 pb-8 md:pb-0 md:mx-0 md:px-0 md:grid-cols-2 lg:grid-cols-3">
+                    <div className="flex md:grid overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 -mx-4 px-4 pb-8 md:pb-0 md:mx-0 md:px-0 md:grid-cols-3">
                         {[
-                            { title: "+40 Plataformas conectadas", desc: "Integração total com as maiores redes" },
-                            { title: "Relatórios Diversos", desc: "Visão 360º de todas as suas métricas" },
-                            { title: "Marcação de Checkout", desc: "Rastreio preciso em todas as etapas" },
-                            { title: "Exportação de Conversão e Checkout", desc: "Exportação fácil de dados vitais de venda" },
-                            { title: "Biblioteca de Ratos", desc: "Base de dados atualizada de acessos suspeitos" },
-                            { title: "Notificação de Ratos", desc: "Fique sabendo de cada ação no seu funil" },
-                            { title: "Dados completos dos acessos", desc: "Informações detalhadas de todo o seu tráfego" },
-                            { title: "Construtor de URL completo", desc: "Ferramenta profissional para trackeamento" },
-                            { title: "Conversão Automática", desc: "Tecnologia exclusiva para otimização de pixels" },
-                            { title: "Conversão com URL de Produtor", desc: "Escala máxima para afiliados profissionais" },
-                            { title: "Bloqueio Automático de IP", desc: "Proteção ativa contra acessos fraudulentos" }
-                        ].map((item, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: idx * 0.05 }}
-                                viewport={{ once: true }}
-                                className="bg-white/5 border border-white/5 p-6 rounded-2xl hover:bg-white/10 transition-colors group shrink-0 w-[280px] snap-center md:w-auto md:snap-align-none"
-                            >
-                                <div className="flex items-center gap-4 mb-2">
-                                    <div className="bg-brand-green/20 p-2 rounded-lg group-hover:bg-brand-green/30 transition-colors">
-                                        <Check size={18} className="text-brand-green" />
-                                    </div>
-                                    <h4 className="font-bold text-white text-lg">{item.title}</h4>
+                            {
+                                category: "📊 Rastreamento e Conversões",
+                                features: [
+                                    { title: "Envio automático de checkout e conversão", desc: "Seus eventos chegam no Google Ads sem atraso e sem erro manual" },
+                                    { title: "Maior taxa de traqueamento do mercado", desc: "Nenhum concorrente consegue registrar tantas vendas como nós" },
+                                    { title: "Conversão automática com URL do produtor", desc: "Traqueia e envia vendas automaticamente mesmo quando anunciando direto para URL do produtor" },
+                                    { title: "Construtor de URL completo", desc: "Crie links prontos com UTMs, parâmetros e tracking em segundos." }
+                                ]
+                            },
+                            {
+                                category: "🧠 Inteligência e Controle",
+                                features: [
+                                    { title: "Dashboard financeiro completo", desc: "Veja lucro real, ROI e performance por campanha, produto e criativo." },
+                                    { title: "Acesso a todos visitantes das suas páginas", desc: "Saiba exatamente quem clicou, de onde veio e como se comportou." }
+                                ]
+                            },
+                            {
+                                category: "🛡️ Proteção e Performance",
+                                features: [
+                                    { title: "Bloqueio automático de IP", desc: "Corta tráfego ruim e cliques inválidos antes de queimar seu orçamento." },
+                                    { title: "Economizômetro", desc: "Nosso bloqueio automático de IP economiza centenas de reais do seu bolso" }
+                                ]
+                            }
+                        ].map((cat, catIdx) => (
+                            <div key={catIdx} className="shrink-0 w-[300px] snap-center md:w-auto md:snap-align-none">
+                                <h4 className="text-xl font-black mb-8 pb-2 border-b border-brand-green/30 text-white flex items-center gap-3">
+                                    {cat.category}
+                                </h4>
+                                <div className="space-y-6">
+                                    {cat.features.map((item, idx) => (
+                                        <motion.div
+                                            key={idx}
+                                            initial={{ opacity: 0, x: -10 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: idx * 0.05 }}
+                                            viewport={{ once: true }}
+                                            className="group"
+                                        >
+                                            <div className="flex items-start gap-3 mb-1">
+                                                <div className="mt-1 bg-brand-green/20 p-1 rounded group-hover:bg-brand-green/30 transition-colors shrink-0">
+                                                    <Check size={14} className="text-brand-green" />
+                                                </div>
+                                                <h5 className="font-bold text-white text-base leading-tight">{item.title}</h5>
+                                            </div>
+                                            <p className="text-gray-400 text-xs leading-relaxed pl-8">
+                                                {item.desc}
+                                            </p>
+                                        </motion.div>
+                                    ))}
                                 </div>
-                                <p className="text-gray-400 text-sm leading-relaxed pl-12">
-                                    {item.desc}
-                                </p>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
