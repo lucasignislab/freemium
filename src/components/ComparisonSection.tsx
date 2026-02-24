@@ -105,7 +105,7 @@ const ComparisonCard = ({ comp, idx }: { comp: typeof competitors[number]; idx: 
                     <img
                         src={comp.icon}
                         alt={`${comp.name} Logo`}
-                        className={`${comp.iconSize || 'h-20'} w-auto object-contain ${comp.blur ? 'blur-[1px] opacity-40 grayscale' : ''}`}
+                        className={`${comp.iconSize || 'h-20'} w-auto object-contain ${comp.blur ? 'blur-[1px] opacity-20 grayscale brightness-0' : ''}`}
                     />
                 ) : (
                     <Target className={comp.textColor} size={40} />
