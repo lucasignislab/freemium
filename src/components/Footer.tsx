@@ -32,7 +32,7 @@ export const Footer = () => {
                             <ul className="space-y-3 text-sm text-gray-500 text-center md:text-left">
                                 <li><a href="#" className="hover:text-brand-yellow transition-colors">WhatsApp</a></li>
                                 <li><a href="#" className="hover:text-brand-yellow transition-colors">Central de Ajuda</a></li>
-                                <li><a href="#" className="hover:text-brand-yellow transition-colors">Status</a></li>
+
                             </ul>
                         </div>
                         <div className="flex flex-col items-center md:items-start col-span-2 md:col-span-1">
