@@ -258,16 +258,19 @@ export const ConversionForm = () => {
         setIsSubmitting(true);
         const fullPhone = `${selectedCountry.dial} ${formData.telefone}`;
 
-        // 1. Collect UTM & raads params from sessionStorage
-        const utmKeys = [
-            "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
-            "raads1", "raads2", "raads3", "raads4", "raads5"
-        ];
-        const utmData: Record<string, string> = {};
-        utmKeys.forEach(key => {
-            const val = sessionStorage.getItem(key);
-            if (val) utmData[key] = val;
-        });
+        // 1. Collect UTM & raads params from sessionStorage (always send all fields)
+        const utmData = {
+            utm_source: sessionStorage.getItem("utm_source") || "",
+            utm_medium: sessionStorage.getItem("utm_medium") || "",
+            utm_campaign: sessionStorage.getItem("utm_campaign") || "",
+            utm_content: sessionStorage.getItem("utm_content") || "",
+            utm_term: sessionStorage.getItem("utm_term") || "",
+            raads1: sessionStorage.getItem("raads1") || "",
+            raads2: sessionStorage.getItem("raads2") || "",
+            raads3: sessionStorage.getItem("raads3") || "",
+            raads4: sessionStorage.getItem("raads4") || "",
+            raads5: sessionStorage.getItem("raads5") || "",
+        };
 
         // 2. Prepare data for N8N webhook (includes UTMs + raads)
         const webhookData = {
