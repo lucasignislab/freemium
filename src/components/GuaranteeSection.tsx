@@ -39,9 +39,9 @@ export const GuaranteeSection = () => {
                                     Teste a Ratoeira na prática. Se você não economizar em cliques fraudulentos ou achar que a ferramenta não é para você, basta solicitar o reembolso.
                                 </p>
 
-                                <div className="bg-gray-50 border border-gray-100 p-4 rounded-2xl">
-                                    <p className="font-bold text-brand-dark text-sm">
-                                        Devolvemos 100% do seu dinheiro. Sem letras miúdas.
+                                <div className="mt-12 pt-6 border-t border-gray-100 text-center">
+                                    <p className="text-sm md:text-base text-brand-yellow font-black uppercase tracking-widest">
+                                        7 DIAS DE GARANTIA!
                                     </p>
                                 </div>
                             </div>
