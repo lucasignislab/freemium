@@ -12,6 +12,7 @@ import { ImpactCarousel } from "./components/ImpactCarousel.tsx"
 import { ComparisonSection } from "./components/ComparisonSection.tsx"
 import { IntegrationsSection } from "./components/IntegrationsSection.tsx"
 import { ClientsCarousel } from "./components/ClientsCarousel.tsx"
+import { GuaranteeSection } from "./components/GuaranteeSection.tsx"
 import { Footer } from "./components/Footer.tsx"
 import { FAQSection } from "./components/FAQSection.tsx"
 import { TermsOfUse } from "./pages/TermsOfUse.tsx"
@@ -43,6 +44,7 @@ const LandingPage = () => {
       <IntegrationsSection />
       <Results />
       <PricingSection />
+      <GuaranteeSection />
       <ClientsCarousel />
       <ConversionForm />
       <FAQSection />
