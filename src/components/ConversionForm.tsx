@@ -252,38 +252,37 @@ export const ConversionForm = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // Capture and persist UTMs to SessionStorage
-    useEffect(() => {
-        const queryParams = new URLSearchParams(window.location.search);
-        const utmKeys = [
-            "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
-            "raads1", "raads2", "raads3", "raads4", "raads5"
-        ];
-
-        utmKeys.forEach(key => {
-            if (queryParams.has(key)) {
-                sessionStorage.setItem(key, queryParams.get(key) || "");
-            }
-        });
-    }, []);
+    // UTMs are captured globally in App.tsx (CaptureUTMs component)
 
     const handleFinalSubmit = async () => {
         setIsSubmitting(true);
         const fullPhone = `${selectedCountry.dial} ${formData.telefone}`;
 
-        // 1. Prepare data for N8N webhook
+        // 1. Collect UTM & raads params from sessionStorage
+        const utmKeys = [
+            "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
+            "raads1", "raads2", "raads3", "raads4", "raads5"
+        ];
+        const utmData: Record<string, string> = {};
+        utmKeys.forEach(key => {
+            const val = sessionStorage.getItem(key);
+            if (val) utmData[key] = val;
+        });
+
+        // 2. Prepare data for N8N webhook (includes UTMs + raads)
         const webhookData = {
             name: formData.nome,
             email: formData.email,
             phone: fullPhone,
             tempo_afiliado: formData.tempoAfiliado,
-            faturamento_afiliado: formData.faturamento
+            faturamento_afiliado: formData.faturamento,
+            ...utmData
         };
 
-        // 2. Dispatch to Webhook (Non-blocking with timeout)
+        // 3. Dispatch to Webhook (Non-blocking with 10s timeout)
         try {
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 3000);
+            const timeoutId = setTimeout(() => controller.abort(), 10000);
 
             await fetch('https://n8n.srv1145908.hstgr.cloud/webhook/form-elementor', {
                 method: 'POST',
@@ -300,7 +299,7 @@ export const ConversionForm = () => {
             // Ignored so we don't break user redirect
         }
 
-        // 3. Build Redirect URL
+        // 4. Build Redirect URL
         const redirectUrl = new URL("https://app.ratoeiraads.com.br/freemium/cadastro");
 
         redirectUrl.searchParams.append("name", formData.nome);
@@ -309,16 +308,9 @@ export const ConversionForm = () => {
         redirectUrl.searchParams.append("tempo_afiliado", formData.tempoAfiliado);
         redirectUrl.searchParams.append("faturamento_afiliado", formData.faturamento);
 
-        const utmKeys = [
-            "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
-            "raads1", "raads2", "raads3", "raads4", "raads5"
-        ];
-
-        utmKeys.forEach(key => {
-            const val = sessionStorage.getItem(key);
-            if (val) {
-                redirectUrl.searchParams.append(key, val);
-            }
+        // Reuse utmData already collected from sessionStorage
+        Object.entries(utmData).forEach(([key, val]) => {
+            redirectUrl.searchParams.append(key, val);
         });
 
         // 4. Redirect

@@ -30,6 +30,23 @@ const ScrollToTop = () => {
   return null;
 };
 
+// Capture UTM & raads params from URL on first load (mirrors hidden-input pattern)
+const CaptureUTMs = () => {
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const trackingKeys = [
+      "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
+      "raads1", "raads2", "raads3", "raads4", "raads5"
+    ];
+    trackingKeys.forEach(key => {
+      if (queryParams.has(key)) {
+        sessionStorage.setItem(key, queryParams.get(key) || "");
+      }
+    });
+  }, []);
+  return null;
+};
+
 const LandingPage = () => {
   return (
     <>
@@ -63,6 +80,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <CaptureUTMs />
       <div className="relative min-h-screen">
         {/* Progress Bar */}
         <motion.div
