@@ -367,7 +367,7 @@ export const ConversionForm = () => {
                     </div>
                 </div>
 
-                <div className="w-full md:w-[480px] bg-white rounded-modern p-10 text-brand-dark border-8 border-brand-yellow shadow-2xl relative">
+                <div className="w-full md:w-[480px] bg-white rounded-modern p-6 sm:p-10 text-brand-dark border-4 sm:border-8 border-brand-yellow shadow-2xl relative">
                     <AnimatePresence mode="wait">
                         {step === 1 ? (
                             <motion.div
@@ -401,10 +401,10 @@ export const ConversionForm = () => {
                                     <button
                                         type="button"
                                         onClick={() => setCountryDropdownOpen(!countryDropdownOpen)}
-                                        className="flex items-center gap-1.5 px-3 border-r border-gray-200 hover:bg-gray-100 transition-colors shrink-0"
+                                        className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 border-r border-gray-200 hover:bg-gray-100 transition-colors shrink-0"
                                     >
-                                        <span className="text-lg">{selectedCountry.flag}</span>
-                                        <span className="text-sm font-bold text-gray-700">{selectedCountry.dial}</span>
+                                        <span className="text-base sm:text-lg">{selectedCountry.flag}</span>
+                                        <span className="text-xs sm:text-sm font-bold text-gray-700">{selectedCountry.dial}</span>
                                         <ChevronDown size={14} className={`text-gray-400 transition-transform ${countryDropdownOpen ? 'rotate-180' : ''}`} />
                                     </button>
                                     <input
@@ -412,7 +412,7 @@ export const ConversionForm = () => {
                                         value={formData.telefone}
                                         onChange={(e) => setFormData(prev => ({ ...prev, telefone: e.target.value }))}
                                         placeholder="Seu Telefone (XX) X XXXX-XXXX"
-                                        className="flex-1 p-4 bg-transparent outline-none"
+                                        className="flex-1 p-3 sm:p-4 text-[13px] sm:text-base bg-transparent outline-none min-w-0"
                                     />
                                     {countryDropdownOpen && (
                                         <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-modern border border-gray-200 shadow-xl z-50 max-h-60 overflow-y-auto">
